@@ -1,5 +1,7 @@
 <template>
-  <button>Export Test</button>
+  <div class="right-header">
+   <button>Export Test</button>
+  </div>
 </template>
 
 <script>
@@ -9,6 +11,13 @@
 
 </script>
 
-<style scoped>
-
+<style>
+ .right-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px red dotted;
+    height: 100%;
+    width: 40%;
+  }
 </style>
