@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-   Hi
+    Hi!
+    <MainLoader />
   </div>
 </template>
 
 <script>
+ import MainLoader from './containers/MainLoader/MainLoader.vue'
   export default {
-    name: 'peppermint'
+    name: 'peppermint',
+    components: {
+      MainLoader
+    }
   }
 </script>
 
