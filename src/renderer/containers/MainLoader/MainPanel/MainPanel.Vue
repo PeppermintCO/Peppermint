@@ -1,11 +1,13 @@
 <template>
   <div class="mainPanel-container">
     <p>Im inside mainPanel</p>
+    <button @click='addTest()'>Add Test</button>
+    
     Component Name <input name='componentName' type='text'/>
+    <div v-for='n in testBoxes'>
+      <CreateTest />
+    </div>
 
-    <CreateTest />
-    <Query />
-    <FireEvent />
   </div>
 </template>
 
@@ -21,7 +23,18 @@ export default {
     Query,
     FireEvent
   },
+  data () {
+    return {
+      testBoxes: 1
+    }
+  },
+  methods: {
+    addTest() {
+      this.$set(this.testBoxes, this.testBoxes += 1);
+    }
+  }
 }
+
 
 </script>
 
