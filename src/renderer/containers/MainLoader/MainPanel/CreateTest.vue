@@ -5,7 +5,7 @@
       <button @click='addQuery'>Add Query</button>
       <button @click='addEvent'>Add Event</button>
       <div v-for='(testItem, index) in testItems' :key='index'>
-         <component :is=testItem></component>
+         <component :is='testItem'></component>
          <span :id='index' @click='deleteItem(index)'>X</span>
       </div>
     </form>
