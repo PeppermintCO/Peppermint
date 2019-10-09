@@ -7,7 +7,7 @@
     <br>
     Component Name <input name='componentName' type='text'/>
     <div v-for='box in boxes'>
-       <component :is="box"></component>
+       <component :is=box></component>
     </div>
   </div>
 </template>
@@ -27,20 +27,17 @@ export default {
   data () {
     return {
       boxes: ['CreateTest'],
-      key: {
-        'testName': eval('<CreateTest />')
-      }
     }
   },
   methods: {
     addTest() {
-      this.boxes.push('testName');
+      this.boxes.push('CreateTest');
     },
     addQuery() {
-      this.boxes.push('query');
+      this.boxes.push('Query');
     },
     addEvent() {
-      this.boxes.push('fireEvent');
+      this.boxes.push('FireEvent');
     }
   }
 }
