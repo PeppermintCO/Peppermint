@@ -16,3 +16,11 @@ export default {
   }
 }
 </script>
+
+<style>
+  .header-container {
+    display: flex;
+    height: 8%;
+  }
+
+</style>

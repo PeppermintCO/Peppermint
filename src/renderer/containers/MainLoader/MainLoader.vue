@@ -1,9 +1,18 @@
 <template>
-  <div class="mainLoader-container">
+  <div v-if="$store.getters.showFileExplorer" class="mainLoader-container">
     <Header />
-    <FileExplorer />
-    <MainPanel />
-    <RightPanel />
+    <div class="mainLoader">
+      <FileExplorer />
+      <MainPanel />
+      <RightPanel />
+    </div>
+  </div>
+  <div v-else class="mainLoader-container-f">
+    <Header />
+    <div class="mainLoader">
+      <MainPanel />
+      <RightPanel />
+    </div>
   </div>
 </template>
 
@@ -19,6 +28,22 @@
      Header, FileExplorer, MainPanel, RightPanel
    }
  }
-  
 </script>
+
+<style>
+  .mainLoader-container {
+    height: 100%;
+    border: 1px red solid;
+    
+  }
+
+  .mainLoader-container-f {
+    height: 100%;
+  }
+
+  .mainLoader {
+    display: flex;
+    height: 100%;
+  }
+</style>
 
