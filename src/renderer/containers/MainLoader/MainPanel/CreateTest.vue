@@ -11,3 +11,6 @@ export default {
   name: 'CreateTest'
 }
 </script>
+
+<style scoped>
+</style>
