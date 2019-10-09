@@ -2,46 +2,34 @@
   <div class="mainPanel-container">
     <p>Im inside mainPanel</p>
     <button @click='addTest()'>Add Test</button>
-    <button @click='addQuery()'>Add Query</button>
-    <button @click='addEvent()'>Add Event</button>
     <br>
     Component Name <input name='componentName' type='text'/>
-    <div v-for='(box, index) in boxes' :key='index'>
-       <component :is=box></component>
-       <span :id='index' @click='deleteBox(index)'>X</span>
+    <div v-for='(test, index) in tests' :key='index'>
+       <component :is=test></component>
+       <span :id='index' @click='deleteTest(index)'>X</span>
     </div>
   </div>
 </template>
 
 <script>
 import CreateTest from './CreateTest.vue';
-import Query from './Query.vue';
-import FireEvent from './FireEvent.vue';
 
 export default {
   name: 'MainPanel',
   components: {
-    CreateTest,
-    Query,
-    FireEvent
+    CreateTest
   },
   data () {
     return {
-      boxes: ['CreateTest'],
+      tests: ['CreateTest'],
     }
   },
   methods: {
     addTest() {
-      this.boxes.push('CreateTest');
+      this.tests.push('CreateTest');
     },
-    addQuery() {
-      this.boxes.push('Query');
-    },
-    addEvent() {
-      this.boxes.push('FireEvent');
-    },
-    deleteBox(index) {
-      this.boxes.splice(index, 1);
+    deleteTest(index) {
+      this.tests.splice(index, 1);
     }
   }
 }
