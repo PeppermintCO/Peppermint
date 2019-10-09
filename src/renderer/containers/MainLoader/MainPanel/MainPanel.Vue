@@ -2,12 +2,13 @@
   <div class="mainPanel-container">
     <p>Im inside mainPanel</p>
     <button @click='addTest()'>Add Test</button>
-    
+    <button @click='addQuery()'>Add Query</button>
+    <button @click='addEvent()'>Add Event</button>
+    <br>
     Component Name <input name='componentName' type='text'/>
-    <div v-for='n in testBoxes'>
-      <CreateTest />
+    <div v-for='box in boxes'>
+       <component :is="box"></component>
     </div>
-
   </div>
 </template>
 
@@ -25,12 +26,21 @@ export default {
   },
   data () {
     return {
-      testBoxes: 1
+      boxes: ['CreateTest'],
+      key: {
+        'testName': eval('<CreateTest />')
+      }
     }
   },
   methods: {
     addTest() {
-      this.$set(this.testBoxes, this.testBoxes += 1);
+      this.boxes.push('testName');
+    },
+    addQuery() {
+      this.boxes.push('query');
+    },
+    addEvent() {
+      this.boxes.push('fireEvent');
     }
   }
 }

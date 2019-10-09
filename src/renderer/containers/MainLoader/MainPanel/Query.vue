@@ -2,7 +2,7 @@
   <div class="test-component">
     Query
     <form action="">
-      Selector Name<input type='text'>
+      Selector Name <input type='text'>
 
       <select name="query-variant">
         <option value="getBy">getBy</option>
