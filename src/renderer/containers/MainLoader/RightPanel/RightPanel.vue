@@ -1,5 +1,5 @@
 <template>
-  <div class="rightPanel-container">
+  <div class= "mainPanel-container">
       <p>Im inside rightPanel</p>
   </div>
 </template>
@@ -10,7 +10,9 @@
 
 <style>
   .rightPanel-container {
-    grid-area: 2 / 3 / 6 / 4;
     border: 1px red solid;
+    width: 50%;
+    height: 100%;
   }
+
 </style>

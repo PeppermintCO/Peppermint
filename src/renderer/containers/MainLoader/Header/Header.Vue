@@ -19,11 +19,8 @@ export default {
 
 <style>
   .header-container {
-    grid-area: 1 / 1 / 2 / 4;
-    border: 1px red solid;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 8%;
   }
 
 </style>

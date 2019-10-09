@@ -1,6 +1,6 @@
 <template>
   <div class="left-header">
-    <button class="button fileExplorerButton">File Explorer</button>
+    <button class="button fileExplorerButton" @click="$store.dispatch('toggleFileExplorer')">File Explorer</button>
     <button class="button openProjectButton">Open Project</button>
   </div>
 </template>

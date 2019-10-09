@@ -52,5 +52,7 @@ export default {
   .mainPanel-container {
     grid-area: 2 / 2 / 6 / 3;
     border: 1px red solid;
+    width: 50%;
+    height: 100%;
   }
 </style>
