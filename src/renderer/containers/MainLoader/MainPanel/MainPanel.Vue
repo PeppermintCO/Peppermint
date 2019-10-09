@@ -5,7 +5,7 @@
     <br>
     Component Name <input name='componentName' type='text'/>
     <div v-for='(test, index) in tests' :key='index'>
-       <component :is=test></component>
+       <component :is='test'></component>
        <span :id='index' @click='deleteTest(index)'>X</span>
     </div>
   </div>
