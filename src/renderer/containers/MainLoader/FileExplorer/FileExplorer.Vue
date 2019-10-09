@@ -13,6 +13,7 @@
 <style> 
   .fileExplorer-container {
     border: 1px red solid;
-    grid-area: 2 / 1 / 6 / 2;
+    width: 25%;
+    height: 100%;
   }
 </style>
