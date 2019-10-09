@@ -1,9 +1,18 @@
 <template>
-  <div class="mainLoader-container">
+  <div v-if="$store.getters.showFileExplorer" class="mainLoader-container">
     <Header />
-    <FileExplorer />
-    <MainPanel />
-    <RightPanel />
+    <div class="mainLoader">
+      <FileExplorer />
+      <MainPanel />
+      <RightPanel />
+    </div>
+  </div>
+  <div v-else class="mainLoader-container-f">
+    <Header />
+    <div class="mainLoader">
+      <MainPanel />
+      <RightPanel />
+    </div>
   </div>
 </template>
 
@@ -24,11 +33,17 @@
 <style>
   .mainLoader-container {
     height: 100%;
-    display: grid;
-    grid-template-columns: 20% repeat(2, 1fr) repeat(2, 0);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    border: 1px red solid;
+    
+  }
+
+  .mainLoader-container-f {
+    height: 100%;
+  }
+
+  .mainLoader {
+    display: flex;
+    height: 100%;
   }
 </style>
 
