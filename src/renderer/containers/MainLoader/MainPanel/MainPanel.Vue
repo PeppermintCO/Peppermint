@@ -6,7 +6,7 @@
     <button @click='addEvent()'>Add Event</button>
     <br>
     Component Name <input name='componentName' type='text'/>
-    <div v-for='(box, index) in boxes'>
+    <div v-for='(box, index) in boxes' :key='index'>
        <component :is=box></component>
        <span :id='index' @click='deleteBox(index)'>X</span>
     </div>
