@@ -57,9 +57,9 @@ const { dialog } = remote
         //make recursive call with current fileObject.filePath and save to fileObject.files
         file.files = generateFileTreeObject(file.filePath)
       }
-    //return fileObject
+      //return fileObject
       return file;
-    }
+     }
     })
 
 return fileArray
@@ -89,11 +89,12 @@ export default {
       const directoryPath = directory[0];
       const testObj = {'/User/me': 'hellooo'}
       this.$store.dispatch('setFilePath', directoryPath);
-      this.$store.dispatch('createFileTree', testObj)
+      this.$store.dispatch('createFileTree', generateFileTreeObject(directoryPath));
     }
-    const filePath2 = this.$store.getters.getFilePath;
-    const test = generateFileTreeObject(filePath2);
-    console.log(test)
+    // const filePath2 = this.$store.getters.getFilePath;
+    // const test = generateFileTreeObject(filePath2);
+    // console.log(test)
+    console.log(this.$store.getters.getFileTree, '<---- fileTree')
       // console.log(this.$store.getters.getFilePath, '<--- Path')
       // const test = this.$store.getters.getFileTree['/User/me']
       // console.log(test , '<--- test')
