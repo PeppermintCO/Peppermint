@@ -12,9 +12,13 @@
         let fileTreeStr = '';
         
         function traverseFileTree(fileTree) {
-          fileTreeStr += `<ul><li>${fileTree.fileName}</li>`;
-          for(let i = 0; i < fileTree.files.length; i++) {
-            traverseFileTree(fileTree.files[i]);
+          if(fileTree.files.length > 0) {
+            fileTreeStr += `<ul><li><button @click="toggleShowSubfolder">${fileTree.fileName}</button></li>`;
+            for(let i = 0; i < fileTree.files.length; i++) {
+              traverseFileTree(fileTree.files[i]);
+            }
+          } else {
+            fileTreeStr += `<ul><li><button @dblclick="displayCode">${fileTree.fileName}</button></li>`;
           }
           fileTreeStr += `</ul>`;
         };
@@ -28,6 +32,12 @@
         
         return fileTreeStr;
       }
+    }, 
+    toggleShowSubFolder() {
+      console.log('toggling folders.....')
+    },
+    displayCode() {
+      console.log('displaying your code........')
     }
   }
     // template: `<div class="fileExplorer-container">${generateFileTreeHtml(this.$store.getters.getFileTree)}</div>`
