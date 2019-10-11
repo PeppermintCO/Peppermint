@@ -39,8 +39,8 @@ export default {
     },
     displayFileContent(filePath) {
       // IMPLEMENT FUNCTIONALITY FOR DISPLAYING FILE CONTENT
-      
-      console.log('diplaying your contents!!!!!!', filePath)
+      // console.log('diplaying your contents!!!!!!', filePath)
+      this.$store.dispatch('setSelectedFilePath', filePath)
     }
   }
 }
