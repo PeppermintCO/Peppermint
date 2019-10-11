@@ -51,6 +51,7 @@
     }
   },
   "dependencies": {
+    "monaco-editor-webpack-plugin": "^1.7.0",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-monaco": "^1.1.0",
