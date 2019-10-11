@@ -32,13 +32,11 @@
 
 <style>
   .mainLoader-container {
-    height: 100%;
-    border: 1px red solid;
-    
+    height: 92%;
   }
 
   .mainLoader-container-f {
-    height: 100%;
+    height: 92%;
   }
 
   .mainLoader {
