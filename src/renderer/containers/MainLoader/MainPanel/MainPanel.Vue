@@ -10,8 +10,7 @@
       @input="saveComponentName"
     />
     <div v-for="(test, index) in tests" :key="index">
-      <component v-bind:id="index" :is="test"></component>
-      <span :id="index" @click="deleteTest(index)">X</span>
+      <component v-bind:id="index" :is="test" :tests="tests" :index="index"></component>
     </div>
   </div>
 </template>
@@ -33,19 +32,17 @@ export default {
   },
   methods: {
     addTest() {
-      // this.$store.state.testList.push(newTest);
       this.tests.push("CreateTest");
 
       this.$store.state.testLength += 1;
-      // console.log(this.$store.state.testLength);
-      // console.log(this.$store.state.componentName);
     },
-    deleteTest(index) {
-      this.tests.splice(index, 1);
+    deleteTest(index) {},
+    deleteTestFromStore(testId) {
+      console.log(testId);
     },
     saveComponentName() {
-      this.$store.state.componentName = this.componentName;
-      console.log(this.$store.state.componentName);
+      console.log(this.$store.getters.showComponentName);
+      this.$store.dispatch("saveComponentName", this.componentName);
     }
   }
 };

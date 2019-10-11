@@ -2,9 +2,9 @@
   <div class="test-component">
     <form action>
       Event Type
-      <input type="text" @input="saveTestItem" v-model="eventType" />
+      <input type="text" @input="saveFireEvent" v-model="eventType" />
       Selector
-      <select name="query-variant" @change="saveTestItem" v-model="selectorType">
+      <select name="query-variant" @change="saveFireEvent" v-model="selectorType">
         <option
           v-for="(selector, index) in this.$store.state.testList[testId]['testItems']"
           :key="index"
@@ -25,34 +25,13 @@ export default {
     };
   },
   methods: {
-    saveTestItem() {
-      if (this.$store.state.testList.hasOwnProperty(this.testId)) {
-        if (
-          !this.$store.state.testList[this.testId].hasOwnProperty("testItems")
-        )
-          this.$store.state.testList[this.testId]["testItems"] = {};
-      } else {
-        this.$store.state.testList[this.testId] = {
-          testItems: {}
-        };
-      }
-
-      if (
-        !this.$store.state.testList[this.testId]["testItems"].hasOwnProperty(
-          this._uid
-        )
-      ) {
-        this.$store.state.testList[this.testId]["testItems"][this._uid] = {};
-      }
-
-      this.$store.state.testList[this.testId]["testItems"][this._uid][
-        "eventType"
-      ] = this.eventType;
-
-      this.$store.state.testList[this.testId]["testItems"][this._uid][
-        "selectorType"
-      ] = this.selectorType;
-      console.log(this.$store.state.testList);
+    saveFireEvent() {
+      this.$store.dispatch("saveFireEvent", {
+        eventType: this.eventType,
+        selectorType: this.selectorType,
+        testId: this.testId,
+        testItemId: this._uid
+      });
     }
   }
 };

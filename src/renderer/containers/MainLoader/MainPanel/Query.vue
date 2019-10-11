@@ -43,42 +43,15 @@ export default {
   },
   methods: {
     saveTestItem() {
-      if (this.$store.state.testList.hasOwnProperty(this.testId)) {
-        if (
-          !this.$store.state.testList[this.testId].hasOwnProperty("testItems")
-        )
-          this.$store.state.testList[this.testId]["testItems"] = {};
-      } else {
-        this.$store.state.testList[this.testId] = {
-          testItems: {}
-        };
-      }
-
-      if (
-        !this.$store.state.testList[this.testId]["testItems"].hasOwnProperty(
-          this._uid
-        )
-      ) {
-        this.$store.state.testList[this.testId]["testItems"][this._uid] = {};
-      }
-
-      this.$store.state.testList[this.testId]["testItems"][this._uid][
-        "selectorName"
-      ] = this.selectorName;
-
-      this.$store.state.testList[this.testId]["testItems"][this._uid][
-        "queryVariant"
-      ] = this.queryVariant;
-
-      this.$store.state.testList[this.testId]["testItems"][this._uid][
-        "queryType"
-      ] = this.queryType;
-
-      this.$store.state.testList[this.testId]["testItems"][this._uid][
-        "textToMatch"
-      ] = this.textToMatch;
-
-      console.log(this.$store.state.testList);
+      this.$store.dispatch("saveTestItem", {
+        selectorName: this.selectorName,
+        queryVariant: this.queryVariant,
+        queryType: this.queryType,
+        textToMatch: this.textToMatch,
+        testId: this.testId,
+        testItemId: this._uid
+      });
+      console.log(this.$store.getters.showTestList);
     }
   }
 };

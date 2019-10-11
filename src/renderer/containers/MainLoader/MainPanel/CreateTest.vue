@@ -6,10 +6,15 @@
       <button @click="addQuery">Add Query</button>
       <button @click="addEvent">Add Event</button>
       <div v-for="(testItem, index) in testItems" :key="index">
-        <component :is="testItem" v-bind:testId="_uid"></component>
-        <span :id="index" @click="deleteItem(index)">X</span>
+        <component :is="testItem"></component>
+        <span :id="index" @click="deleteItem(index)">
+          <button>X</button>
+        </span>
       </div>
     </form>
+    <span @click="deleteTest(_uid)">
+      <button>Delete Test</button>
+    </span>
   </div>
 </template>
 
@@ -23,6 +28,11 @@ export default {
     Query,
     FireEvent
   },
+  props: ["tests", "index"],
+  mounted() {
+    this.$store.dispatch("addTest", this._uid);
+    console.log(this.$store.getters.showTestList);
+  },
   data() {
     return {
       testItems: ["Query"],
@@ -30,6 +40,10 @@ export default {
     };
   },
   methods: {
+    deleteTest() {
+      this.tests.splice(this.index, 1);
+      this.$store.dispatch("deleteTest", this._uid);
+    },
     addQuery(e) {
       e.preventDefault();
       this.testItems.push("Query");
@@ -42,13 +56,10 @@ export default {
       this.testItems.splice(index, 1);
     },
     saveTestName() {
-      if (this.$store.state.testList.hasOwnProperty(this._uid)) {
-        this.$store.state.testList[this._uid]["testName"] = this.testName;
-      } else {
-        this.$store.state.testList[this._uid] = {
-          testName: this.testName
-        };
-      }
+      this.$store.dispatch("saveTestName", {
+        testName: this.testName,
+        testId: this._uid
+      });
     }
   }
 };
