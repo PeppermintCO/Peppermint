@@ -1,6 +1,12 @@
 <template>
   <div v-if="$store.getters.getFileTree" class="fileExplorer-container">
-    <FileFolderItem v-for="(file, index) in $store.getters.getFileTree" :key="index" :fileName="file.fileName" :files="file.files">
+    <FileFolderItem
+       v-for="(file, index) in $store.getters.getFileTree"
+       :key="index"
+       :fileName="file.fileName"
+       :files="file.files"
+       :depth="0"
+       >
     </FileFolderItem>
   </div>
 </template>
