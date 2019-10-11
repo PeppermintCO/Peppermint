@@ -9,6 +9,7 @@ export const store = new Vuex.Store({
     componentName: '',
     testList: {},
     testLength: 0,
+
   },
   mutations: {
     changeFileExplorer(state) {

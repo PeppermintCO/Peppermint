@@ -2,11 +2,11 @@
   <div class="test-name test-component">
     <form action>
       Test Name
-      <input type="text" />
+      <input name="testName" type="text" v-model="testName" @input="saveTestName" />
       <button @click="addQuery">Add Query</button>
       <button @click="addEvent">Add Event</button>
       <div v-for="(testItem, index) in testItems" :key="index">
-        <component :is="testItem"></component>
+        <component :is="testItem" v-bind:testId="_uid"></component>
         <span :id="index" @click="deleteItem(index)">X</span>
       </div>
     </form>
@@ -25,7 +25,8 @@ export default {
   },
   data() {
     return {
-      testItems: ["Query"]
+      testItems: ["Query"],
+      testName: ""
     };
   },
   methods: {
@@ -39,6 +40,15 @@ export default {
     },
     deleteItem(index) {
       this.testItems.splice(index, 1);
+    },
+    saveTestName() {
+      if (this.$store.state.testList.hasOwnProperty(this._uid)) {
+        this.$store.state.testList[this._uid]["testName"] = this.testName;
+      } else {
+        this.$store.state.testList[this._uid] = {
+          testName: this.testName
+        };
+      }
     }
   }
 };

@@ -7,10 +7,10 @@
       name="componentName"
       type="text"
       v-model="componentName"
-      @change="saveComponentName"
+      @input="saveComponentName"
     />
     <div v-for="(test, index) in tests" :key="index">
-      <component :id="index" :is="test"></component>
+      <component v-bind:id="index" :is="test"></component>
       <span :id="index" @click="deleteTest(index)">X</span>
     </div>
   </div>
@@ -24,6 +24,7 @@ export default {
   components: {
     CreateTest
   },
+  props: ["index"],
   data() {
     return {
       tests: ["CreateTest"],
@@ -44,6 +45,7 @@ export default {
     },
     saveComponentName() {
       this.$store.state.componentName = this.componentName;
+      console.log(this.$store.state.componentName);
     }
   }
 };
