@@ -58,11 +58,11 @@ const { dialog } = remote
         file.files = generateFileTreeObject(file.filePath)
       }
       //return fileObject
-      return file;
+        return file;
      }
     })
 
-return fileArray
+return fileArray.filter(file => typeof file === 'object')
 
 
 

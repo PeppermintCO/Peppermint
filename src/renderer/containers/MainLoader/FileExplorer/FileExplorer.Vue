@@ -1,46 +1,18 @@
 <template>
-  <div v-if="$store.getters.getFileTree" class="fileExplorer-container" v-html="generateFileTreeHtml(this.$store.getters.getFileTree)">
-
+  <div v-if="$store.getters.getFileTree" class="fileExplorer-container">
+    <FileFolderItem v-for="(file, index) in $store.getters.getFileTree" :key="index" :fileName="file.fileName" :files="file.files">
+    </FileFolderItem>
   </div>
 </template>
 
 <script>
-
+  import FileFolderItem from './FileFolderItem.vue';
   export default {
-    methods: {
-      generateFileTreeHtml(fileTreeArray) {
-        let fileTreeStr = '';
-        
-        function traverseFileTree(fileTree) {
-          if(fileTree.files.length > 0) {
-            fileTreeStr += `<ul><li><button @click="toggleShowSubfolder">${fileTree.fileName}</button></li>`;
-            for(let i = 0; i < fileTree.files.length; i++) {
-              traverseFileTree(fileTree.files[i]);
-            }
-          } else {
-            fileTreeStr += `<ul><li><button @dblclick="displayCode">${fileTree.fileName}</button></li>`;
-          }
-          fileTreeStr += `</ul>`;
-        };
-
-
-        for(let i = 0; i < fileTreeArray.length; i++) {
-          if (fileTreeArray[i]) {
-            traverseFileTree(fileTreeArray[i]);
-          }
-        }
-        
-        return fileTreeStr;
-      }
-    }, 
-    toggleShowSubFolder() {
-      console.log('toggling folders.....')
-    },
-    displayCode() {
-      console.log('displaying your code........')
+    name: 'fileExplorer',
+    components: {
+      FileFolderItem,
     }
   }
-    // template: `<div class="fileExplorer-container">${generateFileTreeHtml(this.$store.getters.getFileTree)}</div>`
   
 </script>
 
