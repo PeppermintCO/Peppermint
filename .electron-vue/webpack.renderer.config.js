@@ -11,6 +11,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const MonacoEditorPlugin = require('monaco-editor-webpack-plugin')
 
 /**
  * List of node_modules to include in webpack bundle
@@ -124,7 +125,15 @@ let rendererConfig = {
         : false
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new MonacoEditorPlugin({
+      // https://github.com/Microsoft/monaco-editor-webpack-plugin#options
+      // Include a subset of languages support
+      // Some language extensions like typescript are so huge that may impact build performance
+      // e.g. Build full languages support with webpack 4.0 takes over 80 seconds
+      // Languages are loaded on demand at runtime
+      languages: ['javascript', 'css', 'html', 'typescript']
+    })
   ],
   output: {
     filename: '[name].js',
