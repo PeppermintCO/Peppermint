@@ -5,6 +5,7 @@
        :key="index"
        :fileName="file.fileName"
        :files="file.files"
+       :filePath="file.filePath"
        :depth="0"
        >
     </FileFolderItem>

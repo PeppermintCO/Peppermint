@@ -2,8 +2,8 @@
   <ul v-if="files.length > 0">
     <li :style="indent" @click="toggleChildren">{{ fileName }}</li>
     <file-folder
-       v-if="showChildren"
        v-for="(file, index) in files"
+       v-if="showChildren"
        :key="index" 
        :fileName="file.fileName"
        :files="file.files"
@@ -12,14 +12,14 @@
     </file-folder>
   </ul>
   <ul v-else>
-    <li :style="indent" @dblclick="displayFileContent">{{ fileName }}</li>
+    <li :style="indent" @dblclick="displayFileContent(filePath)">{{ fileName }}</li>
   </ul>
 </template>
 
 <script>
 export default {
   name: 'file-folder',
-  props: ['fileName', 'files', 'depth'],
+  props: ['fileName', 'files', 'depth', 'filePath'],
   data() {
     return {
       showChildren: false
@@ -37,8 +37,10 @@ export default {
     toggleChildren() {
       this.showChildren = !this.showChildren;
     },
-    displayFileContent() {
-      console.log('diplaying your contents!!!!!!')
+    displayFileContent(filePath) {
+      // IMPLEMENT FUNCTIONALITY FOR DISPLAYING FILE CONTENT
+      
+      console.log('diplaying your contents!!!!!!', filePath)
     }
   }
 }
