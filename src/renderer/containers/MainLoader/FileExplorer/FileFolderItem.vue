@@ -8,6 +8,7 @@
        :fileName="file.fileName"
        :files="file.files"
        :depth="depth + 1" 
+       :filePath="file.filePath"
         >
     </file-folder>
   </ul>
