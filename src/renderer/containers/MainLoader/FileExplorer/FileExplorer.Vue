@@ -1,13 +1,26 @@
 <template>
-  <div class="fileExplorer-container">
-      <p>Im inside FileExplorer</p>
+  <div v-if="$store.getters.getFileTree" class="fileExplorer-container">
+    <FileFolderItem
+       v-for="(file, index) in $store.getters.getFileTree"
+       :key="index"
+       :fileName="file.fileName"
+       :files="file.files"
+       :filePath="file.filePath"
+       :depth="0"
+       >
+    </FileFolderItem>
   </div>
 </template>
 
 <script>
+  import FileFolderItem from './FileFolderItem.vue';
   export default {
-
+    name: 'fileExplorer',
+    components: {
+      FileFolderItem,
+    }
   }
+  
 </script>
 
 <style> 
@@ -15,5 +28,6 @@
     border: 1px red solid;
     width: 25%;
     height: 100%;
+    overflow: scroll;
   }
 </style>
