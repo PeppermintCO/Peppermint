@@ -18,6 +18,9 @@
 </template>
 
 <script>
+const { remote } = window.require('electron');
+const electronFs = remote.require('fs');
+
 export default {
   name: 'file-folder',
   props: ['fileName', 'files', 'depth', 'filePath'],
@@ -39,9 +42,16 @@ export default {
       this.showChildren = !this.showChildren;
     },
     displayFileContent(filePath) {
-      // IMPLEMENT FUNCTIONALITY FOR DISPLAYING FILE CONTENT
-      
-      console.log('diplaying your contents!!!!!!', filePath)
+      this.$store.dispatch('setSelectedFilePath', filePath)
+      electronFs.readFile(filePath, 'utf-8', (err, data) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        this.$store.dispatch('setFileContent', data);
+        console.log(this.$store.getters.getFileContent)
+      })
+
     }
   }
 }
