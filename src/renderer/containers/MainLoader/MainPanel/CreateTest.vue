@@ -6,7 +6,7 @@
       <button @click="addQuery">Add Query</button>
       <button @click="addEvent">Add Event</button>
       <div v-for="(testItem, index) in testItems" :key="index">
-        <component :is="testItem"></component>
+        <component :is="testItem" v-bind:testId='_uid'></component>
         <span :id="index" @click="deleteItem(index)">
           <button>X</button>
         </span>

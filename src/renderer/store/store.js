@@ -19,25 +19,13 @@ export const store = new Vuex.Store({
     saveComponentName(state, payload) {
       state.componentName = payload
     },
+    addTest(state, payload) {
+      state.testList[payload] = { 'testName': '', 'testItems': {} }
+    },
     saveTestName(state, payload) {
-      console.log(state.testList)
-      state.testList[payload.testId] = {
-        testName: payload.testName
-      };
+      state.testList[payload.testId]['testName'] = payload.testName;
     },
     saveTestItem(state, payload) {
-
-      if (state.testList.hasOwnProperty(payload.testId)) {
-        if (
-          !state.testList[payload.testId].hasOwnProperty("testItems")
-        )
-          state.testList[payload.testId]["testItems"] = {};
-      } else {
-        state.testList[payload.testId] = {
-          testItems: {}
-        };
-      }
-
       if (
         !state.testList[payload.testId]["testItems"].hasOwnProperty(
           payload.testItemId
@@ -64,17 +52,6 @@ export const store = new Vuex.Store({
 
     },
     saveFireEvent(state, payload) {
-      if (state.testList.hasOwnProperty(payload.testId)) {
-        if (
-          !state.testList[payload.testId].hasOwnProperty("testItems")
-        )
-          state.testList[payload.testId]["testItems"] = {};
-      } else {
-        state.testList[payload.testId] = {
-          testItems: {}
-        };
-      }
-
       if (
         !state.testList[payload.testId]["testItems"].hasOwnProperty(
           payload.testItemId
@@ -91,20 +68,17 @@ export const store = new Vuex.Store({
         "selectorType"
       ] = payload.selectorType;
     },
-    addTest(state, payload) {
-      state.testList[payload] = {}
-    },
     deleteTest(state, payload) {
       console.log(payload);
       delete state.testList[payload];
     },
     updateFilePath(state, payload) {
       state.filePath = payload.path;
-    }, 
+    },
     updateFileTree(state, payload) {
       state.fileTree = payload.fileTree;
-    }, 
-  }, 
+    },
+  },
   actions: {
     toggleFileExplorer(context) {
       context.commit('changeFileExplorer');
