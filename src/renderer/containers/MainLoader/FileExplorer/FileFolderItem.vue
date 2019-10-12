@@ -18,6 +18,9 @@
 </template>
 
 <script>
+const { remote } = window.require('electron');
+const electronFs = remote.require('fs');
+
 export default {
   name: 'file-folder',
   props: ['fileName', 'files', 'depth', 'filePath'],

@@ -8,7 +8,8 @@ export const store = new Vuex.Store({
     showFileExplorer: true,
     fileTree: null,
     filePath: null,
-    selectedFilePath: null
+    selectedFilePath: null,
+    fileContent: ''
   },
   mutations: {
     changeFileExplorer(state) {
@@ -22,6 +23,9 @@ export const store = new Vuex.Store({
     },
     updateSelectedFilePath(state, payload) {
       state.selectedFilePath = payload.selectedFilePath;
+    },
+    updateFileContent(state, payload) {
+      state.fileContent = payload.fileContent
     }
   }, 
   actions: {
@@ -36,12 +40,16 @@ export const store = new Vuex.Store({
     },
     setSelectedFilePath(context, selectedFilePath) {
       context.commit('updateSelectedFilePath', { selectedFilePath })
+    },
+    setFileContent(context, fileContent) {
+      context.commit('updateFileContent', { fileContent })
     }
   },
   getters: {
     showFileExplorer: state => state.showFileExplorer,
     getFileTree: state => state.fileTree,
     getFilePath: state => state.filePath,
-    getSelectedFilePath: state => state.selectedFilePath
+    getSelectedFilePath: state => state.selectedFilePath,
+    getFileContent: state => state.fileContent
   }
 })
