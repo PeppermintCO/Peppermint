@@ -49,10 +49,10 @@
     loaderScript.setAttribute('src', '../node_modules/monaco-editor/min/vs/loader.js')
     document.body.appendChild(loaderScript)
   }
- 
+  const fileContent = this.$store.getters.getFileContent;
   export default {
     mounted: function() {
-      loadMonacoEditor(this);
+      loadMonacoEditor(this, fileContent);
     }
   }
 </script>
