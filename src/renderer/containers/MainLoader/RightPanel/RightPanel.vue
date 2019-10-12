@@ -40,11 +40,7 @@
 
       amdRequire(['vs/editor/editor.main'], function () {
         this.monaco.editor.create(document.getElementById('editor-container'), {
-          value: [
-            'function x() {',
-            '\tconsole.log("Hello world!");',
-            '}'
-          ].join('\n'),
+          value: this.$store.getters.getFileContent,
           language: 'javascript'
         })
       })
@@ -71,7 +67,6 @@
     width:100%;
     height:100%;
     border: 1px blue solid;
-    
   }
 
 </style>
