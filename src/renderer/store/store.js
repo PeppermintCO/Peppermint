@@ -69,8 +69,11 @@ export const store = new Vuex.Store({
       ] = payload.selectorType;
     },
     deleteTest(state, payload) {
-      console.log(payload);
       delete state.testList[payload];
+    },
+    deleteTestItem(state, payload) {
+      console.log('payload', payload);
+      // delete state.testList[payload]
     },
     updateFilePath(state, payload) {
       state.filePath = payload.path;
@@ -87,28 +90,31 @@ export const store = new Vuex.Store({
       context.commit('SaveCurrentTest');
     },
     saveComponentName(context, componentName) {
-      context.commit('saveComponentName', componentName)
+      context.commit('saveComponentName', componentName);
     },
     saveTestName(context, testName) {
-      context.commit('saveTestName', testName)
+      context.commit('saveTestName', testName);
     },
     saveTestItem(context, testItem) {
-      context.commit('saveTestItem', testItem)
+      context.commit('saveTestItem', testItem);
     },
     saveFireEvent(context, testItem) {
-      context.commit('saveFireEvent', testItem)
+      context.commit('saveFireEvent', testItem);
     },
     deleteTest(context, testId) {
-      context.commit('deleteTest', testId)
+      context.commit('deleteTest', testId);
+    },
+    deleteTestItem(context, payload) {
+      context.commit('deleteTestItem', payload);
     },
     addTest(context, testId) {
-      context.commit('addTest', testId)
+      context.commit('addTest', testId);
     },
     setFilePath(context, path) {
-      context.commit('updateFilePath', { path })
+      context.commit('updateFilePath', { path });
     },
     createFileTree(context, fileTree) {
-      context.commit('updateFileTree', { fileTree })
+      context.commit('updateFileTree', { fileTree });
     },
   },
   getters: {

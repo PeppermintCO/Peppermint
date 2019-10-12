@@ -10,7 +10,7 @@
       @input="saveComponentName"
     />
     <div v-for="(test, index) in tests" :key="index">
-      <component v-bind:id="index" :is="test" :tests="tests" :index="index"></component>
+      <component v-bind:id="index" :is="test" :tests="tests" :testIndex="index"></component>
     </div>
   </div>
 </template>
