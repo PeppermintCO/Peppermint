@@ -32,9 +32,8 @@ export default {
   },
   methods: {
     addTest() {
+      console.log(this.$store.getters.showTestList)
       this.tests.push("CreateTest");
-
-      this.$store.state.testLength += 1;
     },
     deleteTest(index) {},
     deleteTestFromStore(testId) {
