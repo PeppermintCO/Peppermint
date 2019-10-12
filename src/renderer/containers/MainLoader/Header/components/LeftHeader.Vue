@@ -23,8 +23,9 @@ const { dialog } = remote
 
     if (directory && directory[0]) {
       const directoryPath = directory[0];
-      this.$store.dispatch(setFilePath(directoryPath));
-      this.$store.dispatch(createFileTree({}))
+      // this.$store.dispatch(setFilePath(directoryPath));
+      this.$store.dispatch('setFilePath', directoryPath);
+      this.$store.dispatch('createFileTree', {})
     }
 
     console.log(this.$store.getters.getFilePath, '<--- Path')
