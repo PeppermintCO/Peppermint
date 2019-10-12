@@ -8,7 +8,6 @@ export const store = new Vuex.Store({
     showFileExplorer: true,
     componentName: '',
     testList: {},
-    testLength: 0,
     fileTree: null,
     filePath: null
   },
@@ -72,8 +71,7 @@ export const store = new Vuex.Store({
       delete state.testList[payload];
     },
     deleteTestItem(state, payload) {
-      console.log('payload', payload);
-      // delete state.testList[payload]
+      delete state.testList[payload.testId]['testItems'][payload.testItemId]
     },
     updateFilePath(state, payload) {
       state.filePath = payload.path;
