@@ -40,7 +40,11 @@
 
       amdRequire(['vs/editor/editor.main'], function () {
         this.monaco.editor.create(document.getElementById('editor-container'), {
-          value: this.$store.getters.getFileContent,
+          value: [
+                    'function x() {',
+                    '\tconsole.log("Hello world!");',
+                    '}'
+                ].join('\n'),
           language: 'javascript'
         })
       })
@@ -49,10 +53,10 @@
     loaderScript.setAttribute('src', '../node_modules/monaco-editor/min/vs/loader.js')
     document.body.appendChild(loaderScript)
   }
-  const fileContent = this.$store.getters.getFileContent;
+  // const fileContent = this.$store.getters.getFileContent;
   export default {
     mounted: function() {
-      loadMonacoEditor(this, fileContent);
+      loadMonacoEditor(this);
     }
   }
 </script>

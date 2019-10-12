@@ -20,7 +20,7 @@ const { dialog } = remote
         { name: 'Html', extensions: ['html'] },
       ],
     });
-    
+
     if (directory && directory[0]) {
       const directoryPath = directory[0];
       // this.$store.dispatch(setFilePath(directoryPath));
@@ -53,7 +53,7 @@ const { dialog } = remote
     const fileStats = electronFs.statSync(file.filePath)
     //check if its a directory , .git, node_modules
     if (fileName !== '.git' && fileName !== 'node_modules') {
-      //if directory 
+      //if directory
       if (fileStats.isDirectory()) {
         //make recursive call with current fileObject.filePath and save to fileObject.files
         file.files = generateFileTreeObject(file.filePath)
@@ -72,7 +72,7 @@ return fileArray.filter(file => typeof file === 'object')
 
 
 export default {
-  name: "leftHeader", 
+  name: "leftHeader",
   methods: {
     openProject() {
     //  console.log(handleOpenFolder())
@@ -85,7 +85,7 @@ export default {
         { name: 'Html', extensions: ['html'] },
       ],
     });
-    
+
     if (directory && directory[0]) {
       const directoryPath = directory[0];
       const testObj = {'/User/me': 'hellooo'}
