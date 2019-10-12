@@ -26,13 +26,16 @@
       </select>
       <input type="text" @input="saveTestItem" v-model="textToMatch" />
     </form>
+    <span @click="deleteItem">
+      <button>X</button>
+    </span>
   </div>
 </template>
 
 <script>
 export default {
   name: "Query",
-  props: ["testId"],
+  props: ["testId", 'testItems', 'testItemIndex'],
   data() {
     return {
       selectorName: "",
@@ -52,7 +55,13 @@ export default {
         testItemId: this._uid
       });
       console.log(this.$store.getters.showTestList);
-    }
+    },
+    deleteItem(e) {
+      e.preventDefault();
+
+      this.testItems.splice(this.testItemIndex, 1);
+      this.$store.dispatch("deleteTestItem", { testId: this.testId, testItemId: this._uid });
+    },
   }
 };
 </script>

@@ -6,13 +6,10 @@
       <button @click="addQuery">Add Query</button>
       <button @click="addEvent">Add Event</button>
       <div v-for="(testItem, index) in testItems" :key="index">
-        <component :is="testItem"></component>
-        <span :id="index" @click="deleteItem(index)">
-          <button>X</button>
-        </span>
+        <component :is="testItem" v-bind:testId='_uid' v-bind:testItems='testItems' v-bind:testItemIndex='index'></component>
       </div>
     </form>
-    <span @click="deleteTest(_uid)">
+    <span @click="deleteTest()">
       <button>Delete Test</button>
     </span>
   </div>
@@ -28,10 +25,9 @@ export default {
     Query,
     FireEvent
   },
-  props: ["tests", "index"],
+  props: ["tests", "testIndex"],
   mounted() {
     this.$store.dispatch("addTest", this._uid);
-    console.log(this.$store.getters.showTestList);
   },
   data() {
     return {
@@ -41,7 +37,7 @@ export default {
   },
   methods: {
     deleteTest() {
-      this.tests.splice(this.index, 1);
+      this.tests.splice(this.testIndex, 1);
       this.$store.dispatch("deleteTest", this._uid);
     },
     addQuery(e) {
@@ -51,9 +47,6 @@ export default {
     addEvent(e) {
       e.preventDefault();
       this.testItems.push("FireEvent");
-    },
-    deleteItem(index) {
-      this.testItems.splice(index, 1);
     },
     saveTestName() {
       this.$store.dispatch("saveTestName", {

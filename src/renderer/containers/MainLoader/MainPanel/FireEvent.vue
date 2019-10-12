@@ -11,13 +11,16 @@
         >{{selector['selectorName']}}</option>
       </select>
     </form>
+    <span @click="deleteItem">
+      <button>X</button>
+    </span>
   </div>
 </template>
 
 <script>
 export default {
   name: "FireEvent",
-  props: ["testId"],
+  props: ["testId", 'testItems', 'testItemIndex'],
   data() {
     return {
       eventType: "",
@@ -32,7 +35,13 @@ export default {
         testId: this.testId,
         testItemId: this._uid
       });
-    }
+    },
+    deleteItem(e) {
+      e.preventDefault();
+
+      this.testItems.splice(this.testItemIndex, 1);
+      this.$store.dispatch("deleteTestItem", { testId: this.testId, testItemId: this._uid });
+    },
   }
 };
 </script>
