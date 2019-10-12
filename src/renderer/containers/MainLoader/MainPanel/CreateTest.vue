@@ -53,6 +53,8 @@ export default {
         testName: this.testName,
         testId: this._uid
       });
+
+      console.log(this.$store.state.testList);
     }
   }
 };

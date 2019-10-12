@@ -54,7 +54,6 @@ export default {
         testId: this.testId,
         testItemId: this._uid
       });
-      console.log(this.$store.getters.showTestList);
     },
     deleteItem(e) {
       e.preventDefault();
