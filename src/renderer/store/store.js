@@ -11,7 +11,7 @@ export const store = new Vuex.Store({
     fileTree: null,
     filePath: null,
     selectedFilePath: null,
-    fileContent: ''
+    fileContent: 'testing'
   },
   mutations: {
     changeFileExplorer(state) {

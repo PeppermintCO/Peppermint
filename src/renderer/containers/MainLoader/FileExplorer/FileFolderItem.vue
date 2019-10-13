@@ -50,7 +50,7 @@ export default {
         }
         this.$store.dispatch('setFileContent', data);
         console.log(typeof this.$store.getters.getFileContent)
-        this.$eventHub.$emit('setFileContent')
+        this.$eventHub.$emit('file-content-set')
       })
 
     }

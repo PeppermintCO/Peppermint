@@ -1,94 +1,77 @@
 <template>
-  <div class= "rightPanel-container" >
-    
-
-  </div>
+  <codemirror v-model="code" :options="cmOptions"></codemirror>
 </template>
 
 <script>
-  
-  // const fileContent = this.$store.getters.getFileContent;
-  export default {
-    data() {
-      return {
-        monoacoEditor: null
+// require component
+import { codemirror } from 'vue-codemirror' 
+  // language js
+import '../../../../../node_modules/codemirror/mode/javascript/javascript.js'
+// theme css
+import '../../../../../node_modules/codemirror/theme/base16-light.css'
+// more codemirror resources
+// import 'codemirror/some-resource...'
+export default {
+  data () {
+    return {
+      code: '//Select a file to display...',
+      cmOptions: {
+        // codemirror options
+        tabSize: 4,
+        mode: 'text/javascript',
+        theme: 'base16-light',
+        lineNumbers: true,
+        line: true,
+        // more codemirror options,  codemirror ...
       }
-    },
-    created() {
-      this.$eventHub.$on('setFileContent', this.loadFile);
-    },
-    beforeDestroy() {
-      this.$eventHub.$off('setFileContent');
-    },
-    mounted() {
-      this.loadMonacoEditor();
-    },
-    methods: {
-      loadMonacoEditor() {
-        console.log('loadMonacoEditor is running...')
-        const nodeRequire = global.require
-
-        const loaderScript = document.createElement('script')
-
-        loaderScript.onload = () => {
-          const amdRequire = global.require
-          global.require = nodeRequire
-
-          var path = require('path')
-
-          function uriFromPath (_path) {
-            var pathName = path.resolve(_path).replace(/\\/g, '/')
-
-            if (pathName.length > 0 && pathName.charAt(0) !== '/') {
-              pathName = '/' + pathName
-            }
-
-            return encodeURI('file://' + pathName)
-          }
-
-          amdRequire.config({
-            baseUrl: uriFromPath(path.join(__dirname, '../../../../../node_modules/monaco-editor/min/'))
-          })
-
-          // workaround monaco-css not understanding the environment
-          self.module = undefined
-
-          // workaround monaco-typescript not understanding the environment
-          self.process.browser = true
-
-          amdRequire(['vs/editor/editor.main'], function () {
-            this.monaco.editor.create(document.querySelector('.rightPanel-container'), {
-              value: [
-                        'function x() {',
-                        '\tconsole.log("Hello world!");',
-                        '}'
-                    ].join('\n'),
-              language: 'javascript'
-            })
-          })
-        }
-
-        loaderScript.setAttribute('src', '../node_modules/monaco-editor/min/vs/loader.js')
-        document.body.appendChild(loaderScript)
-      },
-    loadFile() {
-      console.log('Loading new file...')
-      const fileContent = this.$store.getters.getFileContent;
-      console.log('----->', this.monacoEditor)
-      this.monacoEditor.setValue(fileContent);
     }
+  },
+  created() {
+    this.$eventHub.$on('file-content-set', this.onCmCodeChange)
+  },
+  beforeDestroy() {
+    this.$eventHub.$off('file-content-set')
+  },
+    mounted() {
+      console.log('this is current codemirror object', this.codemirror)
+      // you can use this.codemirror to do something...
     },
-  }
+  components: {
+    codemirror
+  },
+  methods: {
+    onCmReady(cm) {
+      console.log('the editor is readied!', cm)
+    },
+    onCmFocus(cm) {
+      console.log('the editor is focus!', cm)
+    },
+    onCmCodeChange() {
+      console.log('this is new code', this.$store.getters.getFileContent)
+      this.code = this.$store.getters.getFileContent
+    },
+  },
+  computed: {
+    codemirror() {
+      return this.$refs.myCm.codemirror
+    }
+  },
+}
 </script>
 
 <style>
-  .rightPanel-container {
+  .vue-codemirror {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px red solid;
     width: 100%;
     height: 100%;
+  }
+
+  .CodeMirror cm-s-base16-light {
+    height:100%;
+    width: 100%;
   }
 
 </style>
