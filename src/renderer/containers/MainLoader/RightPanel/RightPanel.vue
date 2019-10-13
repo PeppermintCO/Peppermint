@@ -7,6 +7,7 @@
 
 <script>
   function loadMonacoEditor () {
+    console.log('loadMonacoEditor has been executed...')
     const nodeRequire = global.require
 
     const loaderScript = document.createElement('script')
