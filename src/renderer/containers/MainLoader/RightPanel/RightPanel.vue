@@ -61,10 +61,15 @@ export default {
 
 <style>
   .vue-codemirror {
+    background-color: #ffffff !important;
     overflow: scroll;
     border: 1px red solid;
     width: 50%;
     height: 100%;
+  }
+
+  .cm-s-base16-light {
+    background-color: #ffffff !important;
   }
 
   .CodeMirror {
@@ -73,6 +78,7 @@ export default {
   }
 
  .CodeMirror-vscrollbar div, .CodeMirror cm-s-base16-light, .CodeMirror-code  {
+    background-color: #ffffff !important;
     height: 100% !important;
     width: 100% !important;
   }
