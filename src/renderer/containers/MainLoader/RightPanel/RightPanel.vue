@@ -1,8 +1,7 @@
 <template>
-  <div class= "mainPanel-container" >
-    <div id="editor-container">
+  <div class= "rightPanel-container" >
+    
 
-    </div>
   </div>
 </template>
 
@@ -39,7 +38,7 @@
       self.process.browser = true
 
       amdRequire(['vs/editor/editor.main'], function () {
-        this.monaco.editor.create(document.getElementById('editor-container'), {
+        this.monaco.editor.create(document.querySelector('.rightPanel-container'), {
           value: [
                     'function x() {',
                     '\tconsole.log("Hello world!");',
@@ -66,11 +65,6 @@
     border: 1px red solid;
     width: 100%;
     height: 100%;
-  }
-  #editor-container {
-    width:100%;
-    height:100%;
-    border: 1px blue solid;
   }
 
 </style>
