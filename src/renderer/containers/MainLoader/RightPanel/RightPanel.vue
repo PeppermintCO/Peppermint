@@ -14,7 +14,13 @@
         monoacoEditor: null
       }
     },
-    mounted: function() {
+    created() {
+      this.$eventHub.$on('setFileContent', this.loadFile);
+    },
+    beforeDestroy() {
+      this.$eventHub.$off('setFileContent');
+    },
+    mounted() {
       this.loadMonacoEditor();
     },
     methods: {
@@ -64,13 +70,14 @@
 
         loaderScript.setAttribute('src', '../node_modules/monaco-editor/min/vs/loader.js')
         document.body.appendChild(loaderScript)
-      }
-    },
+      },
     loadFile() {
       console.log('Loading new file...')
       const fileContent = this.$store.getters.getFileContent;
+      console.log('----->', this.monacoEditor)
       this.monacoEditor.setValue(fileContent);
     }
+    },
   }
 </script>
 
