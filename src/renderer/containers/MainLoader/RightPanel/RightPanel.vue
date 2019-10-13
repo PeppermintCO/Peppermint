@@ -62,9 +62,6 @@ export default {
 <style>
   .vue-codemirror {
     overflow: scroll;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px red solid;
     width: 50%;
     height: 100%;
@@ -75,19 +72,25 @@ export default {
     width: 100%;
   }
 
-  .CodeMirror-vscrollbar, .CodeMirror-vscrollbar div, .CodeMirror cm-s-base16-light, .CodeMirror-code  {
+ .CodeMirror-vscrollbar div, .CodeMirror cm-s-base16-light, .CodeMirror-code  {
     height: 100% !important;
     width: 100% !important;
   }
+
+   .CodeMirror-vscrollbar {
+     display: none;
+   }
 
   .CodeMirror-scroll {
     display: flex;
   }
   .CodeMirror-sizer {
-    position: absolute;
+    /* position: absolute; */
     overflow: scroll !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
     width: 100px !important;
-    top: 100px !important;
+    /* top: 100px !important; */
     margin-left: 30px !important;
   }
 
