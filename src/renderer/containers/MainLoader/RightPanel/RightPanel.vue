@@ -20,7 +20,7 @@ export default {
         tabSize: 4,
         mode: 'text/javascript',
         theme: 'base16-light',
-        lineNumbers: true,
+        lineNumbers: false,
         line: true,
         // more codemirror options,  codemirror ...
       }
@@ -32,10 +32,10 @@ export default {
   beforeDestroy() {
     this.$eventHub.$off('file-content-set')
   },
-    mounted() {
-      console.log('this is current codemirror object', this.codemirror)
-      // you can use this.codemirror to do something...
-    },
+    // mounted() {
+    //   console.log('this is current codemirror object', this.codemirror)
+    //   // you can use this.codemirror to do something...
+    // },
   components: {
     codemirror
   },
@@ -61,17 +61,34 @@ export default {
 
 <style>
   .vue-codemirror {
+    overflow: scroll;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px red solid;
-    width: 100%;
+    width: 50%;
     height: 100%;
   }
 
-  .CodeMirror cm-s-base16-light {
-    height:100%;
+  .CodeMirror {
+    height: 100%;
     width: 100%;
+  }
+
+  .CodeMirror-vscrollbar, .CodeMirror-vscrollbar div, .CodeMirror cm-s-base16-light, .CodeMirror-code  {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .CodeMirror-scroll {
+    display: flex;
+  }
+  .CodeMirror-sizer {
+    position: absolute;
+    overflow: scroll !important;
+    width: 100px !important;
+    top: 100px !important;
+    margin-left: 30px !important;
   }
 
 </style>
