@@ -49,7 +49,7 @@ export default {
           return;
         }
         this.$store.dispatch('setFileContent', data);
-        console.log(this.$store.getters.getFileContent)
+        this.$eventHub.$emit('update-editor')
       })
 
     }

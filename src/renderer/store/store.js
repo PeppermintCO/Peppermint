@@ -11,7 +11,7 @@ export const store = new Vuex.Store({
     fileTree: null,
     filePath: null,
     selectedFilePath: null,
-    fileContent: ''
+    fileContent: 'init content'
   },
   mutations: {
     changeFileExplorer(state) {
@@ -86,7 +86,10 @@ export const store = new Vuex.Store({
     },
     updateFileContent(state, payload) {
       state.fileContent = payload.fileContent
-    }
+    },
+    // set_amd_require(state, amdrequire) {
+
+    // }
   }, 
   
   actions: {
@@ -128,7 +131,7 @@ export const store = new Vuex.Store({
     },
     setFileContent(context, fileContent) {
       context.commit('updateFileContent', { fileContent })
-    }
+    },
   },
   getters: {
     showFileExplorer: state => state.showFileExplorer,
