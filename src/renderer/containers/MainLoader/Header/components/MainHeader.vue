@@ -1,36 +1,18 @@
 <template>
   <div class="main-header">
-    <button class="button saveCurrentButton" @click="displayTestFile">Save Current Test
-    </button>
-    <!-- {{disableButton}} -->
-  </div>  
+    <button class="button displayTestButton" @click='generateTestCode'>Display Test Code</button>
+  </div>
 </template>
 
 <script>
 export default {
-  // data() {
-  //   return {
-  //     disableButton: true
-  //   }
-  // },
+  name: 'MainHeader',
   methods: {
-    displayTestFile() {
+    generateTestCode() {
+      this.$store.dispatch("generateTestCode");
       this.$eventHub.$emit('test-content-set');
     }
-  },
-  // computed: {
-  //   hasTestInput() {
-  //     return Object.keys(this.$store.getters.showTestList).length === 0;
-  //   }
-  // },
-  // watch: {
-  //   hasTestInput(newState, oldState) {
-  //     console.log(`Do you have input into test? ${newState}`);
-  //     if(newState === false) {
-  //       this.disableButton = false;
-  //     }
-  //   }
-  // }
+  }
 }
 </script>
 
