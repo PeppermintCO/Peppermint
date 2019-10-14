@@ -1,5 +1,4 @@
 module.exports = {
-  testCode: {},
   generateTestCode(componentName, testList) {
     let testFileContent =
     `import { render, fireEvent, cleanup } from '@testing-library/vue'\n
