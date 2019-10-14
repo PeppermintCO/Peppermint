@@ -2,7 +2,7 @@
   <div class="main-header">
     <button class="button saveCurrentButton" @click="displayTestFile">Save Current Test
     </button>
-    {{disableButton}}
+    <!-- {{disableButton}} -->
   </div>  
 </template>
 

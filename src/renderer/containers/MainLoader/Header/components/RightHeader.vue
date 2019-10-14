@@ -11,6 +11,13 @@
 const { remote } = window.require('electron');
 const electronFs = remote.require('fs');
 
+const createFile = async (filePath, fileContent) => {
+  await electronFs.writeFile(filePath, fileContent, (err) => {
+   if (err) console.error(err);
+   console.log(`created new test file!`)
+  })
+}
+
   export default {
     methods: {
       displayFileContent() {
@@ -34,19 +41,13 @@ const electronFs = remote.require('fs');
         const testFilePath = `${filePath}/${directoryName}/${componentName}.js`
         
        if (electronFs.existsSync(directoryPath)) {
-         electronFs.writeFile(testFilePath, fileContent, (err) => {
-           if (err) console.error(err);
-           console.log(`created new test file!`)
-         })
+         createFile(testFilePath, fileContent)
        } else {
          try {
            electronFs.mkdirSync(directoryPath);
            console.log('created new directory called __test__');
 
-           electronFs.writeFile(testFilePath, fileContent, (err) => {
-           if (err) console.error(err);
-           console.log(`created new test file!`)
-           })  
+          createFile(testFilePath, fileContent)
          } catch (err) {
            console.error(err)
          }
