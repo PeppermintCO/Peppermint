@@ -17,6 +17,7 @@ export const store = new Vuex.Store({
   },
   mutations: {
     changeFileExplorer(state) {
+      if (!state.fileTree) return;
       state.showFileExplorer = !state.showFileExplorer;
     },
     saveComponentName(state, payload) {
@@ -90,7 +91,10 @@ export const store = new Vuex.Store({
       state.fileContent = payload.fileContent
     },
     generateTestFileContent(state) {
+      console.log('in generateTestFileContent', Object.keys(state.testList).length);
+      // if(Object.keys(state.testList).length === 1) return;
       state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList);
+      console.log(state.testFileContent);
     }
   },
 
@@ -146,6 +150,7 @@ export const store = new Vuex.Store({
     getFileTree: state => state.fileTree,
     getFilePath: state => state.filePath,
     getSelectedFilePath: state => state.selectedFilePath,
-    getFileContent: state => state.fileContent
+    getFileContent: state => state.fileContent,
+    getTestContent: state => state.testFileContent
   }
 })

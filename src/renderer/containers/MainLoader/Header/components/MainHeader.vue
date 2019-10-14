@@ -10,6 +10,7 @@ export default {
   methods: {
     generateTestCode() {
       this.$store.dispatch("generateTestCode");
+      this.$eventHub.$emit('test-content-set');
     }
   }
 }
