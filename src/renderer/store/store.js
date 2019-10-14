@@ -91,6 +91,8 @@ export const store = new Vuex.Store({
       state.fileContent = payload.fileContent
     },
     generateTestFileContent(state) {
+      console.log('in generateTestFileContent', Object.keys(state.testList).length);
+      // if(Object.keys(state.testList).length === 1) return;
       state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList);
     }
   },
