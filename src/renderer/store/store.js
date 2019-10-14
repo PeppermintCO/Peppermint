@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import TestCodeGenerator from './TestCodeGenerator';
 
 Vue.use(Vuex);
 
@@ -11,7 +12,8 @@ export const store = new Vuex.Store({
     fileTree: null,
     filePath: null,
     selectedFilePath: null,
-    fileContent: ''
+    fileContent: '',
+    testFileContent: ''
   },
   mutations: {
     changeFileExplorer(state) {
@@ -86,9 +88,12 @@ export const store = new Vuex.Store({
     },
     updateFileContent(state, payload) {
       state.fileContent = payload.fileContent
+    },
+    generateTestFileContent() {
+      TestCodeGenerator.log();
     }
-  }, 
-  
+  },
+
   actions: {
     toggleFileExplorer(context) {
       context.commit('changeFileExplorer');
@@ -128,6 +133,9 @@ export const store = new Vuex.Store({
     },
     setFileContent(context, fileContent) {
       context.commit('updateFileContent', { fileContent })
+    },
+    generateTestCode(context) {
+      context.commit('generateTestFileContent');
     }
   },
   getters: {
