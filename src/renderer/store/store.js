@@ -89,8 +89,8 @@ export const store = new Vuex.Store({
     updateFileContent(state, payload) {
       state.fileContent = payload.fileContent
     },
-    generateTestFileContent() {
-      TestCodeGenerator.log();
+    generateTestFileContent(state) {
+      state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList);
     }
   },
 
