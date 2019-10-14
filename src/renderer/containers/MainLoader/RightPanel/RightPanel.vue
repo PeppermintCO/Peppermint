@@ -27,15 +27,13 @@ export default {
     }
   },
   created() {
-    this.$eventHub.$on('file-content-set', this.onCmCodeChange)
+    this.$eventHub.$on('file-content-set', this.onCmFileContentChange)
+    this.$eventHub.$on('test-content-set', this.onCmTestContentChange)
   },
   beforeDestroy() {
     this.$eventHub.$off('file-content-set')
+    this.$eventHub.$off('test-content-set')
   },
-    // mounted() {
-    //   console.log('this is current codemirror object', this.codemirror)
-    //   // you can use this.codemirror to do something...
-    // },
   components: {
     codemirror
   },
@@ -46,10 +44,17 @@ export default {
     onCmFocus(cm) {
       console.log('the editor is focus!', cm)
     },
-    onCmCodeChange() {
-      console.log('this is new code', this.$store.getters.getFileContent)
+    onCmFileContentChange() {
+      // console.log('this is new file content code', this.$store.getters.getFileContent)
+      console.log('fileContentChange executed')
       this.code = this.$store.getters.getFileContent
     },
+    onCmTestContentChange() {
+      console.log('testContentChange executed')
+      console.log(this.$store.getters.getTestContent, '<-----')
+      // console.log('this is new test content code', this.$store.getters.getTestContent)
+      this.code = this.$store.getters.getTestContent
+    }
   },
   computed: {
     codemirror() {

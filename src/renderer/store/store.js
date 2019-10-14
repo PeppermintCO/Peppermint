@@ -11,10 +11,12 @@ export const store = new Vuex.Store({
     fileTree: null,
     filePath: null,
     selectedFilePath: null,
-    fileContent: 'testing'
+    fileContent: 'testing',
+    testFileContent: 'fileContent',
   },
   mutations: {
     changeFileExplorer(state) {
+      if (!state.fileTree) return;
       state.showFileExplorer = !state.showFileExplorer;
     },
     saveComponentName(state, payload) {
@@ -141,6 +143,7 @@ export const store = new Vuex.Store({
     getFileTree: state => state.fileTree,
     getFilePath: state => state.filePath,
     getSelectedFilePath: state => state.selectedFilePath,
-    getFileContent: state => state.fileContent
+    getFileContent: state => state.fileContent,
+    getTestContent: state => state.testFileContent
   }
 })
