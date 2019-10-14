@@ -1,12 +1,17 @@
 <template>
   <div class="main-header">
-    <button class="button saveCurrentButton">Save Current Test</button>
-  </div>  
+    <button class="button displayTestButton" @click='generateTestCode'>Display Test Code</button>
+  </div>
 </template>
 
 <script>
 export default {
-  
+  name: 'MainHeader',
+  methods: {
+    generateTestCode() {
+      this.$store.dispatch("generateTestCode");
+    }
+  }
 }
 </script>
 
