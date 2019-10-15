@@ -41,13 +41,14 @@ const createFile = async (filePath, fileContent) => {
         const testFilePath = `${filePath}/${directoryName}/${componentName}.js`
         
        if (electronFs.existsSync(directoryPath)) {
-         createFile(testFilePath, fileContent)
+         createFile(testFilePath, fileContent);
+         this.$eventHub.$emit('refresh-fileExplorer')
        } else {
          try {
            electronFs.mkdirSync(directoryPath);
            console.log('created new directory called __test__');
-
-          createFile(testFilePath, fileContent)
+           createFile(testFilePath, fileContent)
+           this.$eventHub.$emit('refresh-fileExplorer')
          } catch (err) {
            console.error(err)
          }
