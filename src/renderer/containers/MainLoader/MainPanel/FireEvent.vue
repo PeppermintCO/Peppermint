@@ -1,5 +1,6 @@
 <template>
   <div class="test-component">
+    Event
     <form action>
       Event Type
       <input type="text" @input="saveFireEvent" v-model="eventType" />
@@ -20,7 +21,7 @@
 <script>
 export default {
   name: "FireEvent",
-  props: ["testId", 'testItems', 'testItemIndex'],
+  props: ["testId", "testItems", "testItemIndex"],
   data() {
     return {
       eventType: "",
@@ -40,8 +41,11 @@ export default {
       e.preventDefault();
 
       this.testItems.splice(this.testItemIndex, 1);
-      this.$store.dispatch("deleteTestItem", { testId: this.testId, testItemId: this._uid });
-    },
+      this.$store.dispatch("deleteTestItem", {
+        testId: this.testId,
+        testItemId: this._uid
+      });
+    }
   }
 };
 </script>
