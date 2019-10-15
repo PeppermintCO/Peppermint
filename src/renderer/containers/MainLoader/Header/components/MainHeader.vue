@@ -1,13 +1,21 @@
 <template>
   <div class="main-header">
-    <button class="button saveCurrentButton">
+    <button class="button saveCurrentButton" @click="generateTestCode">
       <i class="far fa-save fa-2x"></i>
     </button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "MainHeader",
+  methods: {
+    generateTestCode() {
+      this.$store.dispatch("generateTestCode");
+      this.$eventHub.$emit("test-content-set");
+    }
+  }
+};
 </script>
 
 <style>
@@ -26,4 +34,3 @@ export default {};
   width: 15%;
 }
 </style>
-
