@@ -46,7 +46,7 @@ const { dialog } = remote
 export default {
   name: "leftHeader",
   created() {
-    this.$eventHub.$on('refresh-fileExplorer', this.refreshProject)
+    this.$eventHub.$on('refresh-fileExplorer', this.refreshProject);
   },
   beforeDestroy() {
     this.$eventHub.$off('refresh-fileExplorer');
