@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <MainLoader />
+    <MainLoader v-if="this.$store.getters.getFileTree" />
+    <ProjectLoader v-else />
   </div>
-</template>
+</template> 
 
 <script>
- import MainLoader from './containers/MainLoader/MainLoader.vue'
+import MainLoader from './containers/MainLoader/MainLoader.vue'
+import ProjectLoader from './containers/ProjectLoader/ProjectLoader.vue' 
+  
   export default {
     name: 'peppermint',
     components: {
-      MainLoader
-    }
+      MainLoader,
+      ProjectLoader
+    },
   }
 </script>
 
