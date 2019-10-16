@@ -1,16 +1,19 @@
 <template>
-  <codemirror v-model="code" :options="cmOptions"></codemirror>
+  <div>
+      <codemirror v-model="code" :options="cmOptions"></codemirror>
+  </div>
 </template>
 
 <script>
 // require component
-import { codemirror } from 'vue-codemirror' 
+import { codemirror } from 'vue-codemirror'
   // language js
 import '../../../../../node_modules/codemirror/mode/javascript/javascript.js'
 // theme css
 import '../../../../../node_modules/codemirror/theme/base16-light.css'
 // more codemirror resources
 // import 'codemirror/some-resource...'
+
 export default {
   data () {
     return {
@@ -23,7 +26,7 @@ export default {
         lineNumbers: false,
         line: true,
         // more codemirror options,  codemirror ...
-      }
+      },
     }
   },
   created() {
