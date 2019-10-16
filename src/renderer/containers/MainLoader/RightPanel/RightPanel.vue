@@ -5,6 +5,7 @@
 <script>
 // require component
 import { codemirror } from 'vue-codemirror' 
+import '../../../../../node_modules/codemirror/mode/lib/codemirror.css'
   // language js
 import '../../../../../node_modules/codemirror/mode/javascript/javascript.js'
 // theme css
