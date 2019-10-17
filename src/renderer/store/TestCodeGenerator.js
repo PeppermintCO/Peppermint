@@ -1,7 +1,8 @@
 module.exports = {
   generateTestCode(componentName, testList) {
     let testFileContent =
-    `import { render, fireEvent, cleanup } from '@testing-library/vue'\nimport ${componentName} from  ./${componentName}.vue\n\nafterEach(cleanup)\n\n`;
+    `import { render, fireEvent, cleanup } from '@testing-library/vue'\n
+import ${componentName} from  './${componentName}.vue'\n\nafterEach(cleanup)\n\n`;
 
     for (let test in testList) {
       let currentTest = testList[test];
@@ -35,7 +36,7 @@ module.exports = {
 
         testItems.push(str);
       }
-      testFileContent += `\tconst { ${searchQueryTypes.join(", ")} } = render(Component)\n\n`;
+      testFileContent += `\tconst { ${searchQueryTypes.join(", ")} } = render(${componentName})\n\n`;
 
       testItems.forEach(testItem => {
         testFileContent += testItem;
