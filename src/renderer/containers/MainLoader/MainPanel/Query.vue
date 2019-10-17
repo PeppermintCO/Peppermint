@@ -2,51 +2,54 @@
   <div class="test-component">
     <form action class="query">
       <div class="selectorQueries">
-        Selector Query:
-        <select
-          name="queryVariant"
-          @change="saveTestItem"
-          v-model="queryVariant"
-          class="queryVariant"
-        >
-          <option value="getBy">getBy</option>
-          <option value="findBy">findBy</option>
-          <option value="queryBy">queryBy</option>
-          <option value="getAllBy">getAllBy</option>
-          <option value="findAllBy">findAllBy</option>
-          <option value="queryAllBy">queryAllBy</option>
-        </select>
+        <div class="QueryInput">
+          Query:
+          <input
+            type="text"
+            @input="saveTestItem"
+            v-model="selectorName"
+            class="queryInputBox"
+          />
+          <span @click="deleteItem" style="height: 110%; width: 25%;  "></span>
+        </div>
+        <div class="selectorQuery">
+          <div class="queryTitle">Selector Query:</div>
+          <select
+            name="queryVariant"
+            @change="saveTestItem"
+            v-model="queryVariant"
+            class="queryVariant"
+          >
+            <option value="getBy">getBy</option>
+            <option value="findBy">findBy</option>
+            <option value="queryBy">queryBy</option>
+            <option value="getAllBy">getAllBy</option>
+            <option value="findAllBy">findAllBy</option>
+            <option value="queryAllBy">queryAllBy</option>
+          </select>
+        </div>
       </div>
 
       <div class="labels">
         Matcher:
-        <select
-          name="queryType"
-          @change="saveTestItem"
-          v-model="queryType"
-          class="queryType"
-        >
-          <option value="LabelText">LabelText</option>
-          <option value="PlaceholderText">PlaceholderText</option>
-          <option value="Text">Text</option>
-          <option value="DisplayValue">DisplayValue</option>
-          <option value="AltText">AltText</option>
-          <option value="Title">Title</option>
-          <option value="Role">Role</option>
-          <option value="TestId">TestId</option>
-        </select>
-        <div>
-          <input type="text" @input="saveTestItem" v-model="textToMatch" />
+        <div class="matcher">
+          <select name="queryType" @change="saveTestItem" v-model="queryType" class="queryType">
+            <option value="LabelText">LabelText</option>
+            <option value="PlaceholderText">PlaceholderText</option>
+            <option value="Text">Text</option>
+            <option value="DisplayValue">DisplayValue</option>
+            <option value="AltText">AltText</option>
+            <option value="Title">Title</option>
+            <option value="Role">Role</option>
+            <option value="TestId">TestId</option>
+          </select>
+          <div>
+            <input type="text" @input="saveTestItem" v-model="textToMatch" class="selectorInput" />
+          </div>
         </div>
       </div>
-      <div>
-        Query:
-        <input type="text" @input="saveTestItem" v-model="selectorName" />
-        <span @click="deleteItem">
-          <button>X</button>
-        </span>
-      </div>
     </form>
+    <button class="DeleteQuery Button">Delete Query</button>
   </div>
 </template>
 
@@ -87,32 +90,112 @@ export default {
 </script>
 <style scoped>
 .query {
-  height: 100%;
+  height: 6em;
   padding: 1%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
 }
-.queryVariant {
-  width: 30%;
-  height: 20%;
-  margin-left: 5%;
-  font-size: 12px;
-}
 .selectorQueries {
-  width: 80%;
+  width: 100%;
+  height: 1em;
+  /* margin-right: 3%; */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  /* justify-content: center; */
+  /* margin-left: -2.5%; */
 }
+.selectorQuery {
+  display: flex;
+  margin-right: 8%;
+}
+.queryTitle {
+  position: relative;
+  bottom: 8px;
+}
+.queryVariant {
+  width: 80%;
+  height: 110%;
+  /* margin-left: 50%; */
+  font-size: 12px;
+  background-color: #3c3c3c;
+  border: 1px solid #656565;
+  color: white;
+  border-radius: 12px;
+  outline: none;
+}
+
 .test-component {
   margin-top: 2%;
   height: 100%;
   border-top: 1px solid rgb(50, 50, 50);
 }
 .labels {
+  margin-top: -3%;
+  width: 100%;
+  display: flex;
+}
+.matcher {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.QueryInput {
+  display: flex;
+  /* width: 60%; */
+}
+.queryInputBox {
+  background-color: #3c3c3c;
+  border: 1px solid #656565;
+  border-radius: 6px;
+  color: white;
+  height: 100%;
+  padding-left: 5%;
+  outline: none;
+  margin-left: 8%;
+}
+.queryInputBox:focus {
+  outline: none;
+  border-color: rgb(85, 201, 240);
+}
+.queryType {
+  background-color: #3c3c3c;
+  border: 1px solid #656565;
+  color: white;
+  border-radius: 12px;
+  outline: none;
+}
+.selectorInput {
+  background-color: #3c3c3c;
+  border: 1px solid #656565;
+  border-radius: 6px;
+  color: white;
+  height: 103%;
+  padding-left: 5%;
+  outline: none;
+}
+.selectorInput:focus {
+  outline: none;
+  border-color: rgb(85, 201, 240);
+}
+/* .InputQuery {
+  margin-left: 1.5%;
   width: 100%;
   display: flex;
   justify-content: space-around;
+} */
+.DeleteQuery {
+  height: 20px;
+  width: 30%;
+  border: 1px solid #7b7a7a;
+  background-color: #232323;
+  border-radius: 12px;
+  color: #838383;
+}
+.DeleteQuery:hover {
+  outline: none;
+  color: rgb(85, 201, 240);
+  border-color: rgb(85, 201, 240);
 }
 </style>

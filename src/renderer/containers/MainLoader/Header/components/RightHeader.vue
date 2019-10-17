@@ -1,7 +1,11 @@
 <template>
   <div class="right-header">
-    <button class="show-file-content button" @click="displayFileContent">View File Content</button>
-    <button class="show-test-content button" @click="displayTestFile">View Test Code</button>
+    <button class="show-file-content button" @click="displayFileContent">
+      <i class="fas fa-code fa-2x"></i>
+    </button>
+    <button class="show-test-content button" @click="displayTestFile">
+      <i class="fas fa-vial fa-2x"></i>
+    </button>
     <button class="export-test-file button" @click="exportTest">
       <i class="fas fa-file-download fa-2x"></i>
     </button>
@@ -69,11 +73,22 @@ export default {
   align-items: center;
   height: 100%;
   width: 40%;
+  color: rgb(85, 201, 240);
 }
-.exportButton {
+/* .show-test-content {
+  margin-right: 50%;
+} */
+/* .show-file-content {
+  margin-right: 15%;
+} */
+.export-test-file {
+  margin-left: 55%;
+}
+.button {
   border: none;
+  /* justify-self: flex-end; */
   background-color: #3c3c3c;
-  color: #00e24d;
+  color: rgb(85, 201, 240);
   height: 100%;
   width: 15%;
 }

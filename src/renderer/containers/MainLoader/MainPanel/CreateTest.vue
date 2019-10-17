@@ -5,7 +5,8 @@
         <div class="buttons addEventAndQuery">
           <button @click="addQuery" class="button addQueryButton">Add Query</button>
           <button @click="addEvent" class="button addEventButton">Add Event</button>
-        </div>Test Name
+        </div>
+        <div class="Title testNameTitle">Test Name</div>
         <div style="width: 100%; height: 100%">
           <input
             name="testName"
@@ -78,25 +79,31 @@ export default {
 
 <style scoped>
 .test-component {
-  height: 100%;
+  height: auto;
 }
 .test-name {
   padding: 10px;
 }
+
 .testNameWithButtons {
   /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* height: 40%; */
+  height: 30%;
   /* bottom: 4%; */
+}
+.testNameTitle {
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 1.7px;
+  font-size: 15px;
 }
 .inputForm {
   height: 100%;
 }
 #testNameInputField {
-  height: 40%;
+  height: 65%;
   width: 50%;
   outline: none;
   border-radius: 12px;
@@ -105,10 +112,11 @@ export default {
   border: 1px solid #656565;
   color: rgb(201, 198, 198);
   font-size: 13px;
+  margin-top: 1%;
 }
 #testNameInputField:focus {
   outline: none !important;
-  border-color: #00e24d;
+  border-color: rgb(85, 201, 240);
 }
 .addEventAndQuery {
   /* height:  */
@@ -119,6 +127,7 @@ export default {
   flex-direction: row;
   justify-self: flex-end;
   align-items: flex-end;
+  /* margin-left: 100%; */
 }
 .button {
   outline: none;
@@ -133,14 +142,15 @@ export default {
 }
 .button:hover {
   outline: none;
-  color: #00e24d;
-  border-color: #00e24d;
+  color: rgb(85, 201, 240);
+  border-color: rgb(85, 201, 240);
 }
 .addQueryButton {
-  margin-left: 120px;
+  margin-left: 140px;
+  margin-right: 5px;
 }
 .queryOrEventForms {
-  height: 50%;
+  height: auto;
 }
 .deleteTestButton {
   outline: none;
@@ -151,10 +161,12 @@ export default {
   background-color: #232323;
   border-radius: 12px;
   color: #838383;
+  margin-top: 3%;
+  /* margin-bottom: -8px; */
 }
 .deleteTestButton:hover {
   outline: none;
-  color: #00e24d;
-  border-color: #00e24d;
+  color: rgb(85, 201, 240);
+  border-color: rgb(85, 201, 240);
 }
 </style>

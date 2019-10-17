@@ -94,23 +94,23 @@ export default {
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  width: 15%;
+  width: 12%;
   border-right: 1px solid #232323;
 }
 .fileExplorerButton {
   border: none;
   background-color: #3c3c3c;
-  color: #00e24d;
   height: 100%;
   width: 35%;
   margin-left: 5%;
+  color: rgb(85, 201, 240);
 }
 .openProjectButton {
   border: none;
   background-color: #3c3c3c;
-  color: #00e24d;
   height: 100%;
   width: 35%;
   margin-right: 7%;
+  color: rgb(85, 201, 240);
 }
 </style>

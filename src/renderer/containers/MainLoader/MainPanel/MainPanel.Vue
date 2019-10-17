@@ -66,22 +66,26 @@ export default {
   padding: 2%;
   margin-top: 2%;
   border-bottom: 1px solid #3c3c3c;
+  height: 12%;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 2px;
 }
 
 .componentNameInput {
   margin-top: 1%;
-  width: 70%;
-  height: 6%;
+  width: 50%;
+  height: 38%;
   align-self: center;
   background-color: #3c3c3c;
   border: 1px solid #656565;
-  /* border-radius: 20px; */
-  padding-left: 10px;
+  border-radius: 12px;
+  padding-left: 12px;
   color: white;
+  font-size: 13px;
 }
 .componentNameInput:focus {
   outline: none !important;
-  border-color: #00e24d;
+  border-color: rgb(85, 201, 240);
 }
 .testForms {
   overflow: scroll;
@@ -102,12 +106,12 @@ export default {
 }
 .addTestButton:hover {
   outline: none;
-  color: #00e24d;
-  border-color: #00e24d;
+  color: rgb(85, 201, 240);
+  border-color: rgb(85, 201, 240);
 }
 .tests {
   /* flex-basis: 40%; */
-  min-height: 40%;
+  min-height: 45%;
   margin-top: 3%;
   height: 40%;
   border: 1px solid rgb(41, 41, 41);
@@ -116,5 +120,8 @@ export default {
   overflow: scroll;
   padding: 1%;
 }
+/* .test-component {
+  height: 48%;
+} */
 </style>
 
