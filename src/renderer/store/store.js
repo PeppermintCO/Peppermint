@@ -7,13 +7,15 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     showFileExplorer: true,
+    url: '',
+    showWebsite: false,
     componentName: '',
     testList: {},
     fileTree: null,
     filePath: null,
     selectedFilePath: null,
     fileContent: '',
-    testFileContent: ''
+    testFileContent: '',
   },
   mutations: {
     changeFileExplorer(state) {
@@ -95,6 +97,18 @@ export const store = new Vuex.Store({
       // if(Object.keys(state.testList).length === 1) return;
       state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList);
       console.log(state.testFileContent);
+    },
+    saveUrl(state, payload) {
+      if (
+        payload.url.slice(0, 7) !== "http://" &&
+        payload.url.slice(0, 8) !== "https://"
+      ) {
+        state.url = "http://" + payload.url;
+      }
+      // state.url = payload.url;
+    },
+    changeShowWebsite(state, payload) {
+      state.showWebsite = payload.bool;
     }
   },
 
@@ -140,6 +154,12 @@ export const store = new Vuex.Store({
     },
     generateTestCode(context) {
       context.commit('generateTestFileContent');
+    },
+    saveUrl(context, url) {
+      context.commit('saveUrl', { url });
+    },
+    changeShowWebsite(context, bool) {
+      context.commit('changeShowWebsite', { bool });
     }
   },
   getters: {
@@ -151,6 +171,8 @@ export const store = new Vuex.Store({
     getFilePath: state => state.filePath,
     getSelectedFilePath: state => state.selectedFilePath,
     getFileContent: state => state.fileContent,
-    getTestContent: state => state.testFileContent
+    getTestContent: state => state.testFileContent,
+    getUrl: state => state.url,
+    getShowWebsite: state => state.showWebsite
   }
 })

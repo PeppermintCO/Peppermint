@@ -9,7 +9,7 @@
           <h4>01</h4>
           <p>Enter test site's URL</p>
         </div>
-        <input placeholder="ex: localhost:3000" />
+        <input placeholder="ex: localhost:3000" @input="saveUrl" v-model="url" />
       </div>
       <div class="main-right">
         <div>
@@ -60,6 +60,11 @@ function generateFileTreeObject(directoryPath) {
 
 export default {
   name: "projectLoader",
+  data() {
+    return {
+      url: ""
+    };
+  },
   methods: {
     openProject() {
       const directory = dialog.showOpenDialog({
@@ -83,6 +88,9 @@ export default {
       }
 
       console.log(this.$store.getters.getFileTree, "<----");
+    },
+    saveUrl() {
+      this.$store.dispatch("saveUrl", this.url);
     }
   }
 };
