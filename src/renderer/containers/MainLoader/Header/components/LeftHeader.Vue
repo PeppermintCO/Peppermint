@@ -14,29 +14,6 @@ const { remote } = window.require("electron");
 const electronFs = remote.require("fs");
 const { dialog } = remote;
 
-function handleOpenFolder() {
-  const directory = dialog.showOpenDialog({
-    properties: ["openDirectory"],
-    filters: [
-      { name: "Javascript Files", extensions: ["js"] },
-      { name: "Vue Files", extensions: ["vue"] },
-      { name: "Style", extensions: ["css"] },
-      { name: "Html", extensions: ["html"] }
-    ]
-  });
-
-  if (directory && directory[0]) {
-    const directoryPath = directory[0];
-    // this.$store.dispatch(setFilePath(directoryPath));
-    this.$store.dispatch("setFilePath", directoryPath);
-    this.$store.dispatch("createFileTree", {});
-  }
-
-  console.log(this.$store.getters.getFilePath, "<--- Path");
-  console.log(this.$store.getters.getFileTree, "<--- Tree");
-}
-
-//  console.log(electronFs.readdirSync(directoryPath));
 function generateFileTreeObject(directoryPath) {
   //input path (string)
   //output array of objects. Each object will have filepath, filename, and files (if folder)
@@ -64,16 +41,22 @@ function generateFileTreeObject(directoryPath) {
     }
   });
 
-  return fileArray.filter(file => typeof file === "object");
-
   //output will be fileArray(will contain fileObjects)
+  return fileArray.filter(file => typeof file === "object");
 }
+
+//output will be fileArray(will contain fileObjects)
 
 export default {
   name: "leftHeader",
+  created() {
+    this.$eventHub.$on("refresh-fileExplorer", this.refreshProject);
+  },
+  beforeDestroy() {
+    this.$eventHub.$off("refresh-fileExplorer");
+  },
   methods: {
     openProject() {
-      //  console.log(handleOpenFolder())
       const directory = dialog.showOpenDialog({
         properties: ["openDirectory"],
         filters: [
@@ -86,20 +69,20 @@ export default {
 
       if (directory && directory[0]) {
         const directoryPath = directory[0];
-        const testObj = { "/User/me": "hellooo" };
+        console.log(directoryPath, "directoryPath");
         this.$store.dispatch("setFilePath", directoryPath);
         this.$store.dispatch(
           "createFileTree",
           generateFileTreeObject(directoryPath)
         );
       }
-      // const filePath2 = this.$store.getters.getFilePath;
-      // const test = generateFileTreeObject(filePath2);
-      // console.log(test)
-      console.log(this.$store.getters.getFileTree, "<---- fileTree");
-      // console.log(this.$store.getters.getFilePath, '<--- Path')
-      // const test = this.$store.getters.getFileTree['/User/me']
-      // console.log(test , '<--- test')
+    },
+    refreshProject() {
+      console.log("refreshing fileExplorer...");
+      this.$store.dispatch(
+        "createFileTree",
+        generateFileTreeObject(this.$store.getters.getFilePath)
+      );
     }
   }
 };

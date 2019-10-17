@@ -39,19 +39,20 @@ export default {
       console.log("exporting...");
       const componentName = this.$store.getters.showComponentName;
       const filePath = this.$store.getters.getFilePath;
-      const directoryName = "__test__";
+      const directoryName = "__tests__";
       const directoryPath = `${filePath}/${directoryName}`;
       const fileContent = this.$store.getters.getTestContent;
       const testFilePath = `${filePath}/${directoryName}/${componentName}.js`;
 
       if (electronFs.existsSync(directoryPath)) {
         createFile(testFilePath, fileContent);
+        this.$eventHub.$emit("refresh-fileExplorer");
       } else {
         try {
           electronFs.mkdirSync(directoryPath);
-          console.log("created new directory called __test__");
-
+          console.log("created new directory called __tests__");
           createFile(testFilePath, fileContent);
+          this.$eventHub.$emit("refresh-fileExplorer");
         } catch (err) {
           console.error(err);
         }

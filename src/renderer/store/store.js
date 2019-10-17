@@ -79,7 +79,7 @@ export const store = new Vuex.Store({
       delete state.testList[payload.testId]['testItems'][payload.testItemId]
     },
     updateFilePath(state, payload) {
-      state.filePath = payload.path;
+      state.filePath = payload.filePath;
     },
     updateFileTree(state, payload) {
       state.fileTree = payload.fileTree;
@@ -126,8 +126,8 @@ export const store = new Vuex.Store({
     addTest(context, testId) {
       context.commit('addTest', testId);
     },
-    setFilePath(context, path) {
-      context.commit('updateFilePath', { path });
+    setFilePath(context, filePath) {
+      context.commit('updateFilePath', { filePath });
     },
     createFileTree(context, fileTree) {
       context.commit('updateFileTree', { fileTree })
