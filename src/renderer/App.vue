@@ -6,23 +6,14 @@
 </template> 
 
 <script>
-<<<<<<< HEAD
 import MainLoader from "./containers/MainLoader/MainLoader.vue";
+import ProjectLoader from "./containers/ProjectLoader/ProjectLoader.vue";
+
 export default {
   name: "peppermint",
   components: {
-    MainLoader
-=======
-import MainLoader from './containers/MainLoader/MainLoader.vue'
-import ProjectLoader from './containers/ProjectLoader/ProjectLoader.vue' 
-  
-  export default {
-    name: 'peppermint',
-    components: {
-      MainLoader,
-      ProjectLoader
-    },
->>>>>>> 3de60b7fa02fa2b6dcb5923fd0558698cce69f89
+    MainLoader,
+    ProjectLoader
   }
 };
 </script>
