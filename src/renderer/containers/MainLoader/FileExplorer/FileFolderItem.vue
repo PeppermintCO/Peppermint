@@ -33,7 +33,8 @@ export default {
     indent() {
       return { 
         transform: `translate(${this.depth * 20}px)`,
-        "list-style": `none`
+        "list-style": `none`,
+        "color": 'skyblue'
         }
     }
   },
