@@ -1,7 +1,9 @@
 <template>
-  <!-- <div class="rightWrapper"> -->
-  <codemirror v-model="code" :options="cmOptions"></codemirror>
-  <!-- </div> -->
+  <div class="rightPanelContainer">
+    <ShowWebsite v-if="this.$store.getters.getShowWebsite" />
+    <!-- <ShowWebsite v-if='this.$store.getters.getShowWebsite'/> -->
+    <codemirror v-else v-model="code" :options="cmOptions"></codemirror>
+  </div>
 </template>
 
 <script>
@@ -11,8 +13,10 @@ import { codemirror } from "vue-codemirror";
 import "../../../../../node_modules/codemirror/mode/javascript/javascript.js";
 // theme css
 import "../../../../../node_modules/codemirror/theme/base16-light.css";
+import ShowWebsite from "./ShowWebsite.vue";
 // more codemirror resources
 // import 'codemirror/some-resource...'
+
 export default {
   data() {
     return {
@@ -37,7 +41,8 @@ export default {
     this.$eventHub.$off("test-content-set");
   },
   components: {
-    codemirror
+    codemirror,
+    ShowWebsite
   },
   methods: {
     onCmReady(cm) {
@@ -71,11 +76,16 @@ export default {
 </script>
 
 <style>
+.rightPanelContainer {
+  width: 40%;
+  min-width: 40%;
+}
+
 .vue-codemirror {
   background-color: #1b1c1b !important;
   overflow: scroll;
 
-  width: 50%;
+  width: 100%;
   height: 100%;
   /* max-height: 100vh;
   max-width: 100vw; */
