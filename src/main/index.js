@@ -19,7 +19,7 @@ function createWindow() {
    */
   mainWindow = new BrowserWindow({
     webPreferences: {
-      devTools: false,
+      devTools: true,
       webSecurity: false
     },
     useContentSize: true,
