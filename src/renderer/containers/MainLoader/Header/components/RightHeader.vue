@@ -102,6 +102,7 @@ export default {
   align-items: center;
   height: 100%;
   width: 40%;
+  /* border: 1px red solid; */
   color: rgb(85, 201, 240);
 }
 

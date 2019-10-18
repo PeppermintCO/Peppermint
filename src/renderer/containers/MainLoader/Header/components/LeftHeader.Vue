@@ -95,7 +95,8 @@ export default {
   align-items: center;
   height: 100%;
   width: 12%;
-  border-right: 1px solid #232323;
+  /* border: 1px red solid; */
+  /* border-right: 1px solid #232323; */
 }
 .fileExplorerButton {
   border: none;
