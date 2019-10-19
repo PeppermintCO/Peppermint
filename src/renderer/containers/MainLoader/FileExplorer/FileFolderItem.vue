@@ -70,7 +70,7 @@ export default {
   .active {
     background-color: rgb(90, 154, 175);
     cursor: pointer;
-    color: black; 
+    color: black !important; 
   }
 </style>
 
