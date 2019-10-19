@@ -10,7 +10,6 @@
             v-model="selectorName"
             class="queryInputBox"
           />
-          <span @click="deleteItem" style="height: 110%; width: 25%;  "></span>
         </div>
         <div class="selectorQuery">
           <div class="queryTitle"><p class="variantQuery">Variant:</p></div>
@@ -50,7 +49,7 @@
         </div>
       </div>
     </form>
-    <button class="DeleteQuery Button">Delete Query</button>
+    <button @click="deleteItem" class="DeleteQuery Button">Delete Query</button>
   </div>
 </template>
 
@@ -207,6 +206,7 @@ export default {
   border-color: rgb(85, 201, 240);
 }
 
+<<<<<<< HEAD
 .typeQuereContainer {
   display: flex;
 }
@@ -221,5 +221,9 @@ export default {
 
 .matcherQuery {
   margin-right: 20px;
+=======
+span {
+  border: 1px red solid;
+>>>>>>> master
 }
 </style>

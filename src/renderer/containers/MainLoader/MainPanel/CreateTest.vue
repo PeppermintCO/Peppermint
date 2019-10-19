@@ -25,9 +25,7 @@
           v-bind:testItemIndex="index"
         ></component>
       </div>
-      <span @click="deleteTest()">
-        <button class="deleteTestButton">Delete Test</button>
-      </span>
+      <button @click="deleteTest" class="deleteTestButton">Delete Test</button>
     </form>
   </div>
 </template>
@@ -53,7 +51,9 @@ export default {
     };
   },
   methods: {
-    deleteTest() {
+    deleteTest(e) {
+      e.preventDefault();
+      
       this.tests.splice(this.testIndex, 1);
       this.$store.dispatch("deleteTest", this._uid);
     },
