@@ -126,13 +126,14 @@ export default {
 }
 .tests {
   /* flex-basis: 40%; */
-  min-height: 45%;
+  /* min-height: 45%; */
   margin-top: 3%;
-  height: 40%;
+  /* height: 40%; */
   border: 1px solid rgb(41, 41, 41);
   border-radius: 30px;
   box-shadow: 0 0 10px rgb(18, 18, 18);
-  overflow: scroll;
+  /* overflow: scroll; */
+  
   padding: 1%;
 }
 
@@ -150,6 +151,12 @@ export default {
   /* margin-left: %; */
 }
 
+.saveCurrentButton:hover {
+  cursor: pointer;
+  background-color: lightblue;
+  color: black;
+}
+
 .componentInputContainer {
   display: flex;
   width: 70%;
@@ -161,7 +168,7 @@ export default {
 
 
 /* .test-component {
-  height: 48%;
+  height: 12%;
 } */
 </style>
 
