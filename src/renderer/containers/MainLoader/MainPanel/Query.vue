@@ -10,7 +10,6 @@
             v-model="selectorName"
             class="queryInputBox"
           />
-          <span @click="deleteItem" style="height: 110%; width: 25%;  "></span>
         </div>
         <div class="selectorQuery">
           <div class="queryTitle">Selector Query:</div>
@@ -49,7 +48,7 @@
         </div>
       </div>
     </form>
-    <button class="DeleteQuery Button">Delete Query</button>
+    <button @click="deleteItem" class="DeleteQuery Button">Delete Query</button>
   </div>
 </template>
 
@@ -197,5 +196,9 @@ export default {
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
+}
+
+span {
+  border: 1px red solid;
 }
 </style>
