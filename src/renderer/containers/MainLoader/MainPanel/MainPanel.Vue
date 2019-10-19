@@ -1,14 +1,20 @@
 <template>
   <div class="mainPanel-container">
     <div class="componentName">
-      <div id="componentInputTitle">Component Name</div>
-      <input
-        class="input componentNameInput"
-        name="componentName"
-        type="text"
-        v-model="componentName"
-        @input="saveComponentName"
-      />
+      <div class="componentInputContainer">
+        <p id="componentInputTitle">Component Name</p>
+        <input
+          class="input componentNameInput"
+          name="componentName"
+          type="text"
+          v-model="componentName"
+          @input="saveComponentName"
+        />
+      </div>
+      <button class="button saveCurrentButton" @click="generateTestCode">
+         <!-- <i class="far fa-save fa-2x"></i> -->
+         Display Test
+       </button>
     </div>
     <div class="testForms">
       <button @click="addTest()" class="button addTestButton">Add Test</button>
@@ -46,6 +52,10 @@ export default {
     saveComponentName() {
       console.log(this.$store.getters.showComponentName);
       this.$store.dispatch("saveComponentName", this.componentName);
+    },
+    generateTestCode() {
+      this.$store.dispatch("generateTestCode");
+      this.$eventHub.$emit("test-content-set");
     }
   }
 };
@@ -63,8 +73,12 @@ export default {
   text-align: center;
 }
 .componentName {
+  /* margin-left: 20px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-direction: column; */
   padding: 2%;
-  margin-top: 2%;
   border-bottom: 1px solid #3c3c3c;
   height: 12%;
   font-family: "Ubuntu", sans-serif;
@@ -72,8 +86,9 @@ export default {
 }
 
 .componentNameInput {
+  margin-left: 20px;
   margin-top: 1%;
-  width: 50%;
+  width: 70%;
   height: 38%;
   align-self: center;
   background-color: #3c3c3c;
@@ -120,6 +135,31 @@ export default {
   overflow: scroll;
   padding: 1%;
 }
+
+.saveCurrentButton {
+  /* border: 1px red solid; */
+  border: none;
+  border-radius: 30px;
+  width: 20%;
+  /* background-color: #232323; */
+  /* color: rgb(85, 201, 240); */
+  height: 20px;
+  align-self: flex-start;
+  /* margin-left: 30px;
+  width: 20px; */
+  /* margin-left: %; */
+}
+
+.componentInputContainer {
+  display: flex;
+  width: 70%;
+}
+
+#componentInputTitle {
+  width: 70%
+}
+
+
 /* .test-component {
   height: 48%;
 } */
