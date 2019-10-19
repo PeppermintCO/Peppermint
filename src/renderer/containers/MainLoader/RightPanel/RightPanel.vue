@@ -1,7 +1,6 @@
 <template>
   <div class="rightPanelContainer">
     <ShowWebsite v-if="this.$store.getters.getShowWebsite" />
-    <!-- <ShowWebsite v-if='this.$store.getters.getShowWebsite'/> -->
     <codemirror v-else v-model="code" :options="cmOptions"></codemirror>
   </div>
 </template>
@@ -87,19 +86,18 @@ export default {
 
   width: 100%;
   height: 100%;
-  /* max-height: 100vh;
-  max-width: 100vw; */
+
 }
 
 .cm-s-base16-light {
   background-color: #1b1c1b !important;
-  /* overflow: scroll; */
+
 }
 
 .CodeMirror {
   height: 100%;
   width: 100%;
-  /* overflow: scroll; */
+
 }
 
 /* .CodeMirror-vscrollbar div, */
@@ -108,11 +106,11 @@ export default {
   background-color: #1b1c1b !important;
   height: 100%;
   width: 100%;
-  /* overflow: scroll; */
+
 }
 .CodeMirror-code {
   color: #0d983b;
-  /* overflow: scroll; */
+
 }
 
 .CodeMirror-vscrollbar {
@@ -123,7 +121,7 @@ export default {
   display: flex;
   height: 100%;
   width: 100%;
-  /* overflow: scroll; */
+
 }
 .CodeMirror-sizer {
   overflow: scroll !important;
