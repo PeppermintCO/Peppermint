@@ -38,4 +38,8 @@ body {
   width: 100%;
   background-color: #232323;
 }
+
+button {
+  cursor: pointer;
+}
 </style>

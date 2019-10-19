@@ -76,7 +76,7 @@ export default {
 
 <style>
 .rightPanelContainer {
-  width: 40%;
+  width: 50%;
   min-width: 40%;
 }
 
