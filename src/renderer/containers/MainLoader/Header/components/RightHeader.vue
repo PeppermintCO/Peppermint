@@ -107,6 +107,7 @@ export default {
 }
 
 .button {
+  outline: none;
   border: none;
   /* justify-self: flex-end; */
   background-color: #3c3c3c;

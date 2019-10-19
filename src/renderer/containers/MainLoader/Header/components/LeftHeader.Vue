@@ -99,6 +99,7 @@ export default {
   /* border-right: 1px solid #232323; */
 }
 .fileExplorerButton {
+  outline: none;
   border: none;
   background-color: #3c3c3c;
   height: 100%;
@@ -107,6 +108,7 @@ export default {
   color: rgb(85, 201, 240);
 }
 .openProjectButton {
+  outline: none;
   border: none;
   background-color: #3c3c3c;
   height: 100%;
