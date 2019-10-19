@@ -133,6 +133,7 @@ export default {
   border-radius: 30px;
   box-shadow: 0 0 10px rgb(18, 18, 18);
   /* overflow: scroll; */
+  
   padding: 1%;
 }
 
@@ -150,6 +151,12 @@ export default {
   /* margin-left: %; */
 }
 
+.saveCurrentButton:hover {
+  cursor: pointer;
+  background-color: lightblue;
+  color: black;
+}
+
 .componentInputContainer {
   display: flex;
   width: 70%;
@@ -161,7 +168,7 @@ export default {
 
 
 /* .test-component {
-  height: 48%;
+  height: 12%;
 } */
 </style>
 

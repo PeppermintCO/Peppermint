@@ -144,6 +144,7 @@ export default {
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
+  cursor: pointer;
 }
 .addQueryButton {
   margin-left: 140px;
