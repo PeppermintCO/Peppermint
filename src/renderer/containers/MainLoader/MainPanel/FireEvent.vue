@@ -17,9 +17,8 @@
           >{{selector['selectorName']}}</option>
         </select>
       </div>
-      <span @click="deleteItem"></span>
     </form>
-    <button class="deleteEventButton">Delete Event</button>
+    <button @click="deleteItem" class="deleteEventButton">Delete Event</button>
   </div>
 </template>
 
