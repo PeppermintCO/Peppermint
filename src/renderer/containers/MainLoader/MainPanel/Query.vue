@@ -206,7 +206,6 @@ export default {
   border-color: rgb(85, 201, 240);
 }
 
-<<<<<<< HEAD
 .typeQuereContainer {
   display: flex;
 }
@@ -221,9 +220,5 @@ export default {
 
 .matcherQuery {
   margin-right: 20px;
-=======
-span {
-  border: 1px red solid;
->>>>>>> master
 }
 </style>
