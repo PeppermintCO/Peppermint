@@ -56,14 +56,12 @@ export default {
 <style scoped>
 .test-component {
   margin-top: 3%;
-  /* width: 1em; */
   height: 1em;
 }
 .eventForm {
   margin-left: 1.5%;
   height: 1em;
   display: flex;
-  /* justify-content: ; */
   align-items: center;
 }
 .inputAndDropDown {
@@ -76,7 +74,6 @@ export default {
 .query-variant {
   width: 10em;
   height: 40%;
-  /* margin-left: 50%; */
   font-size: 12px;
   background-color: #3c3c3c;
   border: 1px solid #656565;
@@ -85,8 +82,6 @@ export default {
   outline: none;
 }
 .eventInput {
-  /* position: relative;
-  top: 2px; */
   background-color: #3c3c3c;
   border: 1px solid #656565;
   border-radius: 6px;
