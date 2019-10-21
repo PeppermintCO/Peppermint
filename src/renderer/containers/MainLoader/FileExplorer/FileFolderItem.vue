@@ -51,13 +51,14 @@ export default {
     },
     displayFileContent(filePath) {
       this.$store.dispatch('setSelectedFilePath', filePath)
+      //read the contents of a file based off file path
       electronFs.readFile(filePath, 'utf-8', (err, data) => {
         if (err) {
           console.log(err);
           return;
         }
         this.$store.dispatch('setFileContent', data);
-        console.log(typeof this.$store.getters.getFileContent)
+        //emit 'file-content-set' to RightPanel.vue
         this.$eventHub.$emit('file-content-set')
       })
 
