@@ -4,7 +4,6 @@
     <div class="mainLoader">
       <FileExplorer />
       <MainPanel />
-      <!-- <ShowWebsite v-if='this.$store.getters.getShowWebsite'/> -->
       <RightPanel />
     </div>
   </div>
@@ -12,7 +11,6 @@
     <Header />
     <div class="mainLoader">
       <MainPanel />
-      <!-- <ShowWebsite v-if='this.$store.getters.getShowWebsite'/> -->
       <RightPanel />
     </div>
   </div>

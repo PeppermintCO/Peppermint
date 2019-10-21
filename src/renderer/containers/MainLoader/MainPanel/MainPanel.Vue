@@ -55,6 +55,7 @@ export default {
     },
     generateTestCode() {
       this.$store.dispatch("generateTestCode");
+      //emit 'test-content-set' to RightPanel.vue
       this.$eventHub.$emit("test-content-set");
     }
   }
@@ -73,11 +74,9 @@ export default {
   text-align: center;
 }
 .componentName {
-  /* margin-left: 20px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* flex-direction: column; */
   padding: 2%;
   border-bottom: 1px solid #3c3c3c;
   height: 12%;
@@ -125,30 +124,20 @@ export default {
   border-color: rgb(85, 201, 240);
 }
 .tests {
-  /* flex-basis: 40%; */
-  /* min-height: 45%; */
   margin-top: 3%;
-  /* height: 40%; */
   border: 1px solid rgb(41, 41, 41);
   border-radius: 30px;
   box-shadow: 0 0 10px rgb(18, 18, 18);
-  /* overflow: scroll; */
   
   padding: 1%;
 }
 
 .saveCurrentButton {
-  /* border: 1px red solid; */
   border: none;
   border-radius: 30px;
   width: 20%;
-  /* background-color: #232323; */
-  /* color: rgb(85, 201, 240); */
   height: 20px;
   align-self: flex-start;
-  /* margin-left: 30px;
-  width: 20px; */
-  /* margin-left: %; */
 }
 
 .saveCurrentButton:hover {
@@ -165,10 +154,5 @@ export default {
 #componentInputTitle {
   width: 70%
 }
-
-
-/* .test-component {
-  height: 12%;
-} */
 </style>
 

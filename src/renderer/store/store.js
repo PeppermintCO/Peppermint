@@ -93,10 +93,7 @@ export const store = new Vuex.Store({
       state.fileContent = payload.fileContent
     },
     generateTestFileContent(state) {
-      console.log('in generateTestFileContent', Object.keys(state.testList).length);
-      // if(Object.keys(state.testList).length === 1) return;
       state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList);
-      console.log(state.testFileContent);
     },
     saveUrl(state, payload) {
       if (
@@ -105,7 +102,6 @@ export const store = new Vuex.Store({
       ) {
         state.url = "http://" + payload.url;
       }
-      // state.url = payload.url;
     },
     changeShowWebsite(state, payload) {
       state.showWebsite = payload.bool;

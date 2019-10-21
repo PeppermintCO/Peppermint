@@ -163,7 +163,6 @@ export default {
   border-radius: 12px;
   color: #838383;
   margin-top: 3%;
-  /* margin-bottom: -8px; */
 }
 .deleteTestButton:hover {
   outline: none;
