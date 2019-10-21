@@ -55,6 +55,7 @@ export default {
     },
     generateTestCode() {
       this.$store.dispatch("generateTestCode");
+      //emit 'test-content-set' to RightPanel.vue
       this.$eventHub.$emit("test-content-set");
     }
   }

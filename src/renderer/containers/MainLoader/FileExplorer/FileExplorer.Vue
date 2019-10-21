@@ -26,7 +26,6 @@ export default {
   width: 25%;
   height: 100%;
   background-color: #232323;
-  /* background-color: #888888; */
   overflow: scroll;
 }
 </style>

@@ -102,25 +102,18 @@ export default {
   width: 90%;
   height: 1em;
   margin-left: 20px;
-  /* margin-right: 3%; */
   display: flex;
   justify-content: space-between;
-  /* justify-content: center; */
-  /* margin-left: -2.5%; */
 }
 .selectorQuery {
   display: flex;
   margin-right: 44px;
 }
 .queryTitle {
-  /* position: relative;
-  bottom: 8px; */
   margin-right: 20px;
 }
 .queryVariant {
-  /* width: 80%; */
   height: 110%;
-  /* margin-left: 50%; */
   font-size: 12px;
   background-color: #3c3c3c;
   border: 1px solid #656565;
@@ -144,13 +137,10 @@ export default {
 }
 .matcher {
   display: flex;
-  /* width: 100%; */
   justify-content: space-around;
 }
 .QueryInput {
   display: flex;
-  /* margin-left: 20px; */
-  /* width: 60%; */
 }
 .queryInputBox {
   background-color: #3c3c3c;
@@ -160,7 +150,6 @@ export default {
   height: 100%;
   padding-left: 5%;
   outline: none;
-  /* margin-left: 8%; */
 }
 .queryInputBox:focus {
   outline: none;
@@ -186,12 +175,6 @@ export default {
   outline: none;
   border-color: rgb(85, 201, 240);
 }
-/* .InputQuery {
-  margin-left: 1.5%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-} */
 .DeleteQuery {
   height: 20px;
   width: 30%;

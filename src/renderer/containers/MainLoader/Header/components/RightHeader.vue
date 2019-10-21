@@ -27,6 +27,7 @@
 const { remote } = window.require("electron");
 const electronFs = remote.require("fs");
 
+
 const createFile = async (filePath, fileContent) => {
   await electronFs.writeFile(filePath, fileContent, err => {
     if (err) console.error(err);
@@ -42,13 +43,13 @@ export default {
   },
   methods: {
     displayFileContent() {
-      console.log("inside display File Content (RIGHTHEADER)");
       this.$store.dispatch("changeShowWebsite", false);
+      //emit 'file-content-set' to RightPanel.vue
       this.$eventHub.$emit("file-content-set");
     },
     displayTestFile() {
-      console.log("inside display Test File (RIGHTHEADER)");
       this.$store.dispatch("changeShowWebsite", false);
+      //emit 'test-content-set' to RightPanel.vue
       this.$eventHub.$emit("test-content-set");
     },
     exportTest() {
