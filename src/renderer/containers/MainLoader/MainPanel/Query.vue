@@ -30,7 +30,7 @@
       </div>
 
       <div class="labels">
-        <div class="typeQuereContainer">
+        <div class="typeQueryContainer">
           <p class="typeQuery"> Type:</p>
           <select name="queryType" @change="saveTestItem" v-model="queryType" class="queryType">
             <option value="LabelText">LabelText</option>
@@ -89,7 +89,50 @@ export default {
 };
 </script>
 <style scoped>
+
+.test-component {
+  border: 1px red solid;
+}
+
+.selectorQueries {
+  border: 1px white solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.QueryInput {
+  display: flex;
+  border: 1px lightblue solid;
+}
+
+
 .query {
+  border: 1px pink solid solid;
+}
+
+.selectorQuery {
+  display: flex;
+  border: 1px lightblue solid;
+}
+
+.typeQueryContainer {
+  display: flex;
+  border: 1px lightblue solid;
+}
+
+.matcher {
+  display: flex;
+  border: 1px lightblue solid;
+}
+
+.labels {
+  border: 1px white solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*------------------ */
+/* .query {
   height: 6em;
   padding: 1%;
   display: flex;
@@ -189,7 +232,7 @@ export default {
   border-color: rgb(85, 201, 240);
 }
 
-.typeQuereContainer {
+.typeQueryContainer {
   display: flex;
 }
 
@@ -203,5 +246,5 @@ export default {
 
 .matcherQuery {
   margin-right: 20px;
-}
+} */
 </style>
