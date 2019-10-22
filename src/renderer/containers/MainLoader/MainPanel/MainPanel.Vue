@@ -12,13 +12,34 @@
         />
       </div>
       <button class="button saveCurrentButton" @click="generateTestCode">
-         <!-- <i class="far fa-save fa-2x"></i> -->
-         Display Test
-       </button>
+        <!-- <i class="far fa-save fa-2x"></i> -->
+        Display Test
+      </button>
     </div>
     <div class="testForms">
       <button @click="addTest()" class="button addTestButton">Add Test</button>
-      <div class="tests" v-for="(test, index) in tests" :key="index">
+      <button class="addProp" @click="addProps()">add Props</button>
+      <div class="props" v-for="(props,indexForProps) in propsList" :key="indexForProps">
+        <div>
+          <div>
+            add Prop Key:
+            <input
+              class="addPropsKey"
+              @input="addPropKey(indexForProps)"
+              v-model="propKeys[indexForProps]"
+            />
+          </div>
+          <div>
+            add Prop Value:
+            <input
+              class="addPropsValue"
+              @input="addPropValue(indexForProps)"
+              v-model="propValues[indexForProps]"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="tests" v-for="(test, index) in tests" :key="index+100">
         <component v-bind:id="index" :is="test" :tests="tests" :testIndex="index"></component>
       </div>
     </div>
@@ -37,25 +58,49 @@ export default {
   data() {
     return {
       tests: ["CreateTest"],
-      componentName: ""
+      componentName: "",
+      propsList: [],
+      propKeys: [],
+      propValues: []
     };
   },
   methods: {
     addTest() {
-      console.log(this.$store.getters.showTestList);
+      // console.log(this.$store.getters.showTestList);
       this.tests.push("CreateTest");
     },
     deleteTest(index) {},
     deleteTestFromStore(testId) {
-      console.log(testId);
+      // console.log(testId);
     },
     saveComponentName() {
-      console.log(this.$store.getters.showComponentName);
+      // console.log(this.$store.getters.showComponentName);
       this.$store.dispatch("saveComponentName", this.componentName);
     },
     generateTestCode() {
       this.$store.dispatch("generateTestCode");
       this.$eventHub.$emit("test-content-set");
+    },
+    addProps() {
+      this.propsList.push({});
+      this.propKeys.push("");
+      this.propValues.push("");
+      this.$store.dispatch("addProps");
+    },
+    addPropKey(id) {
+      // this.propsList.
+      // console.log(this.$store.getters.getPropsList);
+      console.log(this.propKeys[id]);
+      this.$store.dispatch("addKeyToProp", {
+        id: id,
+        propKey: this.propKeys[id]
+      });
+    },
+    addPropValue(id) {
+      this.$store.dispatch("addValueToProp", {
+        id: id,
+        propValue: this.propValues[id]
+      });
     }
   }
 };
@@ -156,9 +201,8 @@ export default {
 }
 
 #componentInputTitle {
-  width: 70%
+  width: 70%;
 }
-
 
 /* .test-component {
   height: 48%;

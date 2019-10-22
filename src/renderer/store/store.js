@@ -10,6 +10,10 @@ export const store = new Vuex.Store({
     url: '',
     showWebsite: false,
     componentName: '',
+    propsList: {
+      keys: [],
+      values: []
+    },
     testList: {},
     fileTree: null,
     filePath: null,
@@ -95,8 +99,9 @@ export const store = new Vuex.Store({
     generateTestFileContent(state) {
       console.log('in generateTestFileContent', Object.keys(state.testList).length);
       // if(Object.keys(state.testList).length === 1) return;
-      state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList);
+      state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList, state.propsList);
       console.log(state.testFileContent);
+
     },
     saveUrl(state, payload) {
       if (
@@ -109,6 +114,18 @@ export const store = new Vuex.Store({
     },
     changeShowWebsite(state, payload) {
       state.showWebsite = payload.bool;
+    },
+    addProps(state) {
+      state.propsList.keys.push('');
+      console.log(state.propsList);
+    },
+    addKeyToProp(state, payload) {
+      console.log(state.propsList.keys);
+      state.propsList.keys[payload.id] = payload.propKey
+    },
+    addValueToProp(state, payload) {
+      console.log(state.propsList.values);
+      state.propsList.values[payload.id] = payload.propValue;
     }
   },
 
@@ -160,6 +177,15 @@ export const store = new Vuex.Store({
     },
     changeShowWebsite(context, bool) {
       context.commit('changeShowWebsite', { bool });
+    },
+    addProps(context) {
+      context.commit("addProps");
+    },
+    addKeyToProp(context, data) {
+      context.commit("addKeyToProp", data)
+    },
+    addValueToProp(context, data) {
+      context.commit("addValueToProp", data);
     }
   },
   getters: {
@@ -173,6 +199,7 @@ export const store = new Vuex.Store({
     getFileContent: state => state.fileContent,
     getTestContent: state => state.testFileContent,
     getUrl: state => state.url,
-    getShowWebsite: state => state.showWebsite
+    getShowWebsite: state => state.showWebsitem,
+    getPropsList: state => state.propsList
   }
 })

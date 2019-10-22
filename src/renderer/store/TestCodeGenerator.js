@@ -1,8 +1,25 @@
 module.exports = {
-  generateTestCode(componentName, testList) {
+  generateTestCode(componentName, testList, propsList) {
     let testFileContent =
       `import { render, fireEvent, cleanup } from '@testing-library/vue'\n
        import ${componentName} from  './${componentName}.vue'\n\nafterEach(cleanup)\n\n`;
+    let newObj = {}
+    propsList.keys.forEach((val, index) => {
+      newObj[val] = propsList.values[index];
+    })
+    function objToString(obj) {
+      let str = '';
+      for (let p in obj) {
+        if (obj.hasOwnProperty(p)) {
+          str += p + ':' + obj[p] + ',';
+        }
+      }
+      return str;
+    }
+    let stringified = objToString(newObj)
+    console.log(stringified);
+    testFileContent += `updateProps({${stringified}})\n\n`
+
 
     for (let test in testList) {
       let currentTest = testList[test];
