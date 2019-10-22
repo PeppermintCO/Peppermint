@@ -105,18 +105,18 @@ export default {
   margin: auto;
 }
 
-.QueryInput {
-  display: flex;
-  /* border: 1px lightblue solid; */
-  width: 250px;
-}
-
 .query {
   height: 6em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+}
+
+.QueryInput {
+  display: flex;
+  /* border: 1px lightblue solid; */
+  width: 250px;
 }
 
 .selectorQuery {
@@ -181,6 +181,14 @@ input {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 5px;
+}
+
+.delete:hover {
+  outline: none;
+  color: rgb(85, 201, 240);
+  border-color: rgb(85, 201, 240);
+  cursor: pointer;
 }
 
 /*------------------ */
