@@ -3,17 +3,16 @@
     <form action class="query">
       <div class="selectorQueries">
         <div class="QueryInput">
-          Query:
+          <p class="nameQuery">Name:</p>
           <input
             type="text"
             @input="saveTestItem"
             v-model="selectorName"
             class="queryInputBox"
           />
-          <span @click="deleteItem" style="height: 110%; width: 25%;  "></span>
         </div>
         <div class="selectorQuery">
-          <div class="queryTitle">Selector Query:</div>
+          <div class="queryTitle"><p class="variantQuery">Variant:</p></div>
           <select
             name="queryVariant"
             @change="saveTestItem"
@@ -31,8 +30,8 @@
       </div>
 
       <div class="labels">
-        Matcher:
-        <div class="matcher">
+        <div class="typeQuereContainer">
+          <p class="typeQuery"> Type:</p>
           <select name="queryType" @change="saveTestItem" v-model="queryType" class="queryType">
             <option value="LabelText">LabelText</option>
             <option value="PlaceholderText">PlaceholderText</option>
@@ -43,13 +42,14 @@
             <option value="Role">Role</option>
             <option value="TestId">TestId</option>
           </select>
-          <div>
-            <input type="text" @input="saveTestItem" v-model="textToMatch" class="selectorInput" />
-          </div>
+        </div>
+        <div class="matcher">
+          <p class="matcherQuery">Matcher:</p>
+          <input type="text" @input="saveTestItem" v-model="textToMatch" class="selectorInput" />
         </div>
       </div>
     </form>
-    <button class="DeleteQuery Button">Delete Query</button>
+    <button @click="deleteItem" class="DeleteQuery Button">Delete Query</button>
   </div>
 </template>
 
@@ -98,26 +98,22 @@ export default {
   justify-content: space-around;
 }
 .selectorQueries {
-  width: 100%;
+  display: flex;
+  width: 90%;
   height: 1em;
-  /* margin-right: 3%; */
+  margin-left: 20px;
   display: flex;
   justify-content: space-between;
-  /* justify-content: center; */
-  /* margin-left: -2.5%; */
 }
 .selectorQuery {
   display: flex;
-  margin-right: 8%;
+  margin-right: 44px;
 }
 .queryTitle {
-  position: relative;
-  bottom: 8px;
+  margin-right: 20px;
 }
 .queryVariant {
-  width: 80%;
   height: 110%;
-  /* margin-left: 50%; */
   font-size: 12px;
   background-color: #3c3c3c;
   border: 1px solid #656565;
@@ -132,18 +128,19 @@ export default {
   border-top: 1px solid rgb(50, 50, 50);
 }
 .labels {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
   margin-top: -3%;
-  width: 100%;
+  width: 89%;
   display: flex;
 }
 .matcher {
   display: flex;
-  width: 100%;
   justify-content: space-around;
 }
 .QueryInput {
   display: flex;
-  /* width: 60%; */
 }
 .queryInputBox {
   background-color: #3c3c3c;
@@ -153,7 +150,6 @@ export default {
   height: 100%;
   padding-left: 5%;
   outline: none;
-  margin-left: 8%;
 }
 .queryInputBox:focus {
   outline: none;
@@ -179,12 +175,6 @@ export default {
   outline: none;
   border-color: rgb(85, 201, 240);
 }
-/* .InputQuery {
-  margin-left: 1.5%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-} */
 .DeleteQuery {
   height: 20px;
   width: 30%;
@@ -197,5 +187,21 @@ export default {
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
+}
+
+.typeQuereContainer {
+  display: flex;
+}
+
+.nameQuery {
+  margin-right: 20px;
+}
+
+.typeQuery {
+  margin-right: 25px;
+}
+
+.matcherQuery {
+  margin-right: 20px;
 }
 </style>

@@ -97,11 +97,7 @@ export const store = new Vuex.Store({
       state.fileContent = payload.fileContent
     },
     generateTestFileContent(state) {
-      console.log('in generateTestFileContent', Object.keys(state.testList).length);
-      // if(Object.keys(state.testList).length === 1) return;
       state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList, state.propsList);
-      console.log(state.testFileContent);
-
     },
     saveUrl(state, payload) {
       if (
@@ -110,7 +106,6 @@ export const store = new Vuex.Store({
       ) {
         state.url = "http://" + payload.url;
       }
-      // state.url = payload.url;
     },
     changeShowWebsite(state, payload) {
       state.showWebsite = payload.bool;
@@ -118,6 +113,10 @@ export const store = new Vuex.Store({
     addProps(state) {
       state.propsList.keys.push('');
       console.log(state.propsList);
+    },
+    deleteProps(state, payload) {
+      state.propsList.keys.slice(payload, 1);
+      state.propsList.values.slice(payload, 1);
     },
     addKeyToProp(state, payload) {
       console.log(state.propsList.keys);
@@ -180,6 +179,9 @@ export const store = new Vuex.Store({
     },
     addProps(context) {
       context.commit("addProps");
+    },
+    deleteProps(context, id) {
+      context.commit("deleteProps", id)
     },
     addKeyToProp(context, data) {
       context.commit("addKeyToProp", data)

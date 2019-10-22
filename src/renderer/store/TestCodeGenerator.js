@@ -20,7 +20,6 @@ module.exports = {
     console.log(stringified);
     testFileContent += `updateProps({${stringified}})\n\n`
 
-
     for (let test in testList) {
       let currentTest = testList[test];
 
