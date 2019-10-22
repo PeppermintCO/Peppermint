@@ -1,7 +1,9 @@
 <template>
   <div class="test-component">
+    <div @click="deleteItem" class='delete'>X</div>
+
     <form action class="query">
-      <div class="selectorQueries">
+      <div class="top-row">
         <div class="QueryInput">
           <p class="nameQuery">Name:</p>
           <input
@@ -29,9 +31,9 @@
         </div>
       </div>
 
-      <div class="labels">
+      <div class="bottom-row">
         <div class="typeQueryContainer">
-          <p class="typeQuery"> Type:</p>
+          <p class="typeQuery">Type:</p>
           <select name="queryType" @change="saveTestItem" v-model="queryType" class="queryType">
             <option value="LabelText">LabelText</option>
             <option value="PlaceholderText">PlaceholderText</option>
@@ -49,7 +51,6 @@
         </div>
       </div>
     </form>
-    <button @click="deleteItem" class="DeleteQuery Button">Delete Query</button>
   </div>
 </template>
 
@@ -91,44 +92,95 @@ export default {
 <style scoped>
 
 .test-component {
-  border: 1px red solid;
+  border-bottom: 1px white solid;
+  font-family: "Ubuntu", sans-serif;
 }
 
-.selectorQueries {
-  border: 1px white solid;
+.top-row, .bottom-row {
+  /* border: 1px white solid; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 90%;
+  height: 1em;
+  margin: auto;
 }
 
 .QueryInput {
   display: flex;
-  border: 1px lightblue solid;
+  /* border: 1px lightblue solid; */
+  width: 250px;
 }
 
-
 .query {
-  border: 1px pink solid solid;
+  height: 6em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 .selectorQuery {
   display: flex;
-  border: 1px lightblue solid;
+  /* border: 1px lightblue solid; */
+  width: 250px;
 }
 
 .typeQueryContainer {
   display: flex;
-  border: 1px lightblue solid;
+  /* border: 1px lightblue solid; */
+  width: 250px;
 }
 
 .matcher {
   display: flex;
-  border: 1px lightblue solid;
+  /* border: 1px lightblue solid; */
+  width: 250px;
 }
 
-.labels {
-  border: 1px white solid;
+select {
+  width: 150px;
+  height: 20px;
+  font-size: 12px;
+  background-color: #3c3c3c;
+  border: 1px solid #656565;
+  color: white;
+  border-radius: 12px;
+  outline: none;
+}
+
+input {
+  background-color: #3c3c3c;
+  border: 1px solid #656565;
+  border-radius: 4px;
+  color: white;
+  height: 103%;
+  padding-left: 5%;
+  outline: none;
+  width: 150px;
+  height: 20px;
+  font-size: 12px;
+}
+
+.nameQuery, .matcherQuery {
+  margin-right: 15px;
+}
+
+.variantQuery, .typeQuery {
+  margin-right: 20px;
+}
+
+.typeQuery {
+  margin-left: 3px;
+}
+
+.variantQuery {
+  margin-left: 3px;
+}
+
+.delete {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 /*------------------ */
@@ -170,7 +222,7 @@ export default {
   height: 100%;
   border-top: 1px solid rgb(50, 50, 50);
 }
-.labels {
+.bottom-row {
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
