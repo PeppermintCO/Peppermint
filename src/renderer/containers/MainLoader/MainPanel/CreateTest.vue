@@ -106,7 +106,7 @@ export default {
   height: 65%;
   width: 50%;
   outline: none;
-  border-radius: 12px;
+  border-radius: 4px;
   padding-left: 15px;
   background-color: #3c3c3c;
   border: 1px solid #656565;
