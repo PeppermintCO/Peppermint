@@ -1,7 +1,11 @@
 <template>
   <div class="test-component">
+    <div  class='delete'>
+      <span @click="deleteItem">X</span>
+    </div>
+
     <form action class="query">
-      <div class="selectorQueries">
+      <div class="top-row">
         <div class="QueryInput">
           <p class="nameQuery">Name:</p>
           <input
@@ -29,9 +33,9 @@
         </div>
       </div>
 
-      <div class="labels">
-        <div class="typeQuereContainer">
-          <p class="typeQuery"> Type:</p>
+      <div class="bottom-row">
+        <div class="typeQueryContainer">
+          <p class="typeQuery">Type:</p>
           <select name="queryType" @change="saveTestItem" v-model="queryType" class="queryType">
             <option value="LabelText">LabelText</option>
             <option value="PlaceholderText">PlaceholderText</option>
@@ -49,7 +53,6 @@
         </div>
       </div>
     </form>
-    <button @click="deleteItem" class="DeleteQuery Button">Delete Query</button>
   </div>
 </template>
 
@@ -89,31 +92,56 @@ export default {
 };
 </script>
 <style scoped>
+
+.test-component {
+  border-bottom: 1px #7b7a7a solid;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.top-row, .bottom-row {
+  /* border: 1px white solid; */
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  height: 1em;
+  margin: auto;
+}
+
 .query {
   height: 6em;
-  padding: 1%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
 }
-.selectorQueries {
+
+.QueryInput {
   display: flex;
-  width: 90%;
-  height: 1em;
-  margin-left: 20px;
-  display: flex;
-  justify-content: space-between;
+  /* border: 1px lightblue solid; */
+  width: 250px;
 }
+
 .selectorQuery {
   display: flex;
-  margin-right: 44px;
+  /* border: 1px lightblue solid; */
+  width: 250px;
 }
-.queryTitle {
-  margin-right: 20px;
+
+.typeQueryContainer {
+  display: flex;
+  /* border: 1px lightblue solid; */
+  width: 250px;
 }
-.queryVariant {
-  height: 110%;
+
+.matcher {
+  display: flex;
+  /* border: 1px lightblue solid; */
+  width: 250px;
+}
+
+select {
+  width: 150px;
+  height: 20px;
   font-size: 12px;
   background-color: #3c3c3c;
   border: 1px solid #656565;
@@ -122,86 +150,49 @@ export default {
   outline: none;
 }
 
-.test-component {
-  margin-top: 2%;
-  height: 100%;
-  border-top: 1px solid rgb(50, 50, 50);
-}
-.labels {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 20px;
-  margin-top: -3%;
-  width: 89%;
-  display: flex;
-}
-.matcher {
-  display: flex;
-  justify-content: space-around;
-}
-.QueryInput {
-  display: flex;
-}
-.queryInputBox {
+input {
   background-color: #3c3c3c;
   border: 1px solid #656565;
-  border-radius: 6px;
-  color: white;
-  height: 100%;
-  padding-left: 5%;
-  outline: none;
-}
-.queryInputBox:focus {
-  outline: none;
-  border-color: rgb(85, 201, 240);
-}
-.queryType {
-  background-color: #3c3c3c;
-  border: 1px solid #656565;
-  color: white;
-  border-radius: 12px;
-  outline: none;
-}
-.selectorInput {
-  background-color: #3c3c3c;
-  border: 1px solid #656565;
-  border-radius: 6px;
+  border-radius: 4px;
   color: white;
   height: 103%;
   padding-left: 5%;
   outline: none;
-}
-.selectorInput:focus {
-  outline: none;
-  border-color: rgb(85, 201, 240);
-}
-.DeleteQuery {
+  width: 150px;
   height: 20px;
-  width: 30%;
-  border: 1px solid #7b7a7a;
-  background-color: #232323;
-  border-radius: 12px;
-  color: #838383;
+  font-size: 12px;
 }
-.DeleteQuery:hover {
-  outline: none;
-  color: rgb(85, 201, 240);
+
+input:focus {
   border-color: rgb(85, 201, 240);
 }
 
-.typeQuereContainer {
-  display: flex;
+.nameQuery, .matcherQuery {
+  margin-right: 15px;
 }
 
-.nameQuery {
+.variantQuery, .typeQuery {
   margin-right: 20px;
 }
 
 .typeQuery {
-  margin-right: 25px;
+  margin-left: 3px;
 }
 
-.matcherQuery {
-  margin-right: 20px;
+.variantQuery {
+  margin-left: 3px;
+}
+
+.delete {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 5px;
+}
+
+.delete span:hover {
+  outline: none;
+  color: rgb(85, 201, 240);
+  cursor: pointer;
 }
 </style>

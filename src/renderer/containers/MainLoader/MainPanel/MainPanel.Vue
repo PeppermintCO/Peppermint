@@ -143,7 +143,7 @@ export default {
   align-self: center;
   background-color: #3c3c3c;
   border: 1px solid #656565;
-  border-radius: 12px;
+  border-radius: 4px;
   padding-left: 12px;
   color: white;
   font-size: 13px;
@@ -238,7 +238,6 @@ export default {
   border: 1px solid rgb(41, 41, 41);
   border-radius: 30px;
   box-shadow: 0 0 10px rgb(18, 18, 18);
-
   padding: 1%;
 }
 
@@ -252,7 +251,7 @@ export default {
 
 .saveCurrentButton:hover {
   cursor: pointer;
-  background-color: lightblue;
+  background-color:  dodgerblue;
   color: black;
 }
 
