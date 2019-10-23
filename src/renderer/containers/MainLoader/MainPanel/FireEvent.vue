@@ -1,24 +1,31 @@
 <template>
   <div class="test-component">
+    <div @click="deleteItem" class='delete'>X</div>
+
     <form action class="eventForm">
-      Event Type:
-      <div class="inputAndDropDown">
-        <input type="text" @input="saveFireEvent" v-model="eventType" class="eventInput" />
-        Selector:
-        <select
-          name="query-variant"
-          @change="saveFireEvent"
-          v-model="selectorType"
-          class="query-variant"
-        >
-          <option
-            v-for="(selector, index) in this.$store.state.testList[testId]['testItems']"
-            :key="index"
-          >{{selector['selectorName']}}</option>
-        </select>
+      <div class="row">
+        <div class="event-input">
+          <span>Event:</span>
+          <input type="text" @input="saveFireEvent" v-model="eventType" class="eventInput" />
+        </div>
+
+        <div class="selector-input">
+          <span>Selector:</span>
+          <select
+            name="query-variant"
+            @change="saveFireEvent"
+            v-model="selectorType"
+            class="query-variant"
+          >
+            <option
+              v-for="(selector, index) in this.$store.state.testList[testId]['testItems']"
+              :key="index"
+            >{{selector['selectorName']}}</option>
+          </select>
+        </div>
       </div>
     </form>
-    <button @click="deleteItem" class="deleteEventButton">Delete Event</button>
+    <!-- <button @click="deleteItem" class="deleteEventButton">Delete Event</button> -->
   </div>
 </template>
 
@@ -55,25 +62,36 @@ export default {
 </script>
 <style scoped>
 .test-component {
-  margin-top: 3%;
-  height: 1em;
+  border-bottom: 1px white solid;
+  font-family: "Ubuntu", sans-serif;
 }
+
 .eventForm {
-  margin-left: 1.5%;
-  height: 1em;
+  height: 3em;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
 }
-.inputAndDropDown {
-  width: 80%;
+
+.row {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  width: 90%;
   height: 1em;
+  margin: auto;
+  /* border: 1px solid white; */
 }
-.query-variant {
-  width: 10em;
-  height: 40%;
+
+.event-input, .selector-input {
+  display: flex;
+  /* border: 1px lightblue solid; */
+  width: 250px;
+}
+
+select {
+  width: 150px;
+  height: 20px;
   font-size: 12px;
   background-color: #3c3c3c;
   border: 1px solid #656565;
@@ -81,33 +99,35 @@ export default {
   border-radius: 12px;
   outline: none;
 }
-.eventInput {
+
+input {
   background-color: #3c3c3c;
   border: 1px solid #656565;
-  border-radius: 6px;
+  border-radius: 4px;
   color: white;
-  height: 17px;
-  padding-left: 1%;
+  height: 103%;
+  padding-left: 5%;
   outline: none;
-  margin-left: 2%;
-  margin-right: 3%;
-}
-.eventInput:focus {
-  outline: none;
-  border-color: rgb(85, 201, 240);
-}
-.deleteEventButton {
-  margin-top: 2%;
+  width: 150px;
   height: 20px;
-  width: 30%;
-  border: 1px solid #7b7a7a;
-  background-color: #232323;
-  border-radius: 12px;
-  color: #838383;
+  font-size: 12px;
 }
-.deleteEventButton:hover {
+
+span {
+  margin-right: 15px;
+}
+
+.delete {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 5px;
+}
+
+.delete:hover {
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
+  cursor: pointer;
 }
 </style>
