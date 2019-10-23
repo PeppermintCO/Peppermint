@@ -1,6 +1,8 @@
 <template>
   <div class="test-component">
-    <div @click="deleteItem" class='delete'>X</div>
+    <div  class='delete'>
+      <span @click="deleteItem">X</span>
+    </div>
 
     <form action class="query">
       <div class="top-row">
@@ -92,7 +94,7 @@ export default {
 <style scoped>
 
 .test-component {
-  border-bottom: 1px white solid;
+  border-bottom: 1px #7b7a7a solid;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -161,6 +163,10 @@ input {
   font-size: 12px;
 }
 
+input:focus {
+  border-color: rgb(85, 201, 240);
+}
+
 .nameQuery, .matcherQuery {
   margin-right: 15px;
 }
@@ -184,10 +190,9 @@ input {
   margin-top: 5px;
 }
 
-.delete:hover {
+.delete span:hover {
   outline: none;
   color: rgb(85, 201, 240);
-  border-color: rgb(85, 201, 240);
   cursor: pointer;
 }
 </style>
