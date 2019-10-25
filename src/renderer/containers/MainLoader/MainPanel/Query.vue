@@ -13,6 +13,7 @@
             @input="saveTestItem"
             v-model="selectorName"
             class="queryInputBox"
+            role="name-input"
           />
         </div>
         <div class="selectorQuery">
@@ -22,6 +23,7 @@
             @change="saveTestItem"
             v-model="queryVariant"
             class="queryVariant"
+            role="variant-dropdown"
           >
             <option value="getBy">getBy</option>
             <option value="findBy">findBy</option>
@@ -36,7 +38,12 @@
       <div class="bottom-row">
         <div class="typeQueryContainer">
           <p class="typeQuery">Type:</p>
-          <select name="queryType" @change="saveTestItem" v-model="queryType" class="queryType">
+          <select name="queryType"
+            @change="saveTestItem"
+            v-model="queryType"
+            class="queryType"
+            role="type-dropdown"
+          >
             <option value="LabelText">LabelText</option>
             <option value="PlaceholderText">PlaceholderText</option>
             <option value="Text">Text</option>
@@ -49,7 +56,12 @@
         </div>
         <div class="matcher">
           <p class="matcherQuery">Matcher:</p>
-          <input type="text" @input="saveTestItem" v-model="textToMatch" class="selectorInput" />
+          <input type="text"
+            @input="saveTestItem"
+            v-model="textToMatch"
+            class="selectorInput"
+            role="matcher-input"
+          />
         </div>
       </div>
     </form>

@@ -8,7 +8,7 @@
       <div class="row">
         <div class="event-input">
           <span>Event:</span>
-          <input type="text" @input="saveFireEvent" v-model="eventType" class="eventInput" />
+          <input type="text" @input="saveFireEvent" v-model="eventType" class="eventInput" role="event-input"/>
         </div>
 
         <div class="selector-input">
