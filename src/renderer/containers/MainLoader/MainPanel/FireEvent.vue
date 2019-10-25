@@ -32,7 +32,6 @@
         </div>
       </div>
     </form>
-    <!-- <button @click="deleteItem" class="deleteEventButton">Delete Event</button> -->
   </div>
 </template>
 
