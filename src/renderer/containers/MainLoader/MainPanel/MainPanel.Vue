@@ -16,14 +16,14 @@
     <div class="testForms">
       <div class="button addPropsAndTests">
         <button @click="addTest()" class="button addTestButton">Add Test</button>
-        <button class="addProp" @click="addProps()">add Props</button>
+        <button class="addProp" @click="addProps()">Add Props</button>
       </div>
       <div class="props" v-for="(props,indexForProps) in propsList" :key="indexForProps">
-        <div class="propKeyAndValue">
+        <div class="componentName">
           <div>
             Prop Key:
             <input
-              class="addPropsKey"
+              class="inputProps"
               @input="addPropKey(indexForProps)"
               v-model="propKeys[indexForProps]"
             />
@@ -31,12 +31,12 @@
           <div>
             Prop Value:
             <input
-              class="addPropsValue"
+              class="inputProps"
               @input="addPropValue(indexForProps)"
               v-model="propValues[indexForProps]"
             />
           </div>
-          <button class="deleteProp" @click="deleteProps(indexForProps)">x</button>
+          <button class="deleteProp" @click="deleteProps(indexForProps)">X</button>
         </div>
       </div>
       <div class="tests" v-for="(test, index) in tests" :key="index+100">
@@ -183,11 +183,7 @@ export default {
 .props {
   margin-top: 10px;
 }
-.propKeyAndValue {
-  display: flex;
-  justify-content: space-around;
-}
-.addPropsKey {
+.inputProps {
   background-color: #3c3c3c;
   border: 1px solid #656565;
   color: white;
@@ -195,14 +191,7 @@ export default {
   /* padding-left: 1%; */
   outline: none;
 }
-.addPropsValue {
-  background-color: #3c3c3c;
-  border: 1px solid #656565;
-  color: white;
-  height: 100%;
-  /* padding-left: 1%; */
-  outline: none;
-}
+
 .deleteProp {
   outline: none;
   width: 40px;
