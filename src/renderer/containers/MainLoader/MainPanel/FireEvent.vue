@@ -8,16 +8,21 @@
       <div class="row">
         <div class="event-input">
           <span>Event:</span>
-          <input type="text" @input="saveFireEvent" v-model="eventType" class="eventInput" />
+          <input type="text"
+            @input="saveFireEvent"
+            v-model="eventType"
+            class="eventInput"
+            role="event-input"/>
         </div>
 
         <div class="selector-input">
           <span>Selector:</span>
           <select
-            name="query-variant"
+            name="selector-dropdown"
             @change="saveFireEvent"
             v-model="selectorType"
-            class="query-variant"
+            class="selector-dropdown"
+            role="selector-dropdown"
           >
             <option
               v-for="(selector, index) in this.$store.state.testList[testId]['testItems']"
@@ -27,7 +32,6 @@
         </div>
       </div>
     </form>
-    <!-- <button @click="deleteItem" class="deleteEventButton">Delete Event</button> -->
   </div>
 </template>
 

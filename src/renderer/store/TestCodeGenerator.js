@@ -1,8 +1,7 @@
 module.exports = {
   generateTestCode(componentName, testList, propsList) {
     let testFileContent =
-      `import { render, fireEvent, cleanup } from '@testing-library/vue'\n
-       import ${componentName} from  './${componentName}.vue'\n\nafterEach(cleanup)\n\n`;
+      `import { render, fireEvent, cleanup } from '@testing-library/vue'\nimport ${componentName} from  './${componentName}.vue'\n\nafterEach(cleanup)\n\n`;
     let newObj = {}
     propsList.keys.forEach((val, index) => {
       newObj[val] = propsList.values[index];
