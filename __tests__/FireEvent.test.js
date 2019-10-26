@@ -3,7 +3,7 @@ import FireEvent from  '../src/renderer/containers/MainLoader/MainPanel/FireEven
 
 afterEach(cleanup)
 
-test('it should have an Event label', async () => {
+xtest('it should have an Event label', async () => {
 	console.log(FireEvent)
 	const { getByText } = render(FireEvent)
 
