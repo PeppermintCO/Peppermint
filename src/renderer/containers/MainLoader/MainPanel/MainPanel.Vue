@@ -48,7 +48,6 @@
 
 <script>
 import CreateTest from "./CreateTest.vue";
-
 export default {
   name: "MainPanel",
   components: {
@@ -134,7 +133,6 @@ export default {
   font-family: "Ubuntu", sans-serif;
   letter-spacing: 2px;
 }
-
 .componentNameInput {
   margin-left: 20px;
   margin-top: 1%;
@@ -191,7 +189,6 @@ export default {
   /* padding-left: 1%; */
   outline: none;
 }
-
 .deleteProp {
   outline: none;
   width: 40px;
@@ -229,7 +226,6 @@ export default {
   box-shadow: 0 0 10px rgb(18, 18, 18);
   padding: 1%;
 }
-
 .saveCurrentButton {
   border: none;
   border-radius: 30px;
@@ -237,20 +233,16 @@ export default {
   height: 20px;
   align-self: flex-start;
 }
-
 .saveCurrentButton:hover {
   cursor: pointer;
   background-color:  dodgerblue;
   color: black;
 }
-
 .componentInputContainer {
   display: flex;
   width: 70%;
 }
-
 #componentInputTitle {
   width: 70%;
 }
 </style>
-

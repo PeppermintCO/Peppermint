@@ -14,8 +14,10 @@
     "pack": "npm run pack:main && npm run pack:renderer",
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
-    "postinstall": "",
-    "test": "./node_modules/.bin/jest"
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron ./app",
+    "test": "./node_modules/.bin/jest",
+    "dist": "build"
   },
   "build": {
     "productName": "peppermint",
