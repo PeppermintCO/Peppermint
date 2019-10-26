@@ -53,7 +53,7 @@ export default {
   methods: {
     deleteTest(e) {
       e.preventDefault();
-      
+
       this.tests.splice(this.testIndex, 1);
       this.$store.dispatch("deleteTest", this._uid);
     },
