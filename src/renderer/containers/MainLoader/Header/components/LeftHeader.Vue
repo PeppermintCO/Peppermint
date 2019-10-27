@@ -71,18 +71,12 @@ export default {
         const directoryPath = directory[0];
         console.log(directoryPath, "directoryPath");
         this.$store.dispatch("setFilePath", directoryPath);
-        this.$store.dispatch(
-          "createFileTree",
-          generateFileTreeObject(directoryPath)
-        );
+        this.$store.dispatch("createFileTree", generateFileTreeObject(directoryPath));
       }
     },
     refreshProject() {
       console.log("refreshing fileExplorer...");
-      this.$store.dispatch(
-        "createFileTree",
-        generateFileTreeObject(this.$store.getters.getFilePath)
-      );
+      this.$store.dispatch("createFileTree", generateFileTreeObject(this.$store.getters.getFilePath));
     }
   }
 };
@@ -95,12 +89,9 @@ export default {
   align-items: center;
   height: 100%;
   width: 12%;
-  /* border: 1px red solid; */
-  /* border-right: 1px solid #232323; */
 }
 .fileExplorerButton {
   outline: none;
-  border: none;
   background-color: #3c3c3c;
   height: 100%;
   width: 35%;

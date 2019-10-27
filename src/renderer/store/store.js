@@ -10,6 +10,10 @@ export const store = new Vuex.Store({
     url: '',
     showWebsite: false,
     componentName: '',
+    propsList: {
+      keys: [],
+      values: []
+    },
     testList: {},
     fileTree: null,
     filePath: null,
@@ -93,10 +97,7 @@ export const store = new Vuex.Store({
       state.fileContent = payload.fileContent
     },
     generateTestFileContent(state) {
-      console.log('in generateTestFileContent', Object.keys(state.testList).length);
-      // if(Object.keys(state.testList).length === 1) return;
-      state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList);
-      console.log(state.testFileContent);
+      state.testFileContent = TestCodeGenerator.generateTestCode(state.componentName, state.testList, state.propsList);
     },
     saveUrl(state, payload) {
       if (
@@ -105,10 +106,26 @@ export const store = new Vuex.Store({
       ) {
         state.url = "http://" + payload.url;
       }
-      // state.url = payload.url;
     },
     changeShowWebsite(state, payload) {
       state.showWebsite = payload.bool;
+    },
+    addProps(state) {
+      state.propsList.keys.push('');
+      state.propsList.value.push('');
+      console.log(state.propsList);
+    },
+    deleteProps(state, payload) {
+      state.propsList.keys.splice(payload, 1);
+      state.propsList.values.splice(payload, 1);
+    },
+    addKeyToProp(state, payload) {
+      console.log(state.propsList.keys);
+      state.propsList.keys[payload.id] = payload.propKey
+    },
+    addValueToProp(state, payload) {
+      console.log(state.propsList.values);
+      state.propsList.values[payload.id] = payload.propValue;
     }
   },
 
@@ -160,6 +177,18 @@ export const store = new Vuex.Store({
     },
     changeShowWebsite(context, bool) {
       context.commit('changeShowWebsite', { bool });
+    },
+    addProps(context) {
+      context.commit("addProps");
+    },
+    deleteProps(context, id) {
+      context.commit("deleteProps", id)
+    },
+    addKeyToProp(context, data) {
+      context.commit("addKeyToProp", data)
+    },
+    addValueToProp(context, data) {
+      context.commit("addValueToProp", data);
     }
   },
   getters: {
@@ -173,6 +202,7 @@ export const store = new Vuex.Store({
     getFileContent: state => state.fileContent,
     getTestContent: state => state.testFileContent,
     getUrl: state => state.url,
-    getShowWebsite: state => state.showWebsite
+    getShowWebsite: state => state.showWebsitem,
+    getPropsList: state => state.propsList
   }
 })

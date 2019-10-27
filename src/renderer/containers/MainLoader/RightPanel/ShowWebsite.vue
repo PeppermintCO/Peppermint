@@ -32,6 +32,5 @@ export default {
   overflow-x: scroll;
   overflow-y: scroll;
   background: white;
-  /* margin-right: 30px !important; */
 }
 </style>
