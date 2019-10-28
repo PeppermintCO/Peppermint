@@ -112,7 +112,7 @@ export const store = new Vuex.Store({
     },
     addProps(state) {
       state.propsList.keys.push('');
-      state.propsList.value.push('');
+      state.propsList.values.push('');
       console.log(state.propsList);
     },
     deleteProps(state, payload) {

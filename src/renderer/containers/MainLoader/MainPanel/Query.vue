@@ -1,13 +1,7 @@
 <template>
   <div class="test-component">
-    <div class="deleteAndTooltip">
-      <button class="tooltip">
-        i
-        <span class="toolTipText Assertion">Assertion</span>
-      </button>
-      <div class="delete">
-        <span @click="deleteItem">X</span>
-      </div>
+    <div  class='delete'>
+      <span @click="deleteItem">X</span>
     </div>
 
     <form action class="query">
@@ -21,15 +15,9 @@
             class="queryInputBox"
             role="name-input"
           />
-          <button class="tooltip variableTip">
-            i
-            <span class="toolTipText">Variable name for the query</span>
-          </button>
         </div>
         <div class="selectorQuery">
-          <div class="queryTitle">
-            <p class="variantQuery">Variant:</p>
-          </div>
+          <div class="queryTitle"><p class="variantQuery">Variant:</p></div>
           <select
             name="queryVariant"
             @change="saveTestItem"
@@ -44,18 +32,13 @@
             <option value="findAllBy">findAllBy</option>
             <option value="queryAllBy">queryAllBy</option>
           </select>
-          <button class="tooltip variableTip">
-            i
-            <span class="toolTipText">kind of Query</span>
-          </button>
         </div>
       </div>
 
       <div class="bottom-row">
         <div class="typeQueryContainer">
           <p class="typeQuery">Type:</p>
-          <select
-            name="queryType"
+          <select name="queryType"
             @change="saveTestItem"
             v-model="queryType"
             class="queryType"
@@ -70,24 +53,15 @@
             <option value="Role">Role</option>
             <option value="TestId">TestId</option>
           </select>
-          <button class="tooltip variableTip">
-            i
-            <span class="toolTipText">Type to query for</span>
-          </button>
         </div>
         <div class="matcher">
           <p class="matcherQuery">Matcher:</p>
-          <input
-            type="text"
+          <input type="text"
             @input="saveTestItem"
             v-model="textToMatch"
             class="selectorInput"
             role="matcher-input"
           />
-          <button class="tooltip variableTip">
-            i
-            <span class="toolTipText">Text querying for</span>
-          </button>
         </div>
       </div>
     </form>
@@ -130,13 +104,13 @@ export default {
 };
 </script>
 <style scoped>
+
 .test-component {
   border-bottom: 1px #7b7a7a solid;
   font-family: "Ubuntu", sans-serif;
 }
 
-.top-row,
-.bottom-row {
+.top-row, .bottom-row {
   /* border: 1px white solid; */
   display: flex;
   justify-content: space-around;
@@ -205,13 +179,11 @@ input:focus {
   border-color: rgb(85, 201, 240);
 }
 
-.nameQuery,
-.matcherQuery {
+.nameQuery, .matcherQuery {
   margin-right: 15px;
 }
 
-.variantQuery,
-.typeQuery {
+.variantQuery, .typeQuery {
   margin-right: 20px;
 }
 
@@ -234,14 +206,5 @@ input:focus {
   outline: none;
   color: rgb(85, 201, 240);
   cursor: pointer;
-}
-.deleteAndTooltip {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-}
-.variableTip {
-  margin-left: 8px;
-  margin-top: 3px;
 }
 </style>

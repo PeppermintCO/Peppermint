@@ -1,6 +1,6 @@
 <template>
   <div class="test-component">
-    <div class="delete">
+    <div class='delete'>
       <span @click="deleteItem">X</span>
     </div>
 
@@ -8,17 +8,11 @@
       <div class="row">
         <div class="event-input">
           <span>Event:</span>
-          <input
-            type="text"
+          <input type="text"
             @input="saveFireEvent"
             v-model="eventType"
             class="eventInput"
-            role="event-input"
-          />
-          <button class="tooltip variableTip">
-            i
-            <span class="toolTipText">Name of event</span>
-          </button>
+            role="event-input"/>
         </div>
 
         <div class="selector-input">
@@ -35,10 +29,6 @@
               :key="index"
             >{{selector['selectorName']}}</option>
           </select>
-          <button class="tooltip variableTip">
-            i
-            <span class="toolTipText">Name of query to target</span>
-          </button>
         </div>
       </div>
     </form>
@@ -99,8 +89,7 @@ export default {
   /* border: 1px solid white; */
 }
 
-.event-input,
-.selector-input {
+.event-input, .selector-input {
   display: flex;
   /* border: 1px lightblue solid; */
   width: 250px;
@@ -150,9 +139,5 @@ input:focus {
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
   cursor: pointer;
-}
-.variableTip {
-  margin-left: 8px;
-  margin-top: 3px;
 }
 </style>
