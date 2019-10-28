@@ -1,16 +1,13 @@
 <template>
   <div class="right-header">
     <button class="show-file-content button" @click="displayFileContent">
-      <img src="../../../../assets/images/code-display.png" title="Display File Content">
-      <!-- <i class="fas fa-code fa-2x"></i> -->
+      <i class="fas fa-code fa-2x"></i>
     </button>
     <button class="show-test-content button" @click="displayTestFile">
-      <img src="../../../../assets/images/current-test-code.png" title="Display Current Test">
-      <!-- <i class="fas fa-vial fa-2x"></i> -->
+      <i class="fas fa-vial fa-2x"></i>
     </button>
     <button class="showWebView button" @click="viewWebsite">
-      <img src="../../../../assets/images/rendered-proj.png" title="View Website">
-      <!-- <i class="fab fa-chrome fa-2x"></i> -->
+      <i class="fab fa-chrome fa-2x"></i>
     </button>
     <input
       name="url"
@@ -21,8 +18,7 @@
       class="urlInput"
     />
     <button class="export-test-file button" @click="exportTest">
-      <img src="../../../../assets/images/export.png" title="Download Test File">
-      <!-- <i class="fas fa-file-download fa-2x"></i> -->
+      <i class="fas fa-file-download fa-2x"></i>
     </button>
   </div>
 </template>
