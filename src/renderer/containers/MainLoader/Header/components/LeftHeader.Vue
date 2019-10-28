@@ -1,12 +1,10 @@
 <template>
   <div class="left-header">
     <button class="button fileExplorerButton" @click="$store.dispatch('toggleFileExplorer')">
-      <img src="../../../../assets/images/file-explorer.png" title="Toggle file view">
-      <!-- <i class="far fa-file fa-2x"></i> -->
+      <i class="far fa-file fa-2x"></i>
     </button>
     <button class="button openProjectButton" @click="openProject">
-      <img src="../../../../assets/images/folder.png" title="Open project directory">
-      <!-- <i class="far fa-folder-open fa-2x"></i> -->
+      <i class="far fa-folder-open fa-2x"></i>
     </button>
   </div>
 </template>
@@ -32,7 +30,7 @@ function generateFileTreeObject(directoryPath) {
     //get the stats/data of current file
     const fileStats = electronFs.statSync(file.filePath);
     //check if its a directory , .git, node_modules
-    if (fileName !== ".git" && fileName !== "node_modules" && fileName !== ".DS_Store") {
+    if (fileName !== ".git" && fileName !== "node_modules") {
       //if directory
       if (fileStats.isDirectory()) {
         //make recursive call with current fileObject.filePath and save to fileObject.files
