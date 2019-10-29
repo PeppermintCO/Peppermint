@@ -15,7 +15,7 @@
             class="eventInput"
             role="event-input"
           />
-          <button class="tooltip variableTip">
+          <button class="tooltip variableTip" :disabled="true">
             i
             <span class="toolTipText">Name of event</span>
           </button>
@@ -35,7 +35,7 @@
               :key="index"
             >{{selector['selectorName']}}</option>
           </select>
-          <button class="tooltip variableTip">
+          <button class="tooltip variableTip" :disabled="true">
             i
             <span class="toolTipText">Name of query to target</span>
           </button>

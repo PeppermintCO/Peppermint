@@ -1,7 +1,7 @@
 <template>
   <div class="test-component">
     <div class="deleteAndTooltip">
-      <button class="tooltip">
+      <button class="tooltip" :disabled="true">
         i
         <span class="toolTipText Assertion">Assertion</span>
       </button>
@@ -21,7 +21,7 @@
             class="queryInputBox"
             role="name-input"
           />
-          <button class="tooltip variableTip">
+          <button class="tooltip variableTip" :disabled="true">
             i
             <span class="toolTipText">Variable name for the query</span>
           </button>
@@ -44,7 +44,7 @@
             <option value="findAllBy">findAllBy</option>
             <option value="queryAllBy">queryAllBy</option>
           </select>
-          <button class="tooltip variableTip">
+          <button class="tooltip variableTip" :disabled="true">
             i
             <span class="toolTipText">kind of Query</span>
           </button>
@@ -70,7 +70,7 @@
             <option value="Role">Role</option>
             <option value="TestId">TestId</option>
           </select>
-          <button class="tooltip variableTip">
+          <button class="tooltip variableTip" :disabled="true">
             i
             <span class="toolTipText">Type to query for</span>
           </button>
@@ -84,7 +84,7 @@
             class="selectorInput"
             role="matcher-input"
           />
-          <button class="tooltip variableTip">
+          <button class="tooltip variableTip" :disabled="true">
             i
             <span class="toolTipText">Text querying for</span>
           </button>
@@ -125,6 +125,9 @@ export default {
         testId: this.testId,
         testItemId: this._uid
       });
+    },
+    toolTipDefault(event) {
+      event.preventDefault;
     }
   }
 };

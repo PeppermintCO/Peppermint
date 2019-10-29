@@ -86,18 +86,15 @@ export default {
 
   width: 100%;
   height: 100%;
-
 }
 
 .cm-s-base16-light {
   background-color: #1b1c1b !important;
-
 }
 
 .CodeMirror {
   height: 100%;
   width: 100%;
-
 }
 
 /* .CodeMirror-vscrollbar div, */
@@ -106,11 +103,10 @@ export default {
   background-color: #1b1c1b !important;
   height: 100%;
   width: 100%;
-
 }
 .CodeMirror-code {
   color: #0d983b;
-
+  font-size: 16px;
 }
 
 .CodeMirror-vscrollbar {
@@ -121,7 +117,6 @@ export default {
   display: flex;
   height: 100%;
   width: 100%;
-
 }
 .CodeMirror-sizer {
   overflow: scroll !important;
