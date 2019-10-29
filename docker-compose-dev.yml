@@ -1,0 +1,19 @@
+version: "1"
+services: 
+  dev:
+    image: greyJoyDevelopers/peppermint-dev
+    container_name: peppermjint-dev-hot
+    ports: 
+      - '9080:9080'
+    volumes: 
+      - ./:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    command: npm run dev
+    
+volumes:
+  node_modules:
+
+
+
+
+        
