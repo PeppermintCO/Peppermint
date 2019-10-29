@@ -25,7 +25,7 @@
       <div class="props" v-for="(props,indexForProps) in propsList" :key="indexForProps">
         <div class="componentName">
           <div>
-            Prop Key:
+            Key:
             <input
               class="inputProps"
               @input="addPropKey(indexForProps)"
@@ -37,7 +37,7 @@
             </button>
           </div>
           <div>
-            Prop Value:
+            Value:
             <input
               class="inputProps"
               @input="addPropValue(indexForProps)"
@@ -120,7 +120,13 @@ export default {
         id: id,
         propValue: this.propValues[id]
       });
+    },
+    toolTipDefault(event) {
+      event.preventDefault;
     }
+  },
+  updated() {
+    console.log("hi");
   }
 };
 </script>
