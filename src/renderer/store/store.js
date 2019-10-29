@@ -12,7 +12,7 @@ export const store = new Vuex.Store({
     componentName: '',
     propsList: {
       keys: [],
-      values: []
+      values: [],
     },
     testList: {},
     fileTree: null,
@@ -111,8 +111,9 @@ export const store = new Vuex.Store({
       state.showWebsite = payload.bool;
     },
     addProps(state) {
-      state.propsList.keys.push('');
-      state.propsList.value.push('');
+      console.log(state.propsList.keys);
+      // state.propsList.keys.push('');
+      state.propsList.values.push('');
       console.log(state.propsList);
     },
     deleteProps(state, payload) {
