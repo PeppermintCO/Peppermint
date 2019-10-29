@@ -66,7 +66,6 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^7.1.4",
-    "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
     "babili-webpack-plugin": "^0.1.2",
     "cfonts": "^2.1.2",
