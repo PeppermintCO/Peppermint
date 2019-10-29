@@ -1,4 +1,4 @@
-# peppermint
+# Peppermint
 
 Peppermint allows developers to easily create functional Vue tests without having to write any code. It dynamically converts user inputs into executable test code by using DOM query selectors provided by the vue-testing-library.
 
@@ -45,13 +45,16 @@ In your package.json file, add the following "scripts" key and "jest" key as wel
 npm run test
 ```
 
-#### Build Setup
+#### To Run Dev Version
+1. Clone repo.
 
+2. Install dependencies
 ```
-# install dependencies
 npm install
+```
 
-# serve with hot reload at localhost:9080
+3. Serve with hot reload at localhost:9080
+```
 npm run dev
 ```
 
