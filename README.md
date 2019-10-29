@@ -19,7 +19,6 @@ In your package.json file, add the following "scripts" key and "jest" key as wel
   ...
   "scripts": {
     "test": "./node_modules/.bin/jest",
-    ...
   },
   "jest": {
     "moduleFileExtensions": [
@@ -40,8 +39,8 @@ In your package.json file, add the following "scripts" key and "jest" key as wel
 
 1. On the initial screen, enter the URL of your project and load your Vue application to start creating tests.
 2. Utilize our input fields, drop-down options, and tooltips features to easily create query assertion and event test statements.
-3. Refer to the browser view of your app that is displayed on the right to quickly identify values for your selectors and use the file directory to open up a code editor view to easily refer to your codebase.
-4. Peppermint will then convert user input to dynamically generate a test file that will be saved inside a tests folder. To run tests:
+3. Refer to the browser view of your app displayed on the right panel to quickly identify values for your selectors and use the file directory to open up the code editor to easily refer to your codebase.
+4. Peppermint will then convert user input into dynamically generated test files that will be saved inside a __tests__ folder. To run tests:
 ```
 npm run test
 ```
@@ -54,7 +53,6 @@ npm install
 
 # serve with hot reload at localhost:9080
 npm run dev
-
 ```
 
 ---
