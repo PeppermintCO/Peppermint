@@ -17,7 +17,7 @@ module.exports = {
     }
     let stringified = objToString(newObj)
     console.log(stringified);
-    testFileContent += `updateProps({${stringified}})\n\n`
+    testFileContent += `props({${stringified}})\n\n`
 
     for (let test in testList) {
       let currentTest = testList[test];
