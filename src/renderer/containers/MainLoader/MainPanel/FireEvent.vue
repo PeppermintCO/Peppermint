@@ -63,6 +63,7 @@ export default {
         testId: this.testId,
         testItemId: this._uid
       });
+      console.log(this.$store.state.testList);
     },
     deleteItem(e) {
       e.preventDefault();

@@ -9,9 +9,8 @@ function renderVuexComponent(customStore) {
 	return render(MainPanel, {store: {...store, ...customStore}});
 }
 
-test('has component name', async () => {
+xtest('has component name', async () => {
 	const { getByText } = renderVuexComponent();
 
 	const componentName = getByText('Component Name')
 })
-
