@@ -10,6 +10,10 @@
           v-model="componentName"
           @input="saveComponentName"
         />
+        <button class="tooltip tipComponent">
+          i
+          <span class="toolTipText">Name of the component to test</span>
+        </button>
       </div>
       <button class="button saveCurrentButton" @click="generateTestCode">Display Test</button>
     </div>
@@ -21,20 +25,28 @@
       <div class="props" v-for="(props,indexForProps) in propsList" :key="indexForProps">
         <div class="componentName">
           <div>
-            Prop Key:
+            Key:
             <input
               class="inputProps"
               @input="addPropKey(indexForProps)"
               v-model="propKeys[indexForProps]"
             />
+            <button class="tooltip">
+              i
+              <span class="toolTipText">Name of the prop to change</span>
+            </button>
           </div>
           <div>
-            Prop Value:
+            Value:
             <input
               class="inputProps"
               @input="addPropValue(indexForProps)"
               v-model="propValues[indexForProps]"
             />
+            <button class="tooltip variableTip">
+              i
+              <span class="toolTipText">Value of the prop to change to</span>
+            </button>
           </div>
           <button class="deleteProp" @click="deleteProps(indexForProps)">X</button>
         </div>
@@ -108,7 +120,13 @@ export default {
         id: id,
         propValue: this.propValues[id]
       });
+    },
+    toolTipDefault(event) {
+      event.preventDefault;
     }
+  },
+  updated() {
+    console.log("hi");
   }
 };
 </script>
@@ -136,8 +154,8 @@ export default {
 }
 
 .componentNameInput {
-  margin-left: 20px;
-  margin-top: 1%;
+  /* margin-left: 40px; */
+  /* margin-top: 1%; */
   width: 70%;
   height: 38%;
   align-self: center;
@@ -240,7 +258,7 @@ export default {
 
 .saveCurrentButton:hover {
   cursor: pointer;
-  background-color:  dodgerblue;
+  background-color: dodgerblue;
   color: black;
 }
 
@@ -251,6 +269,58 @@ export default {
 
 #componentInputTitle {
   width: 70%;
+}
+/* tooltips */
+.tipComponent {
+  margin-left: 10px;
+  margin-top: 2px;
+  outline: none;
+  width: 20px !important;
+}
+.tooltip {
+  height: 15px;
+  width: 15px;
+  border: 1px solid rgb(92, 92, 92);
+  border-radius: 50%;
+  background: transparent;
+  color: rgb(92, 92, 92);
+  outline: none;
+  position: relative;
+  /* text-align: center; */
+}
+.tooltip .toolTipText {
+  visibility: hidden;
+  position: absolute;
+  width: 180px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 2px;
+  border-radius: 5px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.tooltip:hover .toolTipText {
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 5px;
+}
+.tooltip .toolTipText {
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+.tooltip .toolTipText:after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 </style>
 
