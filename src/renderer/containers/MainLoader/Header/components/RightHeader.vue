@@ -69,7 +69,7 @@ export default {
       const directoryName = "__tests__";
       const directoryPath = `${filePath}/${directoryName}`;
       const fileContent = this.$store.getters.getTestContent;
-      const testFilePath = `${filePath}/${directoryName}/${componentName}.js`;
+      const testFilePath = `${filePath}/${directoryName}/${componentName}.test.js`;
 
       if (electronFs.existsSync(directoryPath)) {
         createFile(testFilePath, fileContent);
