@@ -1,0 +1,14 @@
+version: '1'
+services:
+  test:
+    image: greyJoyDevelopers/peppermint-dev
+    container_name: peppermint-test
+    ports:
+      - '9080'
+    volumes:
+      - ./:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    command: npm run test
+volumes:
+  node_modules:
+  test-db-volume:
