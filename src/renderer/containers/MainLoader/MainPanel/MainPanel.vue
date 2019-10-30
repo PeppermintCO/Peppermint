@@ -226,7 +226,7 @@ export default {
 }
 
 .prop-value {
-  margin-right: -70px;
+  margin-right: -90px;
 }
 
 .inputProps {
@@ -248,6 +248,7 @@ export default {
   color: #838383;
   font-size: 15px;
   margin-right: -30px;
+  margin-top: -50px;
 }
 
 .deleteProp:hover {
