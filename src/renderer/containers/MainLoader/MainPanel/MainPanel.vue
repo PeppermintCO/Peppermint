@@ -246,8 +246,6 @@ export default {
   width: 40px;
   height: 20px;
   background-color: #232323;
-  /* border: 1px solid #7b7a7a; */
-  /* border-radius: 12px; */
   color: white;
   font-size: 15px;
   margin-right: -50px;
