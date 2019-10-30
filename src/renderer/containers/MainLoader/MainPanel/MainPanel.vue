@@ -12,7 +12,7 @@
         />
         <button class="tooltip tipComponent">
           i
-          <span class="toolTipText">Name of the component to test</span>
+          <span class="toolTipText">Name of component to test</span>
         </button>
       </div>
       <button class="button saveCurrentButton" @click="generateTestCode">Display Test</button>
@@ -33,10 +33,10 @@
             />
             <button class="tooltip">
               i
-              <span class="toolTipText">Name of the prop to change</span>
+              <span class="toolTipText">Name of prop</span>
             </button>
           </div>
-          <div>
+          <div class='prop-value'>
             Value:
             <input
               class="inputProps"
@@ -45,10 +45,10 @@
             />
             <button class="tooltip variableTip">
               i
-              <span class="toolTipText">Value of the prop to change to</span>
+              <span class="toolTipText">Value of prop</span>
             </button>
           </div>
-          <button class="deleteProp" @click="deleteProps(indexForProps)">X</button>
+          <span class="deleteProp" @click="deleteProps(indexForProps)">X</span>
         </div>
       </div>
       <div class="tests" v-for="(test, index) in tests" :key="index+100">
@@ -200,23 +200,32 @@ export default {
 }
 .props {
   margin-top: 10px;
+  padding-left: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .inputProps {
   background-color: #3c3c3c;
   border: 1px solid #656565;
   color: white;
-  height: 100%;
+  width: 150px;
+  height: 20px;
+  border-radius: 4px;
   /* padding-left: 1%; */
   outline: none;
+  margin-left: 10px;
+}
+
+.prop-value {
+  padding-left: 50px;
 }
 
 .deleteProp {
   outline: none;
   width: 40px;
   height: 20px;
-  border: 1px solid #7b7a7a;
   background-color: #232323;
-  border-radius: 12px;
   color: #838383;
   font-size: 15px;
 }
@@ -323,4 +332,3 @@ export default {
   border-color: #555 transparent transparent transparent;
 }
 </style>
-

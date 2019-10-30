@@ -17,7 +17,7 @@
           />
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">Name of event</span>
+            <span class="toolTipText">Event type</span>
           </button>
         </div>
 
@@ -37,7 +37,7 @@
           </select>
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">Name of query to target</span>
+            <span class="toolTipText">Name of selector to target</span>
           </button>
         </div>
       </div>
