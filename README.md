@@ -38,6 +38,7 @@ In your package.json file, add the following "scripts" key and "jest" key as wel
 ## How it Works
 
 1. On the initial screen, enter the URL of your project and load your Vue application to start creating tests.
+![Landing Page](./assets/images/peppermint-landing-page)
 2. Utilize our input fields, drop-down options, and tooltips features to easily create query assertion and event test statements.
 3. Refer to the browser view of your app displayed on the right panel to quickly identify values for your selectors and use the file directory to open up the code editor to easily refer to your codebase.
 4. Peppermint will then convert user input into dynamically generated test files that will be saved inside a __tests__ folder. To run tests:
