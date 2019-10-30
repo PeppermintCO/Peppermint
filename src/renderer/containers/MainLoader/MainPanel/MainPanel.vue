@@ -48,7 +48,8 @@
               <span class="toolTipText">Value of the prop to change to</span>
             </button>
           </div>
-          <button class="deleteProp" @click="deleteProps(indexForProps)">X</button>
+          <span class="deleteProp" @click="deleteProps(indexForProps)">X</span>
+          <!-- <button class="deleteProp" @click="deleteProps(indexForProps)">X</button> -->
         </div>
       </div>
       <div class="tests" v-for="(test, index) in tests" :key="index+100">
@@ -206,6 +207,7 @@ export default {
   border: 1px solid #656565;
   color: white;
   height: 100%;
+  border-radius: 4px;
   /* padding-left: 1%; */
   outline: none;
 }
@@ -214,13 +216,14 @@ export default {
   outline: none;
   width: 40px;
   height: 20px;
-  border: 1px solid #7b7a7a;
   background-color: #232323;
-  border-radius: 12px;
-  color: #838383;
+  /* border: 1px solid #7b7a7a; */
+  /* border-radius: 12px; */
+  color: white;
   font-size: 15px;
 }
 .deleteProp:hover {
+  cursor: pointer;
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
