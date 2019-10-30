@@ -90,6 +90,7 @@ export default {
       console.log(this.$store.getters.getUrl);
     },
     viewWebsite() {
+      console.log('hi')
       this.$store.dispatch("changeShowWebsite", true);
       this.$eventHub.$emit("website-content-set");
     }

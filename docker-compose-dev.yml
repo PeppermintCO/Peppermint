@@ -2,7 +2,7 @@ version: "1"
 services: 
   dev:
     image: greyJoyDevelopers/peppermint-dev
-    container_name: peppermjint-dev-hot
+    container_name: peppermint-dev-hot
     ports: 
       - '9080:9080'
     volumes: 
