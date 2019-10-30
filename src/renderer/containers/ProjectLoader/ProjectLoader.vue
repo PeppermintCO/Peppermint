@@ -2,7 +2,7 @@
   <div class="projectLoader">
     <div class="projectLoader-header">
       <div class="projectLoader-title">
-        <img src="../../../../build/icons/pepperming-logo.png">
+        <img src="../../assets/images/peppermint-logo.png">
         <h1 class="projectLoaderH1">Peppermint</h1>
       </div>
     </div>
