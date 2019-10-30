@@ -1,7 +1,10 @@
 <template>
   <div class="projectLoader">
     <div class="projectLoader-header">
-      <h1 class="projectLoaderH1">Peppermint</h1>
+      <div class="projectLoader-title">
+        <img src="../../assets/images/peppermint-logo.png">
+        <h1 class="projectLoaderH1">Peppermint</h1>
+      </div>
     </div>
     <div class="projectLoader-main">
       <div class="main-left">
@@ -43,7 +46,7 @@ function generateFileTreeObject(directoryPath) {
     //get the stats/data of current file
     const fileStats = electronFs.statSync(file.filePath);
     //check if its a directory , .git, node_modules
-    if (fileName !== ".git" && fileName !== "node_modules") {
+    if (fileName !== ".git" && fileName !== "node_modules" && fileName !== ".DS_Store") {
       //if directory
       if (fileStats.isDirectory()) {
         //make recursive call with current fileObject.filePath and save to fileObject.files
@@ -113,10 +116,14 @@ export default {
   height: 50%;
 }
 
-.projectLoader-header h1 {
+.projectLoader-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   font-family: "Ubuntu", sans-serif;
   letter-spacing: 2.5px;
   margin-bottom: 20px;
+  width: 35%;
 }
 
 .projectLoader-main {
@@ -189,5 +196,9 @@ button {
   padding-left: 1rem;
   font-size: 12px;
   color: grey;
+}
+
+img {
+  height: 80px;
 }
 </style>

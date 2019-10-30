@@ -12,7 +12,7 @@
         />
         <button class="tooltip tipComponent">
           i
-          <span class="toolTipText">Name of component to test</span>
+          <span class="toolTipText">Name of the component to test</span>
         </button>
       </div>
       <button class="button saveCurrentButton" @click="generateTestCode">Display Test</button>
@@ -33,7 +33,7 @@
             />
             <button class="tooltip">
               i
-              <span class="toolTipText">Name of prop</span>
+              <span class="toolTipText">Name of the prop to change</span>
             </button>
           </div>
           <div class="prop-value">
@@ -45,10 +45,11 @@
             />
             <button class="tooltip variableTip">
               i
-              <span class="toolTipText">Value of prop</span>
+              <span class="toolTipText">Value of the prop to change to</span>
             </button>
           </div>
           <span class="deleteProp" @click="deleteProps(indexForProps)">X</span>
+          <!-- <button class="deleteProp" @click="deleteProps(indexForProps)">X</button> -->
         </div>
       </div>
       <div class="tests" v-for="(test, index) in tests" :key="index+100">
@@ -245,13 +246,16 @@ export default {
   width: 40px;
   height: 20px;
   background-color: #232323;
-  color: #838383;
+  /* border: 1px solid #7b7a7a; */
+  /* border-radius: 12px; */
+  color: white;
   font-size: 15px;
-  margin-right: -30px;
-  margin-top: -50px;
+  margin-right: -50px;
+  margin-top: -40px;
 }
 
 .deleteProp:hover {
+  cursor: pointer;
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
