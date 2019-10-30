@@ -150,12 +150,9 @@ export default {
   border-bottom: 1px solid #3c3c3c;
   height: 12%;
   font-family: "Ubuntu", sans-serif;
-  letter-spacing: 2px;
 }
 
 .componentNameInput {
-  /* margin-left: 40px; */
-  /* margin-top: 1%; */
   width: 70%;
   height: 38%;
   align-self: center;
@@ -212,7 +209,6 @@ export default {
   width: 150px;
   height: 20px;
   border-radius: 4px;
-  /* padding-left: 1%; */
   outline: none;
   margin-left: 10px;
 }
