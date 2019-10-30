@@ -2,8 +2,8 @@
   <div class="projectLoader">
     <div class="projectLoader-header">
       <div class="projectLoader-title">
-        <h1 class="projectLoaderH1">Peppermint</h1>
         <img src="../../../../build/icons/pepperming-logo.png">
+        <h1 class="projectLoaderH1">Peppermint</h1>
       </div>
     </div>
     <div class="projectLoader-main">
@@ -46,7 +46,7 @@ function generateFileTreeObject(directoryPath) {
     //get the stats/data of current file
     const fileStats = electronFs.statSync(file.filePath);
     //check if its a directory , .git, node_modules
-    if (fileName !== ".git" && fileName !== "node_modules") {
+    if (fileName !== ".git" && fileName !== "node_modules" && fileName !== ".DS_Store") {
       //if directory
       if (fileStats.isDirectory()) {
         //make recursive call with current fileObject.filePath and save to fileObject.files
