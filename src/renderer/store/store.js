@@ -203,7 +203,7 @@ export const store = new Vuex.Store({
     getFileContent: state => state.fileContent,
     getTestContent: state => state.testFileContent,
     getUrl: state => state.url,
-    getShowWebsite: state => state.showWebsitem,
+    getShowWebsite: state => state.showWebsite,
     getPropsList: state => state.propsList
   }
 })
