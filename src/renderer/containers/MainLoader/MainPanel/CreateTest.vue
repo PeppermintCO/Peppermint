@@ -94,7 +94,6 @@ export default {
 }
 .testNameTitle {
   font-family: "Ubuntu", sans-serif;
-  letter-spacing: 1.7px;
   font-size: 15px;
 }
 .inputForm {

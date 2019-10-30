@@ -23,8 +23,8 @@
         <button class="addProp" @click="addProps()">Add Props</button>
       </div>
       <div class="props" v-for="(props,indexForProps) in propsList" :key="indexForProps">
-        <div class="componentName">
-          <div>
+        <div class="prop-key-val">
+          <div class="prop-key">
             Key:
             <input
               class="inputProps"
@@ -36,7 +36,7 @@
               <span class="toolTipText">Name of the prop to change</span>
             </button>
           </div>
-          <div>
+          <div class="prop-value">
             Value:
             <input
               class="inputProps"
@@ -143,6 +143,7 @@ export default {
   flex-direction: column;
   text-align: center;
 }
+
 .componentName {
   display: flex;
   justify-content: space-between;
@@ -151,12 +152,9 @@ export default {
   border-bottom: 1px solid #3c3c3c;
   height: 12%;
   font-family: "Ubuntu", sans-serif;
-  letter-spacing: 2px;
 }
 
 .componentNameInput {
-  /* margin-left: 40px; */
-  /* margin-top: 1%; */
   width: 70%;
   height: 38%;
   align-self: center;
@@ -167,15 +165,18 @@ export default {
   color: white;
   font-size: 13px;
 }
+
 .componentNameInput:focus {
   outline: none !important;
   border-color: rgb(85, 201, 240);
 }
+
 .testForms {
   overflow: scroll;
   height: 94%;
   padding: 2%;
 }
+
 .addPropsAndTests {
   align-self: flex-start;
   height: 30px;
@@ -184,6 +185,7 @@ export default {
   justify-content: space-between;
   background-color: #232323;
 }
+
 .addProp {
   outline: none;
   min-height: 30px;
@@ -194,22 +196,49 @@ export default {
   border-radius: 12px;
   color: #838383;
 }
+
 .addProp:hover {
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
 }
+
 .props {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+
+.prop-key-val {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2%;
+  border-bottom: 1px solid #3c3c3c;
+  height: 12%;
+  font-family: "Ubuntu", sans-serif;
+  width: 100%;
+  padding-right: 0px;
+}
+
+.prop-key {
+  margin-right: -50px;
+}
+
+.prop-value {
+  margin-right: -90px;
+}
+
 .inputProps {
   background-color: #3c3c3c;
   border: 1px solid #656565;
   color: white;
-  height: 100%;
+  width: 150px;
+  height: 20px;
   border-radius: 4px;
-  /* padding-left: 1%; */
   outline: none;
+  margin-left: 10px;
 }
 
 .deleteProp {
@@ -221,13 +250,17 @@ export default {
   /* border-radius: 12px; */
   color: white;
   font-size: 15px;
+  margin-right: -50px;
+  margin-top: -40px;
 }
+
 .deleteProp:hover {
   cursor: pointer;
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
 }
+
 .addTestButton {
   outline: none;
   min-height: 30px;
@@ -238,11 +271,13 @@ export default {
   border-radius: 12px;
   color: #838383;
 }
+
 .addTestButton:hover {
   outline: none;
   color: rgb(85, 201, 240);
   border-color: rgb(85, 201, 240);
 }
+
 .tests {
   margin-top: 3%;
   border: 1px solid rgb(41, 41, 41);
@@ -280,6 +315,7 @@ export default {
   outline: none;
   width: 20px !important;
 }
+
 .tooltip {
   height: 15px;
   width: 15px;
@@ -289,8 +325,9 @@ export default {
   color: rgb(92, 92, 92);
   outline: none;
   position: relative;
-  /* text-align: center; */
+  margin-left: 5px;
 }
+
 .tooltip .toolTipText {
   visibility: hidden;
   position: absolute;
@@ -304,17 +341,20 @@ export default {
   opacity: 0;
   transition: opacity 0.6s;
 }
+
 .tooltip:hover .toolTipText {
   visibility: visible;
   opacity: 1;
   margin-bottom: 5px;
 }
+
 .tooltip .toolTipText {
   width: 120px;
   bottom: 100%;
   left: 50%;
   margin-left: -60px;
 }
+
 .tooltip .toolTipText:after {
   content: " ";
   position: absolute;
@@ -326,4 +366,3 @@ export default {
   border-color: #555 transparent transparent transparent;
 }
 </style>
-
