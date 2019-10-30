@@ -33,7 +33,7 @@
             />
             <button class="tooltip">
               i
-              <span class="toolTipText">Name of the prop to change</span>
+              <span class="toolTipText">Name of prop</span>
             </button>
           </div>
           <div>
@@ -45,7 +45,7 @@
             />
             <button class="tooltip variableTip">
               i
-              <span class="toolTipText">Value of the prop to change to</span>
+              <span class="toolTipText">Value of prop</span>
             </button>
           </div>
           <span class="deleteProp" @click="deleteProps(indexForProps)">X</span>
