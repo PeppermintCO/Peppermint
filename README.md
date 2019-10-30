@@ -1,4 +1,4 @@
-# Peppermint ![logo](https://github.com/marzily/Peppermint/blob/readme/assets/images/peppermint-logo-1.png)
+# Peppermint
 
 Peppermint allows developers to easily create functional Vue tests without having to write any code. It dynamically converts user inputs into executable test code by using DOM query selectors provided by the vue-testing-library.
 
@@ -44,7 +44,6 @@ In your package.json file, add the following "scripts" key and "jest" key as wel
 3. Refer to the browser view of your app displayed on the right panel to quickly identify values for your selectors and use the file directory to open up the code editor to easily refer to your codebase.
 ![Peppermint with browser](https://github.com/marzily/Peppermint/blob/readme/assets/images/peppermint-w-browser.png)
 4. Peppermint will then convert user input into dynamically generated test files that will be saved inside a __tests__ folder. To run tests:
-![Test Code](https://github.com/marzily/Peppermint/blob/readme/assets/images/test-code.png)
 ```
 npm run test
 ```
