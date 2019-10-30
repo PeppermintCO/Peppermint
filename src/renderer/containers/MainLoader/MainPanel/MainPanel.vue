@@ -36,7 +36,7 @@
               <span class="toolTipText">Name of prop</span>
             </button>
           </div>
-          <div>
+          <div class='prop-value'>
             Value:
             <input
               class="inputProps"
@@ -200,14 +200,25 @@ export default {
 }
 .props {
   margin-top: 10px;
+  padding-left: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .inputProps {
   background-color: #3c3c3c;
   border: 1px solid #656565;
   color: white;
-  height: 100%;
+  width: 150px;
+  height: 20px;
+  border-radius: 4px;
   /* padding-left: 1%; */
   outline: none;
+  margin-left: 10px;
+}
+
+.prop-value {
+  padding-left: 50px;
 }
 
 .deleteProp {

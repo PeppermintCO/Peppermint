@@ -1,13 +1,7 @@
 <template>
   <div class="test-component">
-    <div class="deleteAndTooltip">
-      <button class="tooltip" :disabled="true">
-        i
-        <span class="toolTipText Assertion">Assertion</span>
-      </button>
-      <div class="delete">
-        <span @click="deleteItem">X</span>
-      </div>
+    <div class="delete">
+      <span @click="deleteItem">X</span>
     </div>
 
     <form action class="query">
@@ -23,7 +17,7 @@
           />
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">Variable name for the query</span>
+            <span class="toolTipText">Variable name to save DOM element to</span>
           </button>
         </div>
         <div class="selectorQuery">
@@ -46,7 +40,7 @@
           </select>
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">kind of Query</span>
+            <span class="toolTipText">Search variant for selecting DOM element</span>
           </button>
         </div>
       </div>
@@ -72,7 +66,7 @@
           </select>
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">Type to query for</span>
+            <span class="toolTipText">Search type for selecting DOM element</span>
           </button>
         </div>
         <div class="matcher">
@@ -86,7 +80,7 @@
           />
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">Text querying for</span>
+            <span class="toolTipText">Text to match for query</span>
           </button>
         </div>
       </div>
@@ -238,11 +232,7 @@ input:focus {
   color: rgb(85, 201, 240);
   cursor: pointer;
 }
-.deleteAndTooltip {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-}
+
 .variableTip {
   margin-left: 8px;
   margin-top: 3px;
