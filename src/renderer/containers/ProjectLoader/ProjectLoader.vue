@@ -1,7 +1,10 @@
 <template>
   <div class="projectLoader">
     <div class="projectLoader-header">
-      <h1 class="projectLoaderH1">Peppermint</h1>
+      <div class="projectLoader-title">
+        <h1 class="projectLoaderH1">Peppermint</h1>
+        <img src="../../../../build/icons/pepperming-logo.png">
+      </div>
     </div>
     <div class="projectLoader-main">
       <div class="main-left">
@@ -113,10 +116,14 @@ export default {
   height: 50%;
 }
 
-.projectLoader-header h1 {
+.projectLoader-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   font-family: "Ubuntu", sans-serif;
   letter-spacing: 2.5px;
   margin-bottom: 20px;
+  width: 45%;
 }
 
 .projectLoader-main {
@@ -189,5 +196,9 @@ button {
   padding-left: 1rem;
   font-size: 12px;
   color: grey;
+}
+
+img {
+  height: 80px;
 }
 </style>
