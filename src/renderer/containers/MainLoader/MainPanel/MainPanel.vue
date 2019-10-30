@@ -12,7 +12,7 @@
         />
         <button class="tooltip tipComponent">
           i
-          <span class="toolTipText">Name of the component to test</span>
+          <span class="toolTipText">Name of component you are testing</span>
         </button>
       </div>
       <button class="button saveCurrentButton" @click="generateTestCode">Display Test</button>

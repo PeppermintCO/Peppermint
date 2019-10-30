@@ -1,13 +1,7 @@
 <template>
   <div class="test-component">
-    <div class="deleteAndTooltip">
-      <button class="tooltip" :disabled="true">
-        i
-        <span class="toolTipText Assertion">Assertion</span>
-      </button>
-      <div class="delete">
-        <span @click="deleteItem">X</span>
-      </div>
+    <div class="delete">
+      <span @click="deleteItem">X</span>
     </div>
 
     <form action class="query">
@@ -238,11 +232,7 @@ input:focus {
   color: rgb(85, 201, 240);
   cursor: pointer;
 }
-.deleteAndTooltip {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-}
+
 .variableTip {
   margin-left: 8px;
   margin-top: 3px;
