@@ -12,7 +12,7 @@
         />
         <button class="tooltip tipComponent">
           i
-          <span class="toolTipText">Name of the component to test</span>
+          <span class="toolTipText">Name of component you are testing</span>
         </button>
       </div>
       <button class="button saveCurrentButton" @click="generateTestCode">Display Test</button>
@@ -33,7 +33,7 @@
             />
             <button class="tooltip">
               i
-              <span class="toolTipText">Name of the prop to change</span>
+              <span class="toolTipText">Name of your prop</span>
             </button>
           </div>
           <div class="prop-value">
@@ -45,7 +45,7 @@
             />
             <button class="tooltip variableTip">
               i
-              <span class="toolTipText">Value of the prop to change to</span>
+              <span class="toolTipText">Value for your prop</span>
             </button>
           </div>
           <span class="deleteProp" @click="deleteProps(indexForProps)">X</span>
@@ -246,8 +246,6 @@ export default {
   width: 40px;
   height: 20px;
   background-color: #232323;
-  /* border: 1px solid #7b7a7a; */
-  /* border-radius: 12px; */
   color: white;
   font-size: 15px;
   margin-right: -50px;
