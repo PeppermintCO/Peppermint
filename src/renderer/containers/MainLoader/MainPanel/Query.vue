@@ -17,7 +17,7 @@
           />
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">Variable name for the query</span>
+            <span class="toolTipText">Name you will save your DOM element to</span>
           </button>
         </div>
         <div class="selectorQuery">
@@ -40,7 +40,7 @@
           </select>
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">kind of Query</span>
+            <span class="toolTipText">Search variant to find DOM element</span>
           </button>
         </div>
       </div>
@@ -66,7 +66,7 @@
           </select>
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">Type to query for</span>
+            <span class="toolTipText">Search type to find DOM element</span>
           </button>
         </div>
         <div class="matcher">
@@ -80,7 +80,7 @@
           />
           <button class="tooltip variableTip" :disabled="true">
             i
-            <span class="toolTipText">Text querying for</span>
+            <span class="toolTipText">Matching text on your DOM element</span>
           </button>
         </div>
       </div>
