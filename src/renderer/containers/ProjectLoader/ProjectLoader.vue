@@ -123,7 +123,7 @@ export default {
   font-family: "Ubuntu", sans-serif;
   letter-spacing: 2.5px;
   margin-bottom: 20px;
-  width: 45%;
+  width: 35%;
 }
 
 .projectLoader-main {
