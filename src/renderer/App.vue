@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <MainLoader v-if="this.$store.getters.getFileTree" />
-    <!-- <MainLoader  /> -->
     <ProjectLoader v-else />
   </div>
 </template>
@@ -29,12 +28,10 @@ html,
 body {
   height: 100%;
   width: 100% !important;
-  /* max-height: 100%; */
   overflow: hidden !important;
 }
 
 #app {
-  /* overflow: hidden !important; */
   height: 100%;
   width: 100%;
   background-color: #232323;

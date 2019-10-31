@@ -49,7 +49,6 @@
             </button>
           </div>
           <span class="deleteProp" @click="deleteProps(indexForProps)">X</span>
-          <!-- <button class="deleteProp" @click="deleteProps(indexForProps)">X</button> -->
         </div>
       </div>
       <div class="tests" v-for="(test, index) in tests" :key="index+100">
@@ -79,20 +78,16 @@ export default {
   },
   methods: {
     addTest() {
-      // console.log(this.$store.getters.showTestList);
       this.tests.push("CreateTest");
     },
     deleteTest(index) {},
     deleteTestFromStore(testId) {
-      // console.log(testId);
     },
     saveComponentName() {
-      // console.log(this.$store.getters.showComponentName);
       this.$store.dispatch("saveComponentName", this.componentName);
     },
     generateTestCode() {
       this.$store.dispatch("generateTestCode");
-      //emit 'test-content-set' to RightPanel.vue
       this.$eventHub.$emit("test-content-set");
     },
     addProps() {
@@ -108,9 +103,6 @@ export default {
       this.$store.dispatch("deleteProps");
     },
     addPropKey(id) {
-      // this.propsList.
-      // console.log(this.$store.getters.getPropsList);
-      console.log(this.propKeys[id]);
       this.$store.dispatch("addKeyToProp", {
         id: id,
         propKey: this.propKeys[id]
@@ -125,9 +117,6 @@ export default {
     toolTipDefault(event) {
       event.preventDefault;
     }
-  },
-  updated() {
-    console.log("hi");
   }
 };
 </script>
@@ -281,7 +270,7 @@ export default {
   border: 1px solid rgb(41, 41, 41);
   border-radius: 30px;
   box-shadow: 0 0 10px rgb(18, 18, 18);
-  padding: 1%;
+  /* padding: 1%; */
 }
 
 .saveCurrentButton {
@@ -306,6 +295,7 @@ export default {
 #componentInputTitle {
   width: 70%;
 }
+
 /* tooltips */
 .tipComponent {
   margin-left: 10px;
@@ -324,6 +314,7 @@ export default {
   outline: none;
   position: relative;
   margin-left: 5px;
+
 }
 
 .tooltip .toolTipText {

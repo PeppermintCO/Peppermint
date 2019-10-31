@@ -111,21 +111,16 @@ export const store = new Vuex.Store({
       state.showWebsite = payload;
     },
     addProps(state) {
-      console.log(state.propsList.keys);
-      // state.propsList.keys.push('');
       state.propsList.values.push('');
-      console.log(state.propsList);
     },
     deleteProps(state, payload) {
       state.propsList.keys.splice(payload, 1);
       state.propsList.values.splice(payload, 1);
     },
     addKeyToProp(state, payload) {
-      console.log(state.propsList.keys);
       state.propsList.keys[payload.id] = payload.propKey
     },
     addValueToProp(state, payload) {
-      console.log(state.propsList.values);
       state.propsList.values[payload.id] = payload.propValue;
     }
   },

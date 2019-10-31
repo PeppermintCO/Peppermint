@@ -15,8 +15,7 @@
             class="queryInputBox"
             role="name-input"
           />
-          <button class="tooltip variableTip" :disabled="true">
-            i
+          <button class="tooltip variableTip" :disabled="true"> i
             <span class="toolTipText">Name you will save your DOM element to</span>
           </button>
         </div>
@@ -39,7 +38,7 @@
             <option value="queryAllBy">queryAllBy</option>
           </select>
           <button class="tooltip variableTip" :disabled="true">
-            i
+          i
             <span class="toolTipText">Search variant to find DOM element</span>
           </button>
         </div>
@@ -65,7 +64,7 @@
             <option value="TestId">TestId</option>
           </select>
           <button class="tooltip variableTip" :disabled="true">
-            i
+          i
             <span class="toolTipText">Search type to find DOM element</span>
           </button>
         </div>
@@ -79,7 +78,7 @@
             role="matcher-input"
           />
           <button class="tooltip variableTip" :disabled="true">
-            i
+          i
             <span class="toolTipText">Matching text on your DOM element</span>
           </button>
         </div>
@@ -134,7 +133,6 @@ export default {
 
 .top-row,
 .bottom-row {
-  /* border: 1px white solid; */
   display: flex;
   justify-content: space-around;
   width: 90%;
@@ -152,25 +150,21 @@ export default {
 
 .QueryInput {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
 .selectorQuery {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
 .typeQueryContainer {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
 .matcher {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
@@ -217,9 +211,11 @@ input:focus {
 }
 
 .variantQuery {
-  margin-left: 3px;
+  margin-left: 10px;
 }
-
+.matcherQuery {
+  margin-left: 10px;
+}
 .delete {
   display: flex;
   flex-direction: column;
@@ -234,7 +230,7 @@ input:focus {
 }
 
 .variableTip {
-  margin-left: 8px;
+  /* margin-left: 8px; */
   margin-top: 3px;
 }
 </style>
