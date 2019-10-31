@@ -37,6 +37,7 @@ export default {
         "list-style": `none`,
         "color": 'skyblue',
         'padding-top': '3px',
+        'padding-left': '8px',
         'padding-bottom': '3px',
         'letter-spacing': '2px',
         'word-spacing': '3px',
