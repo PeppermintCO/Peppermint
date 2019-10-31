@@ -84,13 +84,11 @@ export default {
 }
 
 .testNameWithButtons {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 30%;
-  /* bottom: 4%; */
 }
 .testNameTitle {
   font-family: "Ubuntu", sans-serif;
@@ -116,7 +114,6 @@ export default {
   border-color: rgb(85, 201, 240);
 }
 .addEventAndQuery {
-  /* height:  */
   min-width: 278.08px;
   width: 50%;
   align-self: flex-end;
@@ -124,7 +121,6 @@ export default {
   flex-direction: row;
   justify-self: flex-end;
   align-items: flex-end;
-  /* margin-left: 100%; */
 }
 .button {
   outline: none;
