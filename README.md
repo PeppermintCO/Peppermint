@@ -38,7 +38,7 @@ In your package.json file, add the following "scripts" key and "jest" key as wel
 ## How it Works
 
 1. On the initial screen, enter the URL of your project and load your Vue application to start creating tests.
-![Landing Page](https://github.com/PeppermintCO/Peppermint/blob/master/assets/images/peppermint-landing-page.png)
+![Landing Page](https://github.com/PeppermintCO/Peppermint/blob/master/assets/images/landing-page.png)
 2. Utilize our input fields, drop-down options, and tooltips features to easily create query assertion and event test statements.
 ![Peppermint with code editor](https://github.com/PeppermintCO/Peppermint/blob/master/assets/images/peppermint-w-code-editor.png)
 3. Refer to the browser view of your app displayed on the right panel to quickly identify values for your selectors and use the file directory to open up the code editor to easily refer to your codebase.
