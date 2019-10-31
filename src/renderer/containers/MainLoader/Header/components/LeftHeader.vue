@@ -2,11 +2,9 @@
   <div class="left-header">
     <button class="button fileExplorerButton" @click="$store.dispatch('toggleFileExplorer')">
       <img src="../../../../assets/images/file-explorer.png" title="Toggle file view">
-      <!-- <i class="far fa-file fa-2x"></i> -->
     </button>
     <button class="button openProjectButton" @click="openProject">
       <img src="../../../../assets/images/folder.png" title="Open project directory">
-      <!-- <i class="far fa-folder-open fa-2x"></i> -->
     </button>
   </div>
 </template>
@@ -47,7 +45,7 @@ function generateFileTreeObject(directoryPath) {
   return fileArray.filter(file => typeof file === "object");
 }
 
-//output will be fileArray(will contain fileObjects)
+
 
 export default {
   name: "leftHeader",
@@ -71,13 +69,11 @@ export default {
 
       if (directory && directory[0]) {
         const directoryPath = directory[0];
-        console.log(directoryPath, "directoryPath");
         this.$store.dispatch("setFilePath", directoryPath);
         this.$store.dispatch("createFileTree", generateFileTreeObject(directoryPath));
       }
     },
     refreshProject() {
-      console.log("refreshing fileExplorer...");
       this.$store.dispatch("createFileTree", generateFileTreeObject(this.$store.getters.getFilePath));
     }
   }

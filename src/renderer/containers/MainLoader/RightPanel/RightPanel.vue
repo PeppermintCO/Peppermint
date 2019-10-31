@@ -27,7 +27,6 @@ export default {
         theme: "base16-light",
         lineNumbers: false,
         line: true
-        // more codemirror options,  codemirror ...
       }
     };
   },
@@ -51,18 +50,12 @@ export default {
       console.log("the editor is focus!", cm);
     },
     onCmCodeChange() {
-      console.log("this is new code", this.$store.getters.getFileContent);
       this.code = this.$store.getters.getFileContent;
     },
     onCmFileContentChange() {
-      // console.log('this is new file content code', this.$store.getters.getFileContent)
-      console.log("fileContentChange executed");
       this.code = this.$store.getters.getFileContent;
     },
     onCmTestContentChange() {
-      console.log("testContentChange executed");
-      console.log(this.$store.getters.getTestContent, "<-----");
-      // console.log('this is new test content code', this.$store.getters.getTestContent)
       this.code = this.$store.getters.getTestContent;
     }
   },

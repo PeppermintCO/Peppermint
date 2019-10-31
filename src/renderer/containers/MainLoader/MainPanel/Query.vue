@@ -134,7 +134,6 @@ export default {
 
 .top-row,
 .bottom-row {
-  /* border: 1px white solid; */
   display: flex;
   justify-content: space-around;
   width: 90%;
@@ -152,25 +151,21 @@ export default {
 
 .QueryInput {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
 .selectorQuery {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
 .typeQueryContainer {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
 .matcher {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
