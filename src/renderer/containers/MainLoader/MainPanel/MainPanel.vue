@@ -117,9 +117,6 @@ export default {
     toolTipDefault(event) {
       event.preventDefault;
     }
-  },
-  updated() {
-    console.log("hi");
   }
 };
 </script>
