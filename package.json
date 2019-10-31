@@ -43,7 +43,7 @@
       ]
     },
     "mac": {
-      "icon": "build/icons/icon.icns"
+      "icon": "build/icons/peppermint-logo.png"
     },
     "win": {
       "icon": "build/icons/icon.ico"
