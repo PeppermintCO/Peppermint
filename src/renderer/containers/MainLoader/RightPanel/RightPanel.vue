@@ -15,7 +15,6 @@ import "../../../../../node_modules/codemirror/theme/base16-light.css";
 import ShowWebsite from "./ShowWebsite.vue";
 // more codemirror resources
 // import 'codemirror/some-resource...'
-document.getElement
 export default {
   data() {
     return {
