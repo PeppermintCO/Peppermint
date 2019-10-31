@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <MainLoader v-if="this.$store.getters.getFileTree" /> -->
-    <MainLoader  />
-    <!-- <ProjectLoader v-else /> -->
+    <MainLoader v-if="this.$store.getters.getFileTree" />
+    <!-- <MainLoader  /> -->
+    <ProjectLoader v-else />
   </div>
 </template>
 
