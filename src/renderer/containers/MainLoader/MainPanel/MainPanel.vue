@@ -103,7 +103,6 @@ export default {
       this.$store.dispatch("deleteProps");
     },
     addPropKey(id) {
-      console.log(this.propKeys[id]);
       this.$store.dispatch("addKeyToProp", {
         id: id,
         propKey: this.propKeys[id]
