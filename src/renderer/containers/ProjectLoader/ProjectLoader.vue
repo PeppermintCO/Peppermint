@@ -82,15 +82,12 @@ export default {
 
       if (directory && directory[0]) {
         const directoryPath = directory[0];
-        console.log(directoryPath, "directoryPath");
         this.$store.dispatch("setFilePath", directoryPath);
         this.$store.dispatch(
           "createFileTree",
           generateFileTreeObject(directoryPath)
         );
       }
-
-      console.log(this.$store.getters.getFileTree, "<----");
     },
     saveUrl() {
       this.$store.dispatch("saveUrl", this.url);
