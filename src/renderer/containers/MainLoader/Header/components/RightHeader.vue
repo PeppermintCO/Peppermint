@@ -87,6 +87,7 @@ export default {
       this.$store.dispatch("saveUrl", this.url);
     },
     viewWebsite() {
+      console.log('hi')
       this.$store.dispatch("changeShowWebsite", true);
       this.$eventHub.$emit("website-content-set");
     }

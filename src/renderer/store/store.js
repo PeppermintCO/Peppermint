@@ -108,7 +108,7 @@ export const store = new Vuex.Store({
       }
     },
     changeShowWebsite(state, payload) {
-      state.showWebsite = payload.bool;
+      state.showWebsite = payload;
     },
     addProps(state) {
       state.propsList.values.push('');
