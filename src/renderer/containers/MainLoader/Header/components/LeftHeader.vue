@@ -71,13 +71,13 @@ export default {
 
       if (directory && directory[0]) {
         const directoryPath = directory[0];
-        console.log(directoryPath, "directoryPath");
+        // console.log(directoryPath, "directoryPath");
         this.$store.dispatch("setFilePath", directoryPath);
         this.$store.dispatch("createFileTree", generateFileTreeObject(directoryPath));
       }
     },
     refreshProject() {
-      console.log("refreshing fileExplorer...");
+      // console.log("refreshing fileExplorer...");
       this.$store.dispatch("createFileTree", generateFileTreeObject(this.$store.getters.getFilePath));
     }
   }
