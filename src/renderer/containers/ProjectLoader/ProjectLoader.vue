@@ -185,7 +185,7 @@ input {
   padding-left: 1rem;
   font-size: 12px;
   width: 250px;
-  color: grey;
+  color: black;
 }
 
 button {
