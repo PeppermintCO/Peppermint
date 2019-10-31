@@ -63,7 +63,6 @@ export default {
         !this.$store.getters.getTestContent
       )
         return;
-      console.log("exporting...");
       const componentName = this.$store.getters.showComponentName;
       const filePath = this.$store.getters.getFilePath;
       const directoryName = "__tests__";
@@ -77,7 +76,6 @@ export default {
       } else {
         try {
           electronFs.mkdirSync(directoryPath);
-          console.log("created new directory called __tests__");
           createFile(testFilePath, fileContent);
           this.$eventHub.$emit("refresh-fileExplorer");
         } catch (err) {
@@ -87,7 +85,6 @@ export default {
     },
     saveUrl() {
       this.$store.dispatch("saveUrl", this.url);
-      console.log(this.$store.getters.getUrl);
     },
     viewWebsite() {
       this.$store.dispatch("changeShowWebsite", true);

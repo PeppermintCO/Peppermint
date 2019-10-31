@@ -63,7 +63,6 @@ export default {
         testId: this.testId,
         testItemId: this._uid
       });
-      console.log(this.$store.state.testList);
     },
     deleteItem(e) {
       e.preventDefault();
@@ -97,13 +96,11 @@ export default {
   width: 90%;
   height: 1em;
   margin: auto;
-  /* border: 1px solid white; */
 }
 
 .event-input,
 .selector-input {
   display: flex;
-  /* border: 1px lightblue solid; */
   width: 250px;
 }
 
