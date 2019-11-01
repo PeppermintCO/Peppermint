@@ -48,7 +48,7 @@ In your package.json file, add the following "scripts" key and "jest" key as wel
 npm run test
 ```
 
-#### To Run Dev Version
+## To Run Dev Version
 1. Clone repo.
 
 2. Install dependencies
@@ -60,7 +60,7 @@ npm install
 ```
 npm run dev
 ```
----
+
 
 ## Team
 
