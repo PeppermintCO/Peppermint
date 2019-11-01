@@ -270,7 +270,7 @@ export default {
   border: 1px solid rgb(41, 41, 41);
   border-radius: 30px;
   box-shadow: 0 0 10px rgb(18, 18, 18);
-  padding: 1%;
+  /* padding: 1%; */
 }
 
 .saveCurrentButton {
@@ -314,6 +314,7 @@ export default {
   outline: none;
   position: relative;
   margin-left: 5px;
+
 }
 
 .tooltip .toolTipText {

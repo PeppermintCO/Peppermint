@@ -103,7 +103,9 @@ export default {
   display: flex;
   width: 250px;
 }
-
+.selector-input {
+  margin-left: 5px;
+}
 select {
   width: 150px;
   height: 20px;
@@ -150,7 +152,7 @@ input:focus {
   cursor: pointer;
 }
 .variableTip {
-  margin-left: 8px;
-  margin-top: 3px;
+  /* margin-left: 5px;*/
+  margin-top: 3px; 
 }
 </style>
